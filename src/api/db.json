@@ -1,0 +1,1140 @@
+{
+  "users": [
+    {
+      "id": "e9bf8r",
+      "email": "patrickcavanni@gmail.com",
+      "password": "Pa$$w0rd!",
+      "confirmPassword": "Pa$$w0rd!",
+      "name": "Patrick Cavani",
+      "phoneCountry": "NG",
+      "phone": "+234 908 777 0900",
+      "street": "No 8, Ndele Street, Wuse Zone 3",
+      "city": "Abuja",
+      "zipCode": "30343",
+      "country": "NG",
+      "role": "user",
+      "cart": [],
+      "wishlist": [],
+      "createdAt": "2025-12-19T09:35:50.271Z"
+    },
+    {
+      "id": "e9b7",
+      "email": "seqycaj@mailinator.com",
+      "password": "Pa$$w0rd!",
+      "confirmPassword": "Pa$$w0rd!",
+      "name": "Armando Guerrero",
+      "phoneCountry": "NG",
+      "phone": "+234 701 942 7556",
+      "street": "Officia incididunt a",
+      "city": "Eius minus qui nostr",
+      "zipCode": "30343",
+      "country": "UK",
+      "role": "admin",
+      "cart": [],
+      "wishlist": [],
+      "createdAt": "2025-12-19T09:35:50.271Z"
+    },
+    {
+      "id": "2c35",
+      "email": "mimi@mailinator.com",
+      "password": "Pa$$w0rd!",
+      "confirmPassword": "Pa$$w0rd!",
+      "name": "Hanae Acosta",
+      "phoneCountry": "NG",
+      "phone": "+234 701 942 7556",
+      "street": "Quaerat architecto d",
+      "city": "Aliqua Consequatur",
+      "zipCode": "26417",
+      "country": "NG",
+      "role": "user",
+      "cart": [],
+      "wishlist": [],
+      "createdAt": "2025-12-19T09:40:49.258Z"
+    },
+    {
+      "id": "cff4",
+      "email": "gugar@mailinator.com",
+      "password": "Pa$$w0rd!",
+      "confirmPassword": "Pa$$w0rd!",
+      "name": "Xyla Stevenson",
+      "phoneCountry": "NG",
+      "phone": "+234 701 942 7556",
+      "street": "Dignissimos vero ver",
+      "city": "Fugiat amet eu vol",
+      "zipCode": "36779",
+      "country": "NG",
+      "role": "user",
+      "cart": [],
+      "wishlist": [],
+      "createdAt": "2025-12-19T09:46:46.209Z"
+    },
+    {
+      "id": "eff9",
+      "email": "gykabep@mailinator.com",
+      "password": "Pa$$w0rd!",
+      "confirmPassword": "Pa$$w0rd!",
+      "name": "Ori Owen",
+      "phoneCountry": "NG",
+      "phone": "+234 701 942 7556",
+      "street": "Nihil voluptatem Do",
+      "city": "Accusantium id conse",
+      "zipCode": "25634",
+      "country": "GH",
+      "role": "user",
+      "cart": [],
+      "wishlist": [],
+      "createdAt": "2025-12-19T10:17:11.277Z"
+    },
+    {
+      "id": "9619",
+      "email": "banit@mailinator.com",
+      "password": "Pa$$w0rd!",
+      "confirmPassword": "Pa$$w0rd!",
+      "name": "Eaton Reid",
+      "phoneCountry": "NG",
+      "phone": "+234 701 942 7556",
+      "street": "Commodo unde unde do",
+      "city": "Quae maiores corrupt",
+      "zipCode": "86408",
+      "country": "NG",
+      "role": "user",
+      "cart": [],
+      "wishlist": [],
+      "createdAt": "2025-12-19T10:18:06.085Z"
+    },
+    {
+      "id": "4ef5",
+      "email": "qekoxy@mailinator.com",
+      "password": "Pa$$w0rd!",
+      "confirmPassword": "Pa$$w0rd!",
+      "name": "SULAIMAN ADAMU",
+      "phoneCountry": "NG",
+      "phone": "+234 701 942 7556",
+      "street": "Est consequuntur dol",
+      "city": "Earum autem assumend",
+      "zipCode": "45964",
+      "country": "NG",
+      "role": "user",
+      "cart": [],
+      "wishlist": [],
+      "createdAt": "2025-12-19T10:20:04.257Z"
+    },
+    {
+      "id": "c697",
+      "email": "jahulir@mailinator.com",
+      "password": "Pa$$w0rd!",
+      "confirmPassword": "Pa$$w0rd!",
+      "name": "Anika Strickland",
+      "phoneCountry": "NG",
+      "phone": "+234 701 942 7556",
+      "street": "Laborum cupidatat de",
+      "city": "Tempore consequat ",
+      "zipCode": "15281",
+      "country": "NG",
+      "role": "user",
+      "cart": [],
+      "wishlist": [],
+      "createdAt": "2025-12-23T15:12:59.009Z"
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "name": "Classic White Shirt",
+      "gender": "unisex",
+      "price": 59.99,
+      "originalPrice": 79.99,
+      "image": [
+        "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+      ],
+      "categories": [
+        "Tops",
+        "New Arrival"
+      ],
+      "brand": "Gucci",
+      "colors": [
+        "white",
+        "black",
+        "blue"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "rating": 4.5,
+      "reviews": 128,
+      "inStock": true,
+      "description": "A timeless classic that pairs well with anything in your wardrobe. Made from premium cotton for maximum comfort."
+    },
+    {
+      "id": "2",
+      "name": "Slim Fit Jeans",
+      "gender": "men",
+      "price": 89.99,
+      "originalPrice": 109.99,
+      "image": [
+        "https://images.unsplash.com/photo-1542272604-787c3835535d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1542272604-787c3835535d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1542272604-787c3835535d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1542272604-787c3835535d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+      ],
+      "categories": [
+        "Pants",
+        "New Arrival"
+      ],
+      "colors": [
+        "blue",
+        "black"
+      ],
+      "sizes": [
+        "28",
+        "30",
+        "32",
+        "34",
+        "36"
+      ],
+      "rating": 4.3,
+      "reviews": 215,
+      "inStock": true,
+      "description": "Slim fit jeans that offer both comfort and style. Perfect for any casual occasion."
+    },
+    {
+      "id": "3",
+      "name": "Oversized Blazer",
+      "gender": "women",
+      "price": 129.99,
+      "originalPrice": 159.99,
+      "image": [
+        "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+      ],
+      "categories": [
+        "Exclusive Collections",
+        "Haute couture"
+      ],
+      "colors": [
+        "black",
+        "beige",
+        "gray"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L"
+      ],
+      "rating": 4.7,
+      "reviews": 89,
+      "inStock": true,
+      "description": "Make a statement with this elegant oversized blazer. Perfect for both office and evening wear."
+    },
+    {
+      "id": "4",
+      "name": "Knit Sweater",
+      "gender": "unisex",
+      "price": 79.99,
+      "originalPrice": 99.99,
+      "image": [
+        "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+      ],
+      "categories": [
+        "Tops",
+        "Cavanni Wardrobe"
+      ],
+      "colors": [
+        "beige",
+        "brown",
+        "gray"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "rating": 4.6,
+      "reviews": 176,
+      "inStock": true,
+      "description": "Stay cozy and stylish with this soft knit sweater. Perfect for the colder months."
+    },
+    {
+      "id": "5",
+      "name": "Leather Crossbody Bag",
+      "gender": "women",
+      "price": 149.99,
+      "originalPrice": 179.99,
+      "image": [
+        "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+      ],
+      "categories": [
+        "Exclusive Collections"
+      ],
+      "colors": [
+        "black",
+        "brown",
+        "tan"
+      ],
+      "sizes": [
+        "One Size"
+      ],
+      "rating": 4.8,
+      "reviews": 243,
+      "inStock": true,
+      "description": "A versatile leather crossbody bag that complements any outfit. Perfect for everyday use."
+    },
+    {
+      "id": "6",
+      "name": "High-Waisted Trousers",
+      "gender": "unisex",
+      "price": 69.99,
+      "originalPrice": 89.99,
+      "image": [
+        "https://images.unsplash.com/photo-1573891960643-6af2f2121783?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1573891960643-6af2f2121783?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1573891960643-6af2f2121783?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1573891960643-6af2f2121783?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+      ],
+      "categories": [
+        "Pants",
+        "Cavanni Wardrobe"
+      ],
+      "colors": [
+        "black",
+        "beige",
+        "navy"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "rating": 4.4,
+      "reviews": 132,
+      "inStock": true,
+      "description": "Elegant high-waisted trousers that offer both comfort and sophistication."
+    },
+    {
+      "id": "7",
+      "name": "Wide-Leg Jumpsuit",
+      "gender": "women",
+      "price": 119.99,
+      "originalPrice": 149.99,
+      "image": [
+        "https://images.unsplash.com/photo-1534215754734-18e55d13e021?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1534215754734-18e55d13e021?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1534215754734-18e55d13e021?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1534215754734-18e55d13e021?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+      ],
+      "categories": [
+        "Dress",
+        "New Arrival"
+      ],
+      "colors": [
+        "black",
+        "navy",
+        "olive"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L"
+      ],
+      "rating": 4.7,
+      "reviews": 98,
+      "inStock": true,
+      "description": "Effortlessly stylish wide-leg jumpsuit for any occasion."
+    },
+    {
+      "id": "8",
+      "name": "Basic T-Shirt",
+      "gender": "men",
+      "price": 19.99,
+      "originalPrice": 29.99,
+      "image": [
+        "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+      ],
+      "categories": [
+        "Tops",
+        "Basics"
+      ],
+      "colors": [
+        "white",
+        "black",
+        "gray"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "rating": 2.1,
+      "reviews": 45,
+      "inStock": true,
+      "description": "Basic cotton t-shirt that fits well but may shrink after washing."
+    },
+    {
+      "id": "9",
+      "name": "Casual Denim Shorts",
+      "gender": "unisex",
+      "price": 34.99,
+      "originalPrice": 44.99,
+      "image": [
+        "https://images.unsplash.com/photo-1600978257452-c6f315b8a668?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1600978257452-c6f315b8a668?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1600978257452-c6f315b8a668?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1600978257452-c6f315b8a668?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+      ],
+      "categories": [
+        "Bottoms",
+        "Summer"
+      ],
+      "colors": [
+        "blue",
+        "black"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L"
+      ],
+      "rating": 2.8,
+      "reviews": 67,
+      "inStock": true,
+      "description": "Casual denim shorts, comfortable but may fade after several washes."
+    },
+    {
+      "id": "10",
+      "name": "Canvas Sneakers",
+      "gender": "unisex",
+      "price": 45.99,
+      "originalPrice": 59.99,
+      "image": [
+        "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+      ],
+      "categories": [
+        "Footwear",
+        "Casual"
+      ],
+      "colors": [
+        "white",
+        "black"
+      ],
+      "sizes": [
+        "7",
+        "8",
+        "9",
+        "10",
+        "11"
+      ],
+      "rating": 2.8,
+      "reviews": 63,
+      "inStock": true,
+      "description": "Affordable canvas sneakers that wear out quickly with regular use."
+    },
+    {
+      "id": "11",
+      "name": "Knit Beanie",
+      "gender": "unisex",
+      "price": 14.99,
+      "image": [
+        "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+      ],
+      "categories": [
+        "Accessories",
+        "Winter"
+      ],
+      "colors": [
+        "black",
+        "gray",
+        "navy"
+      ],
+      "sizes": [
+        "One Size"
+      ],
+      "rating": 1.8,
+      "reviews": 31,
+      "inStock": true,
+      "description": "Basic knit beanie, some customers found it to be too small or not as warm as expected."
+    },
+    {
+      "id": "12",
+      "name": "Denim Jacket",
+      "gender": "unisex",
+      "price": 79.99,
+      "originalPrice": 99.99,
+      "image": [
+        "https://images.unsplash.com/photo-1551028719-00167d1e1beb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1551028719-00167d1e1beb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1551028719-00167d1e1beb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1551028719-00167d1e1beb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+      ],
+      "categories": [
+        "Outerwear",
+        "Casual"
+      ],
+      "colors": [
+        "blue",
+        "black"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "rating": 2.2,
+      "reviews": 47,
+      "inStock": true,
+      "description": "Classic denim jacket with some reported issues with zipper and buttons."
+    },
+    {
+      "id": "13",
+      "name": "Plaid Scarf",
+      "gender": "unisex",
+      "price": 24.99,
+      "image": [
+        "https://images.unsplash.com/photo-1576566588028-4147f3842f27?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1576566588028-4147f3842f27?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1576566588028-4147f3842f27?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1576566588028-4147f3842f27?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+      ],
+      "categories": [
+        "Accessories",
+        "Winter"
+      ],
+      "colors": [
+        "red/black",
+        "blue/black",
+        "green/black"
+      ],
+      "sizes": [
+        "One Size"
+      ],
+      "rating": 2.7,
+      "reviews": 52,
+      "inStock": true,
+      "description": "Warm plaid scarf, some customers found the material to be scratchy."
+    },
+    {
+      "id": "14",
+      "name": "Cargo Pants",
+      "gender": "men",
+      "price": 54.99,
+      "originalPrice": 64.99,
+      "image": [
+        "https://images.unsplash.com/photo-1542272604-787c3835535d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1542272604-787c3835535d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1542272604-787c3835535d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1542272604-787c3835535d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+      ],
+      "categories": [
+        "Pants",
+        "Casual"
+      ],
+      "colors": [
+        "khaki",
+        "olive",
+        "black"
+      ],
+      "sizes": [
+        "30",
+        "32",
+        "34",
+        "36"
+      ],
+      "rating": 2,
+      "reviews": 36,
+      "inStock": true,
+      "description": "Utility cargo pants with some reported fit and durability issues."
+    },
+    {
+      "id": "15",
+      "name": "Graphic Tee",
+      "gender": "men",
+      "price": 24.99,
+      "image": [
+        "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+      ],
+      "categories": [
+        "Tops",
+        "Casual"
+      ],
+      "colors": [
+        "white",
+        "black",
+        "gray"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L"
+      ],
+      "rating": 1.9,
+      "reviews": 29,
+      "inStock": true,
+      "description": "Basic graphic t-shirt with some reports of print fading quickly after washing."
+    },
+    {
+      "id": "16",
+      "name": "Ankle Socks",
+      "gender": "unisex",
+      "price": 9.99,
+      "image": [
+        "https://images.unsplash.com/photo-1589674781759-8d68fefbcafd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1589674781759-8d68fefbcafd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1589674781759-8d68fefbcafd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1589674781759-8d68fefbcafd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+      ],
+      "categories": [
+        "Accessories",
+        "Basics"
+      ],
+      "colors": [
+        "white",
+        "black",
+        "gray"
+      ],
+      "sizes": [
+        "One Size"
+      ],
+      "rating": 2.4,
+      "reviews": 41,
+      "inStock": true,
+      "description": "Pack of 3 ankle socks that may lose elasticity after a few washes."
+    },
+    {
+      "id": "17",
+      "name": "Cotton Tank Top",
+      "gender": "women",
+      "price": 14.99,
+      "originalPrice": 19.99,
+      "image": [
+        "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+      ],
+      "categories": [
+        "Tops",
+        "Summer"
+      ],
+      "colors": [
+        "white",
+        "black",
+        "gray",
+        "pink"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L"
+      ],
+      "rating": 2.5,
+      "reviews": 38,
+      "inStock": true,
+      "description": "Basic cotton tank top that may lose shape after washing."
+    },
+    {
+      "id": "18",
+      "name": "Premium Leather Jacket",
+      "gender": "men",
+      "price": 349.99,
+      "originalPrice": 399.99,
+      "image": [
+        "https://images.unsplash.com/photo-1551028719-00167d1e1beb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1551028719-00167d1e1beb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1551028719-00167d1e1beb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1551028719-00167d1e1beb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+      ],
+      "categories": [
+        "Outerwear",
+        "Luxury"
+      ],
+      "colors": [
+        "black",
+        "brown"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "rating": 4.8,
+      "reviews": 187,
+      "inStock": true,
+      "description": "Handcrafted premium leather jacket with a perfect fit. The leather softens beautifully with wear."
+    },
+    {
+      "id": "19",
+      "name": "Designer Handbag",
+      "gender": "women",
+      "price": 299.99,
+      "originalPrice": 349.99,
+      "image": [
+        "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+      ],
+      "categories": [
+        "Accessories",
+        "Luxury"
+      ],
+      "colors": [
+        "black",
+        "brown",
+        "navy"
+      ],
+      "sizes": [
+        "One Size"
+      ],
+      "rating": 4.7,
+      "reviews": 243,
+      "inStock": true,
+      "description": "Elegant designer handbag with multiple compartments and premium hardware. Made from genuine leather with meticulous attention to detail."
+    },
+    {
+      "id": "20",
+      "name": "Wool Overcoat",
+      "gender": "unisex",
+      "price": 279.99,
+      "originalPrice": 329.99,
+      "image": [
+        "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+      ],
+      "categories": [
+        "Outerwear",
+        "Winter"
+      ],
+      "colors": [
+        "black",
+        "gray",
+        "camel"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "rating": 4.6,
+      "reviews": 156,
+      "inStock": true,
+      "description": "Classic wool overcoat with a tailored fit. The high-quality wool blend provides excellent warmth without bulk, perfect for formal and casual occasions."
+    },
+    {
+      "id": "21",
+      "name": "Silk Blouse",
+      "gender": "women",
+      "price": 129.99,
+      "originalPrice": 159.99,
+      "image": [
+        "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+      ],
+      "categories": [
+        "Tops",
+        "Luxury"
+      ],
+      "colors": [
+        "white",
+        "black",
+        "blush"
+      ],
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L"
+      ],
+      "rating": 4.5,
+      "reviews": 178,
+      "inStock": true,
+      "description": "Elegant silk blouse with a flattering cut. The lightweight fabric drapes beautifully and feels luxurious against the skin."
+    },
+    {
+      "id": "22",
+      "name": "Suede Boots",
+      "gender": "unisex",
+      "price": 189.99,
+      "originalPrice": 229.99,
+      "image": [
+        "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+      ],
+      "categories": [
+        "Footwear",
+        "Winter"
+      ],
+      "colors": [
+        "brown",
+        "black",
+        "taupe"
+      ],
+      "sizes": [
+        "6",
+        "7",
+        "8",
+        "9",
+        "10"
+      ],
+      "rating": 4.8,
+      "reviews": 267,
+      "inStock": true,
+      "description": "Stylish suede boots with a comfortable block heel. The water-resistant treatment helps protect against light rain and spills."
+    },
+    {
+      "id": "23",
+      "name": "Linen Suit",
+      "gender": "men",
+      "price": 299.99,
+      "originalPrice": 349.99,
+      "image": [
+        "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+      ],
+      "categories": [
+        "Suits",
+        "Summer"
+      ],
+      "colors": [
+        "beige",
+        "light gray",
+        "navy"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "rating": 4.4,
+      "reviews": 132,
+      "inStock": true,
+      "description": "Breathable linen suit perfect for warm weather. The natural fabric keeps you cool while maintaining a sharp, tailored look."
+    },
+    {
+      "id": "24",
+      "name": "Leather Gloves",
+      "gender": "unisex",
+      "price": 89.99,
+      "originalPrice": 109.99,
+      "image": [
+        "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+      ],
+      "categories": [
+        "Accessories",
+        "Winter"
+      ],
+      "colors": [
+        "black",
+        "brown",
+        "oxblood"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L"
+      ],
+      "rating": 4.7,
+      "reviews": 198,
+      "inStock": true,
+      "description": "Premium leather gloves with cashmere lining for exceptional warmth and comfort. The touchscreen-compatible fingertips allow for easy phone use."
+    },
+    {
+      "id": "25",
+      "name": "Cashmere Scarf",
+      "price": 149.99,
+      "originalPrice": 179.99,
+      "image": [
+        "https://images.unsplash.com/photo-1576566588028-4147f3842f27?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1576566588028-4147f3842f27?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1576566588028-4147f3842f27?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1576566588028-4147f3842f27?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+      ],
+      "categories": [
+        "Accessories",
+        "Luxury"
+      ],
+      "colors": [
+        "camel",
+        "charcoal",
+        "navy"
+      ],
+      "sizes": [
+        "One Size"
+      ],
+      "rating": 4.9,
+      "reviews": 224,
+      "inStock": true,
+      "description": "Luxuriously soft cashmere scarf that provides exceptional warmth without bulk. The fine gauge knit creates a lightweight yet insulating layer."
+    },
+    {
+      "id": "26",
+      "name": "Wool Fedora",
+      "price": 129.99,
+      "originalPrice": 149.99,
+      "image": [
+        "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+      ],
+      "categories": [
+        "Accessories",
+        "Luxury"
+      ],
+      "colors": [
+        "black",
+        "brown",
+        "gray"
+      ],
+      "sizes": [
+        "One Size"
+      ],
+      "rating": 4.6,
+      "reviews": 167,
+      "inStock": true,
+      "description": "Classic wool fedora with a structured crown and medium brim. The quality wool felt holds its shape well and provides excellent sun protection."
+    },
+    {
+      "id": "27",
+      "name": "Cashmere Sweater",
+      "gender": "unisex",
+      "price": 199.99,
+      "originalPrice": 249.99,
+      "image": [
+        "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+      ],
+      "categories": [
+        "Tops",
+        "Luxury"
+      ],
+      "colors": [
+        "beige",
+        "gray",
+        "navy"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "rating": 4.8,
+      "reviews": 189,
+      "inStock": true,
+      "description": "Luxuriously soft cashmere sweater that provides exceptional warmth and comfort. The fine gauge knit creates a lightweight yet insulating layer that's perfect for layering or wearing on its own."
+    }
+  ],
+  "categories": [
+    {
+      "name": "New Arrival",
+      "id": "660b"
+    },
+    {
+      "name": "Tops",
+      "id": "b16b"
+    },
+    {
+      "name": "Pants",
+      "id": "bb87"
+    },
+    {
+      "name": "Dress",
+      "id": "b4cd"
+    },
+    {
+      "name": "Cavanni Wardrobe",
+      "id": "6b06"
+    },
+    {
+      "name": "Exclusive Collections",
+      "id": "cb8e"
+    }
+  ],
+  "blogs": [
+    {
+      "id": "1",
+      "title": "2023 FALL FASHION GUIDE: MUST-HAVE TRENDS",
+      "image": "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+      "tags": [
+        "#Trending",
+        "#Outfits",
+        "#FashionWeek"
+      ],
+      "date": "2 days ago",
+      "excerpt": "Discover the top trends dominating the fashion scene this fall...",
+      "views": 1245,
+      "likes": 342
+    },
+    {
+      "id": "2",
+      "title": "10 ESSENTIAL ACCESSORIES TO ELEVATE YOUR WARDROBE",
+      "image": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+      "tags": [
+        "#Accessories",
+        "#StyleTips",
+        "#Luxury"
+      ],
+      "date": "5 days ago",
+      "excerpt": "Transform any outfit with these statement accessories...",
+      "views": 987,
+      "likes": 256
+    },
+    {
+      "id": "3",
+      "title": "SUSTAINABLE FASHION: BRANDS MAKING A DIFFERENCE",
+      "image": "https://images.unsplash.com/photo-1485462537746-965f33f7f6a7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+      "tags": [
+        "#Sustainable",
+        "#EcoFriendly",
+        "#EthicalFashion"
+      ],
+      "date": "1 week ago",
+      "excerpt": "Discover fashion brands that are changing the industry...",
+      "views": 1567,
+      "likes": 421
+    },
+    {
+      "id": "4",
+      "title": "THE ULTIMATE DENIM GUIDE: FINDING YOUR PERFECT FIT",
+      "image": "https://images.unsplash.com/photo-1542272604-787c3835535d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+      "tags": [
+        "#Denim",
+        "#StyleGuide",
+        "#FashionTips"
+      ],
+      "date": "2 weeks ago",
+      "excerpt": "Everything you need to know about finding jeans that fit perfectly...",
+      "views": 2043,
+      "likes": 532
+    },
+    {
+      "id": "5",
+      "title": "LUXURY WATCHES: TIMELESS PIECES FOR EVERY STYLE",
+      "image": "https://images.unsplash.com/photo-1523170335258-f5ed11844a49?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+      "tags": [
+        "#Luxury",
+        "#Watches",
+        "#Accessories"
+      ],
+      "date": "3 weeks ago",
+      "excerpt": "Explore the most coveted timepieces of the season...",
+      "views": 1876,
+      "likes": 498
+    },
+    {
+      "id": "6",
+      "title": "STREET STYLE INSPIRATION FROM FASHION WEEKS",
+      "image": "https://images.unsplash.com/photo-1485462537746-965f33f7f6a7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+      "tags": [
+        "#StreetStyle",
+        "#FashionWeek",
+        "#Trending"
+      ],
+      "date": "1 month ago",
+      "excerpt": "The best street style looks from fashion capitals around the world...",
+      "views": 2310,
+      "likes": 678
+    },
+    {
+      "id": "7",
+      "title": "SUSTAINABLE FASHION: BRANDS MAKING A DIFFERENCE",
+      "image": "https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+      "tags": [
+        "#Sustainable",
+        "#EcoFriendly",
+        "#EthicalFashion"
+      ],
+      "date": "3 weeks ago",
+      "excerpt": "Discover fashion brands that are leading the way in sustainability and ethical production...",
+      "views": 1890,
+      "likes": 423
+    },
+    {
+      "id": "8",
+      "title": "THE ART OF LAYERING: WINTER STYLE GUIDE",
+      "image": "https://images.unsplash.com/photo-1485965373059-f07aacff3d26?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+      "tags": [
+        "#WinterFashion",
+        "#Layering",
+        "#StyleGuide"
+      ],
+      "date": "1 month ago",
+      "excerpt": "Master the art of layering with these essential winter fashion tips and tricks...",
+      "views": 2450,
+      "likes": 567
+    },
+    {
+      "id": "9",
+      "title": "VINTAGE FASHION: HOW TO SHOP AND STYLE",
+      "image": "https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+      "tags": [
+        "#Vintage",
+        "#Thrifting",
+        "#RetroStyle"
+      ],
+      "date": "2 months ago",
+      "excerpt": "A complete guide to finding and styling vintage fashion pieces like a pro...",
+      "views": 2100,
+      "likes": 489
+    },
+    {
+      "id": "10",
+      "title": "LUXURY STAPLES: INVESTMENT PIECES WORTH THE SPLURGE",
+      "image": "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+      "tags": [
+        "#Luxury",
+        "#InvestmentPieces",
+        "#FashionEssentials"
+      ],
+      "date": "2 weeks ago",
+      "excerpt": "These luxury fashion pieces are worth the investment for your timeless wardrobe...",
+      "views": 1780,
+      "likes": 512
+    }
+  ]
+}

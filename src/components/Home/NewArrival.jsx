@@ -44,7 +44,7 @@ const NewArrival = () => {
   ];
 
   return (
-    <section id="new" className="py-16 bg-white">
+    <section id="new" className="py-10 bg-white">
       <div className="max-w-6xl mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-12">
@@ -111,7 +111,7 @@ const NewArrival = () => {
         {/* View All Button */}
         <div className="text-center mt-12">
           <Link
-            to="/shop"
+            to="/products"
             className="inline-block bg-gray-900 text-white px-8 py-3 rounded-full font-medium hover:bg-primary hover:scale-105 transition-all"
           >
             View All

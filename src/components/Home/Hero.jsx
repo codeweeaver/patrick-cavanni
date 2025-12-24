@@ -4,26 +4,28 @@ import { Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import local hero images
-import hero1 from "../../assets/images/hero/hero1.jpg";
-import hero2 from "../../assets/images/hero/hero2.jpg";
-import hero3 from "../../assets/images/hero/hero3.jpg";
+import hero1 from "../../assets/images/hero/hero1.png";
+import hero2 from "../../assets/images/hero/hero2.png";
+import hero3 from "../../assets/images/hero/hero3.png";
 
 const heroSlides = [
   {
     id: 1,
-    title: "New Collection 2025",
+    title: "Designer Spotlight",
     subtitle: "Discover the latest trends in fashion",
-    description: "Up to 30% off on selected items",
+    description:
+      "A designer dedicated to infusing luxury with creative freedom, bringing unique expressions to fashion",
     buttonText: "Shop Now",
-    buttonLink: "/store",
+    buttonLink: "/products",
     image: hero1,
     bgColor: "bg-gray-100",
   },
   {
     id: 2,
-    title: "Summer Sale",
-    subtitle: "Hot deals on summer essentials",
-    description: "Free shipping on orders over $50",
+    title: "Craftsmanship",
+    subtitle: "Art of Crafting Luxury",
+    description:
+      "Our pieces are made with the highest quality materials and attention to detail, blending tradition with innovation.",
     buttonText: "Explore Deals",
     buttonLink: "/deals",
     image: hero2,
@@ -31,10 +33,11 @@ const heroSlides = [
   },
   {
     id: 3,
-    title: "Luxury Collection",
-    subtitle: "Elegant styles for every occasion",
-    description: "Limited edition pieces available",
-    buttonText: "View Collection",
+    title: "Exclusive Collections",
+    subtitle: "Curated for the Discerning Eye",
+    description:
+      "Discover our limited-edition pieces that redefine luxury and style, perfect for any occasion.",
+    buttonText: "Browse Collection",
     buttonLink: "/collection",
     image: hero3,
     bgColor: "bg-amber-50",
@@ -44,7 +47,7 @@ const heroSlides = [
 const Hero = () => {
   const swiperRef = useRef(null);
   return (
-    <section className="relative bg-gray-900 min-h-[80vh] flex items-center">
+    <section className="relative bg-gray-900 min-h-[70vh] flex items-center">
       <Swiper
         direction="horizontal"
         spaceBetween={0}
@@ -116,7 +119,7 @@ const Hero = () => {
         ))}
 
         {/* Pagination */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30 flex space-x-2 custom-pagination" />
+        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-100 flex space-x-2 custom-pagination" />
       </Swiper>
     </section>
   );

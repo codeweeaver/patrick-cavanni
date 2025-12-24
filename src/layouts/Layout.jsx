@@ -2,8 +2,8 @@
 import { AnimatePresence } from "framer-motion";
 import { Outlet, useLocation } from "react-router-dom";
 import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
 import ScrollToTop from "../components/global/ScrollToTop";
+import Navbar from "../components/navbar/Navbar";
 
 const Layout = () => {
   const location = useLocation();
@@ -16,6 +16,7 @@ const Layout = () => {
         <main className="min-h-[calc(100vh-200px)]">
           <Outlet key={location.pathname} />
         </main>
+        <ScrollToTop />
       </AnimatePresence>
       <Footer />
     </div>

@@ -1,12 +1,12 @@
-import AnimatedPage from "../components/AnimatedPage";
-import Assurance from "../components/Home/Assurance";
-import HauteCouture from "../components/Home/HauteCouture";
+import AnimatedPage from "../components/global/AnimatedPage";
+import Assurance from "../components/home/Assurance";
+import HauteCouture from "../components/home/HauteCouture";
 
-import Hero from "../components/Home/Hero";
-import Intro from "../components/Home/Intro";
-import JustForYou from "../components/Home/JustForYou";
-import NewArrival from "../components/Home/NewArrival";
-import Support from "../components/Home/SupportingBrands";
+import Hero from "../components/home/Hero";
+import Intro from "../components/home/Intro";
+import JustForYou from "../components/home/JustForYou";
+import NewArrival from "../components/home/NewArrival";
+import Support from "../components/home/SupportingBrands";
 
 const Home = () => {
   return (

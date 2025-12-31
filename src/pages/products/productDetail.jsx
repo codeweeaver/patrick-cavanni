@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import LoadingSpinner from '../../components/global/LoadingSpinner';
 import { useAuth } from '../../hooks/useAuth.jsx';
 import { useCart } from '../../hooks/useCart.jsx';
+import { useCurrency } from '../../context/CurrencyContext';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -26,6 +27,7 @@ export const productsDetailLoader = async ({ params }) => {
 const ProductDetail = () => {
   const { addToCart } = useCart();
   const { addToHistory } = useAuth();
+  const { formatPrice } = useCurrency();
   const product = useLoaderData();
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const [selectedSize, setSelectedSize] = useState('');
@@ -142,10 +144,10 @@ const ProductDetail = () => {
           {/* Price */}
           <div className="mb-6">
             <div className="flex items-center">
-              <span className="text-2xl font-bold">${product.price?.toFixed(2)}</span>
+              <span className="text-2xl font-bold">{formatPrice(product.price)}</span>
               {product.originalPrice && (
                 <span className="ml-2 text-gray-500 line-through">
-                  ${product.originalPrice.toFixed(2)}
+                  {formatPrice(product.originalPrice)}
                 </span>
               )}
               {product.originalPrice && (

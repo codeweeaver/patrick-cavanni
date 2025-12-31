@@ -1,9 +1,10 @@
 import { createContext, useEffect, useReducer } from 'react';
+import { toast } from 'react-hot-toast';
 
 const CartContext = createContext();
 
 const getInitialCart = () => {
-  const user = JSON.parse(localStorage.getItem('user'));
+  const user = JSON.parse(localStorage.getItem('user') || sessionStorage.getItem('user'));
   return {
     items: user?.cart || [],
   };
@@ -62,24 +63,36 @@ export const CartProvider = ({ children }) => {
 
   // Sync cart with the user object in localStorage
   useEffect(() => {
-    const user = JSON.parse(localStorage.getItem('user'));
-    const allUsers = JSON.parse(localStorage.getItem('users')) || [];
+    let user = JSON.parse(localStorage.getItem('user'));
+    let storage = localStorage;
+
+    if (!user) {
+      user = JSON.parse(sessionStorage.getItem('user'));
+      storage = sessionStorage;
+    }
 
     if (user) {
       // 1. Update the current session user object
       const updatedUser = { ...user, cart: state.items };
-      localStorage.setItem('user', JSON.stringify(updatedUser));
+      storage.setItem('user', JSON.stringify(updatedUser));
 
-      // 2. Update this user in the global users array (database mock)
-      const updatedUsersList = allUsers.map((u) => (u.id === user.id ? updatedUser : u));
-      localStorage.setItem('users', JSON.stringify(updatedUsersList));
+      // 3. Persist to Backend (Fix for data loss on logout/login)
+      if (user.id) {
+        fetch(`http://localhost:3000/users/${user.id}`, {
+          method: 'PATCH',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ cart: state.items }),
+        }).catch((err) => console.error('Failed to sync cart to server:', err));
+      }
     }
   }, [state.items]);
 
   // Listen for login/logout to reset cart state
   useEffect(() => {
     const handleStorageChange = () => {
-      const user = JSON.parse(localStorage.getItem('user'));
+      const user = JSON.parse(localStorage.getItem('user') || sessionStorage.getItem('user'));
       dispatch({ type: 'SET_CART', payload: user?.cart || [] });
     };
 
@@ -95,15 +108,34 @@ export const CartProvider = ({ children }) => {
       );
       return;
     }
+
+    // Inventory Check
+    const existingItem = state.items.find((i) => i.id === item.id);
+    const currentQty = existingItem ? existingItem.quantity : 0;
+    const quantityToAdd = item.quantity || 1;
+    const maxQty = item.inventory?.quantity || 0;
+
+    if (currentQty + quantityToAdd > maxQty) {
+      toast.error(`Sorry, only ${maxQty} items available in stock.`);
+      return;
+    }
+
     dispatch({ type: 'ADD_ITEM', payload: item });
+    toast.success('Added to cart');
   };
 
   const removeFromCart = (itemId) => {
     dispatch({ type: 'REMOVE_ITEM', payload: itemId });
+    toast.success('Removed from cart');
   };
 
   const updateQuantity = (itemId, quantity) => {
     if (quantity < 1) return;
+    const item = state.items.find((i) => i.id === itemId);
+    if (item && item.inventory?.quantity && quantity > item.inventory.quantity) {
+      toast.error(`Sorry, only ${item.inventory.quantity} items available.`);
+      return;
+    }
     dispatch({ type: 'UPDATE_QUANTITY', payload: { id: itemId, quantity } });
   };
 

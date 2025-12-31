@@ -3,10 +3,12 @@ import { FiEye, FiHeart, FiStar } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 import { useCart } from '../../hooks/useCart';
 import { useWishlist } from '../../hooks/useWishlist';
+import { useCurrency } from '../../context/CurrencyContext';
 
 const ProductCard = ({ product, badge, delay = 0 }) => {
   const { toggleWishlist, isInWishlist } = useWishlist();
   const { addToCart } = useCart();
+  const { formatPrice } = useCurrency();
 
   const isWishlisted = isInWishlist(product.id);
 
@@ -108,11 +110,11 @@ const ProductCard = ({ product, badge, delay = 0 }) => {
           {/* prices column */}
           <div className="flex flex-col self-start text-right">
             <span className="text-md font-bold whitespace-nowrap text-gray-900">
-              ₦ {product.price?.toLocaleString()}
+              {formatPrice(product.price)}
             </span>
             {product.originalPrice && (
               <span className="text-accent/80 text-xs line-through">
-                ₦ {product.originalPrice.toLocaleString()}
+                {formatPrice(product.originalPrice)}
               </span>
             )}
             {product.inventory.quantity > 0 && (
@@ -126,7 +128,7 @@ const ProductCard = ({ product, badge, delay = 0 }) => {
         </div>
         <button
           onClick={handleAddToCart}
-          className="bg-primary/90 hover:bg-primary mt-2 w-full cursor-pointer rounded-lg p-2 text-white transition-colors hover:text-white"
+          className="bg-primary/90 hover:bg-primary mt-2 w-full cursor-pointer self-end rounded-lg p-2 text-white transition-colors hover:text-white"
         >
           Add To Cart
         </button>

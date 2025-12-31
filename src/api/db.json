@@ -98,8 +98,262 @@
       "zipCode": "86408",
       "country": "NG",
       "role": "user",
-      "cart": [],
-      "wishlist": [],
+      "cart": [
+        {
+          "id": "1",
+          "name": "Classic White Shirt",
+          "slug": "classic-white-shirt-gucci-unisex",
+          "gender": "unisex",
+          "price": 59.99,
+          "originalPrice": 79.99,
+          "discount": 25,
+          "images": [
+            "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+          ],
+          "category": "Tops",
+          "collection": "Cavanni Wardrobe",
+          "brand": "gucci",
+          "colors": [
+            "white",
+            "black",
+            "blue"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL"
+          ],
+          "rating": 4.5,
+          "reviews": 128,
+          "inventory": {
+            "status": "inStock",
+            "quantity": 50,
+            "sku": "GC-SHT-001"
+          },
+          "description": "A timeless classic that pairs well with anything in your wardrobe. Made from premium cotton for maximum comfort.",
+          "createdAt": "2025-12-01T09:00:00.000Z",
+          "quantity": 1
+        }
+      ],
+      "wishlist": [
+        {
+          "id": "1",
+          "name": "Classic White Shirt",
+          "slug": "classic-white-shirt-gucci-unisex",
+          "gender": "unisex",
+          "price": 59.99,
+          "originalPrice": 79.99,
+          "discount": 25,
+          "images": [
+            "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+          ],
+          "category": "Tops",
+          "collection": "Cavanni Wardrobe",
+          "brand": "gucci",
+          "colors": [
+            "white",
+            "black",
+            "blue"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL"
+          ],
+          "rating": 4.5,
+          "reviews": 128,
+          "inventory": {
+            "status": "inStock",
+            "quantity": 50,
+            "sku": "GC-SHT-001"
+          },
+          "description": "A timeless classic that pairs well with anything in your wardrobe. Made from premium cotton for maximum comfort.",
+          "createdAt": "2025-12-01T09:00:00.000Z"
+        },
+        {
+          "id": "5",
+          "name": "Leather Crossbody Bag",
+          "slug": "leather-crossbody-bag-fendi-women",
+          "gender": "women",
+          "price": 149.99,
+          "originalPrice": 179.99,
+          "discount": 17,
+          "images": [
+            "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+          ],
+          "category": "Accessories",
+          "collection": "Exclusive Collections",
+          "brand": "fendi",
+          "colors": [
+            "black",
+            "brown",
+            "tan"
+          ],
+          "sizes": [
+            "One Size"
+          ],
+          "rating": 4.8,
+          "reviews": 243,
+          "inventory": {
+            "status": "inStock",
+            "quantity": 10,
+            "sku": "FD-BAG-005"
+          },
+          "description": "A versatile leather crossbody bag that complements any outfit. Perfect for everyday use.",
+          "createdAt": "2025-12-05T16:55:00.000Z"
+        },
+        {
+          "id": "7",
+          "name": "Wide-Leg Jumpsuit",
+          "slug": "wide-leg-jumpsuit-gucci-women",
+          "gender": "women",
+          "price": 119.99,
+          "originalPrice": 149.99,
+          "discount": 20,
+          "images": [
+            "https://images.unsplash.com/photo-1534215754734-18e55d13e021?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1534215754734-18e55d13e021?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1534215754734-18e55d13e021?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1534215754734-18e55d13e021?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+          ],
+          "category": "Dress",
+          "collection": "Exclusive Collections",
+          "brand": "gucci",
+          "colors": [
+            "black",
+            "navy",
+            "olive"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L"
+          ],
+          "rating": 4.7,
+          "reviews": 98,
+          "inventory": {
+            "status": "inStock",
+            "quantity": 12,
+            "sku": "GC-JMP-007"
+          },
+          "description": "Effortlessly stylish wide-leg jumpsuit for any occasion.",
+          "createdAt": "2025-12-07T12:30:00.000Z"
+        },
+        {
+          "id": "11",
+          "name": "Knit Beanie",
+          "slug": "knit-beanie-rolex-unisex",
+          "gender": "unisex",
+          "price": 14.99,
+          "discount": 25,
+          "images": [
+            "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+          ],
+          "category": "Accessories",
+          "collection": "Cavanni Wardrobe",
+          "brand": "rolex",
+          "colors": [
+            "black",
+            "gray",
+            "navy"
+          ],
+          "sizes": [
+            "One Size"
+          ],
+          "rating": 1.8,
+          "reviews": 31,
+          "inventory": {
+            "status": "inStock",
+            "quantity": 150,
+            "sku": "RX-HET-011"
+          },
+          "description": "Basic knit beanie, some customers found it to be too small or not as warm as expected.",
+          "createdAt": "2025-12-11T08:30:00.000Z"
+        },
+        {
+          "id": "19",
+          "name": "Designer Handbag",
+          "slug": "designer-handbag-fendi-women",
+          "gender": "women",
+          "price": 299.99,
+          "originalPrice": 349.99,
+          "discount": 14,
+          "images": [
+            "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+          ],
+          "category": "Accessories",
+          "collection": "Exclusive Collections",
+          "brand": "fendi",
+          "colors": [
+            "black",
+            "brown",
+            "navy"
+          ],
+          "sizes": [
+            "One Size"
+          ],
+          "rating": 4.7,
+          "reviews": 243,
+          "inventory": {
+            "status": "inStock",
+            "quantity": 5,
+            "sku": "FD-HBG-019"
+          },
+          "description": "Elegant designer handbag with multiple compartments and premium hardware.",
+          "createdAt": "2025-12-19T10:45:00.000Z"
+        },
+        {
+          "id": "27",
+          "name": "Embroidered Cape",
+          "slug": "embroidered-cape-haute-couture-burberry",
+          "gender": "unisex",
+          "price": 340,
+          "originalPrice": 500,
+          "discount": 32,
+          "images": [
+            "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+          ],
+          "category": "Outerwear",
+          "collection": "Haute Couture",
+          "brand": "burberry",
+          "colors": [
+            "gold",
+            "cream"
+          ],
+          "sizes": [
+            "One Size"
+          ],
+          "rating": 4.9,
+          "reviews": 5,
+          "inventory": {
+            "status": "inStock",
+            "quantity": 5,
+            "sku": "BB-H-027"
+          },
+          "description": "Stunning embroidered cape for a unique silhouette.",
+          "createdAt": "2025-12-27T10:15:00.000Z"
+        }
+      ],
       "createdAt": "2025-12-19T10:18:06.085Z",
       "history": {
         "products": [

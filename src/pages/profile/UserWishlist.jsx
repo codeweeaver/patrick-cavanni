@@ -1,7 +1,7 @@
 import { FiHeart, FiShoppingBag } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
-import ProductCard from '../../components/global/ProductCard';
 import AnimatedPage from '../../components/global/AnimatedPage';
+import ProductCard from '../../components/global/ProductCard';
 import { useWishlist } from '../../hooks/useWishlist';
 
 const UserWishlist = () => {
@@ -43,7 +43,7 @@ const UserWishlist = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-2">
           {wishlistItems.map((item) => (
             <ProductCard key={item.id} product={item} />
           ))}

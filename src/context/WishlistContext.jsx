@@ -3,7 +3,7 @@ import { createContext, useEffect, useReducer } from 'react';
 const WishlistContext = createContext();
 
 const getInitialWishlist = () => {
-  const user = JSON.parse(localStorage.getItem('user'));
+  const user = JSON.parse(localStorage.getItem('user') || sessionStorage.getItem('user'));
   return {
     items: user?.wishlist || [],
   };
@@ -51,22 +51,39 @@ export const WishlistProvider = ({ children }) => {
 
   // Sync wishlist with the user object in localStorage
   useEffect(() => {
-    const user = JSON.parse(localStorage.getItem('user'));
+    let user = JSON.parse(localStorage.getItem('user'));
+    let storage = localStorage;
+
+    if (!user) {
+      user = JSON.parse(sessionStorage.getItem('user'));
+      storage = sessionStorage;
+    }
     const allUsers = JSON.parse(localStorage.getItem('users')) || [];
 
     if (user) {
       const updatedUser = { ...user, wishlist: state.items };
-      localStorage.setItem('user', JSON.stringify(updatedUser));
+      storage.setItem('user', JSON.stringify(updatedUser));
 
       const updatedUsersList = allUsers.map((u) => (u.id === user.id ? updatedUser : u));
       localStorage.setItem('users', JSON.stringify(updatedUsersList));
+
+      // 3. Persist to Backend (Fix for data loss on logout/login)
+      if (user.id) {
+        fetch(`http://localhost:3000/users/${user.id}`, {
+          method: 'PATCH',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ wishlist: state.items }),
+        }).catch((err) => console.error('Failed to sync wishlist to server:', err));
+      }
     }
   }, [state.items]);
 
   // Sync state if localStorage changes (e.g., login/logout)
   useEffect(() => {
     const handleStorageChange = () => {
-      const user = JSON.parse(localStorage.getItem('user'));
+      const user = JSON.parse(localStorage.getItem('user') || sessionStorage.getItem('user'));
       dispatch({ type: 'SET_WISHLIST', payload: user?.wishlist || [] });
     };
 

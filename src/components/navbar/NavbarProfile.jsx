@@ -1,6 +1,6 @@
-import { AnimatePresence, motion } from "framer-motion";
-import { useState } from "react";
-import { FaHeadset } from "react-icons/fa6";
+import { AnimatePresence, motion } from 'framer-motion';
+import { useState } from 'react';
+import { FaHeadset } from 'react-icons/fa6';
 import {
   FiArrowUpCircle,
   FiChevronDown,
@@ -8,15 +8,13 @@ import {
   FiLogOut,
   FiSettings,
   FiUser,
-} from "react-icons/fi";
-import { NavLink } from "react-router-dom";
-import { useAuth } from "../../hooks/useAuth";
+} from 'react-icons/fi';
+import { NavLink } from 'react-router-dom';
+import { useAuth } from '../../hooks/useAuth';
 
 const NavbarProfile = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { user, logOut } = useAuth();
-
-  console.log("User object:", user); // Changed for clearer console output
 
   // Animation variants
   const menuVariants = {
@@ -24,14 +22,14 @@ const NavbarProfile = () => {
       opacity: 0,
       y: -15,
       scale: 0.95,
-      transition: { duration: 0.2, ease: "easeOut" },
+      transition: { duration: 0.2, ease: 'easeOut' },
     },
     visible: {
       opacity: 1,
       y: 0,
       scale: 1,
       transition: {
-        type: "spring",
+        type: 'spring',
         stiffness: 300,
         damping: 20,
         staggerChildren: 0.05,
@@ -49,20 +47,20 @@ const NavbarProfile = () => {
       {/* Trigger Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-3 p-2 rounded-full hover:bg-gray-100 transition-colors duration-200 focus:outline-none"
+        className="flex items-center gap-3 rounded-full p-2 transition-colors duration-200 hover:bg-gray-100 focus:outline-none"
       >
         <div className="relative">
           <img
             src="https://i.pravatar.cc/150?u=mahamud"
             alt="User Avatar"
-            className="w-10 h-10 rounded-full border-2 border-primary object-cover"
+            className="border-primary h-10 w-10 rounded-full border-2 object-cover"
           />
-          <div className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-white rounded-full"></div>
+          <div className="absolute right-0 bottom-0 h-3 w-3 rounded-full border-2 border-white bg-green-500"></div>
         </div>
 
         <FiChevronDown
           className={`text-gray-400 transition-transform duration-300 ${
-            isOpen ? "rotate-180" : ""
+            isOpen ? 'rotate-180' : ''
           }`}
         />
       </button>
@@ -72,30 +70,27 @@ const NavbarProfile = () => {
         {isOpen && (
           <>
             {/* Click outside to close backdrop */}
-            <div
-              className="fixed inset-0 z-10"
-              onClick={() => setIsOpen(false)}
-            />
+            <div className="fixed inset-0 z-10" onClick={() => setIsOpen(false)} />
 
             <motion.div
               variants={menuVariants}
               initial="hidden"
               animate="visible"
               exit="hidden"
-              className="absolute right-0 mt-3 w-64 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden z-20"
+              className="absolute right-0 z-20 mt-3 w-64 overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-2xl"
             >
-              <div className="w-full flex items-center gap-3 px-4 py-4 border-b border-gray-50">
+              <div className="flex w-full items-center gap-3 border-b border-gray-50 px-4 py-4">
                 <div className="relative">
                   <img
                     src="https://i.pravatar.cc/150?u=mahamud"
                     alt="User Avatar"
-                    className="w-10 h-10 rounded-full border-2 border-primary object-cover"
+                    className="border-primary h-10 w-10 rounded-full border-2 object-cover"
                   />
-                  <div className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-white rounded-full"></div>
+                  <div className="absolute right-0 bottom-0 h-3 w-3 rounded-full border-2 border-white bg-green-500"></div>
                 </div>
-                <div className="flex-1 min-w-0">
-                  <p className="font-bold text-gray-900 truncate">{user.name}</p>
-                  <p className="text-xs text-gray-500 truncate">{user.email}</p>
+                <div className="min-w-0 flex-1">
+                  <p className="truncate font-bold text-gray-900">{user.name}</p>
+                  <p className="truncate text-xs text-gray-500">{user.email}</p>
                 </div>
               </div>
 
@@ -122,12 +117,11 @@ const NavbarProfile = () => {
                   variants={itemVariants}
                   icon={<FiArrowUpCircle />}
                   label="Orders"
-
                   onClick={() => setIsOpen(false)}
                 />
               </div>
 
-              <div className="p-2 border-t border-gray-50">
+              <div className="border-t border-gray-50 p-2">
                 <DropdownItem
                   to="/help-center"
                   variants={itemVariants}
@@ -146,10 +140,10 @@ const NavbarProfile = () => {
 
               </div>
 
-              <div className="p-2 border-t border-gray-50 bg-gray-50/50">
+              <div className="border-t border-gray-50 bg-gray-50/50 p-2">
                 <button
                   onClick={logOut}
-                  className="w-full flex items-center gap-3 px-3 py-2.5 text-sm font-semibold text-red-500 hover:bg-red-50 rounded-xl transition-colors"
+                  className="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-semibold text-red-500 transition-colors hover:bg-red-50"
                 >
                   <FiLogOut className="text-lg" />
                   Log Out
@@ -163,41 +157,26 @@ const NavbarProfile = () => {
   );
 };
 
-const DropdownItem = ({
-  to,
-  icon,
-  label,
-  isAccent = false,
-  variants,
-  onClick,
-}) => {
+const DropdownItem = ({ to, icon, label, isAccent = false, variants, onClick }) => {
   return (
     <motion.div variants={variants} whileHover={{ x: 5 }}>
       <NavLink
         to={to}
         onClick={onClick}
-        className={({ isActive }) => `
-          w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200
-          ${
+        className={({ isActive }) =>
+          `flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-all duration-200 ${
             isActive
-              ? "bg-primary/10 text-primary"
-              : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
-          }
-          ${isAccent && !isActive ? "text-accent hover:bg-accent/5" : ""}
-        `}
+              ? 'bg-primary/10 text-primary'
+              : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+          } ${isAccent && !isActive ? 'text-accent hover:bg-accent/5' : ''} `
+        }
       >
         {({ isActive }) => (
           <>
-            <span
-              className={`text-lg ${
-                isActive ? "text-primary" : "text-gray-400"
-              }`}
-            >
-              {icon}
-            </span>
+            <span className={`text-lg ${isActive ? 'text-primary' : 'text-gray-400'}`}>{icon}</span>
             {label}
             {isAccent && (
-              <span className="ml-auto text-[10px] bg-accent/10 text-accent px-2 py-0.5 rounded-full uppercase tracking-wider font-bold">
+              <span className="bg-accent/10 text-accent ml-auto rounded-full px-2 py-0.5 text-[10px] font-bold tracking-wider uppercase">
                 Pro
               </span>
             )}

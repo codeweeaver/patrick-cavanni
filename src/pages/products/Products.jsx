@@ -4,6 +4,8 @@ import {
   FiChevronLeft,
   FiChevronRight,
   FiFilter,
+  FiGrid,
+  FiList,
   FiSearch,
   FiX,
 } from 'react-icons/fi'; // Added for icons
@@ -12,6 +14,8 @@ import { Await, useLoaderData, useSearchParams } from 'react-router-dom';
 import AnimatedPage from '../../components/global/AnimatedPage';
 import LoadingSpinner from '../../components/global/LoadingSpinner';
 import ProductCard from '../../components/global/ProductCard';
+import ProductListItem from '../../components/global/ProductListItem';
+import { useCurrency } from '../../context/CurrencyContext';
 
 export const productsLoader = async () => {
   const productsPromise = fetch('http://localhost:3000/products')
@@ -38,6 +42,7 @@ export const productsLoader = async () => {
 const Products = () => {
   const { products, categories, brands } = useLoaderData();
   const [searchParams, setSearchParams] = useSearchParams();
+  const { formatPrice } = useCurrency();
 
   // --- Filter State ---
   const [searchTerm, setSearchTerm] = useState(searchParams.get('search') || '');
@@ -49,6 +54,7 @@ const Products = () => {
   const [maxPrice, setMaxPrice] = useState(searchParams.get('maxPrice') || 'Any');
   const [currentPage, setCurrentPage] = useState(0);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [viewMode, setViewMode] = useState('grid');
 
   const isFiltered =
     searchTerm !== '' ||
@@ -59,7 +65,7 @@ const Products = () => {
     minRating !== 'Any' ||
     maxPrice !== 'Any';
 
-  const itemsPerPage = 20;
+  const itemsPerPage = 9;
 
   // Reset page when filters change
   useEffect(() => {
@@ -104,15 +110,13 @@ const Products = () => {
 
   return (
     <AnimatedPage>
-      <div className="min-h-screen bg-accent/2 pb-20">
+      <div className="bg-accent/2 min-h-screen pb-20">
         {/* --- ANILIST STYLE FILTER BAR --- */}
         <div className="container pt-8">
-
-
           <div className="flex flex-col gap-8 md:flex-row">
             {/* --- SIDEBAR FILTER --- */}
             <aside
-              className={`fixed inset-y-0 left-0 z-50 w-72  transform overflow-y-auto bg-white p-6 shadow-xl transition-transform duration-300 ease-in-out scrollbar-hide md:sticky md:top-24 md:z-0 md:h-[calc(100vh-120px)] md:w-64 md:translate-x-0 md:rounded-md md:shadow-none ${
+              className={`scrollbar-hide fixed inset-y-0 left-0 z-50 w-72 transform overflow-y-auto bg-white p-6 shadow-xl transition-transform duration-300 ease-in-out md:shadow-none lg:static lg:z-0 lg:h-[calc(100vh-120px)] lg:w-64 lg:translate-x-0 lg:rounded-md ${
                 isSidebarOpen ? 'translate-x-0' : '-translate-x-full'
               }`}
             >
@@ -135,7 +139,7 @@ const Products = () => {
                     setMaxPrice('Any');
                     setIsSidebarOpen(false);
                   }}
-                  className="ml-auto flex mb-3 px-2 items-center justify-center gap-2 rounded-full cursor-pointer py-1 text-xs text-accent border border-accent/80 shadow-sm transition-colors animate-in fade-in zoom-in duration-200"
+                  className="text-accent border-accent/80 animate-in fade-in zoom-in mb-3 ml-auto flex cursor-pointer items-center justify-center gap-2 rounded-full border px-2 py-1 text-xs shadow-sm transition-colors duration-200"
                 >
                   Clear All <FiX />
                 </button>
@@ -191,8 +195,23 @@ const Products = () => {
                   value={selectedSize}
                   onChange={setSelectedSize}
                   options={[
-                    'XS', 'S', 'M', 'L', 'XL', 'XXL', 'One Size',
-                    '28', '30', '32', '34', '36', '7', '8', '9', '10', '11',
+                    'XS',
+                    'S',
+                    'M',
+                    'L',
+                    'XL',
+                    'XXL',
+                    'One Size',
+                    '28',
+                    '30',
+                    '32',
+                    '34',
+                    '36',
+                    '7',
+                    '8',
+                    '9',
+                    '10',
+                    '11',
                   ]}
                 />
 
@@ -208,7 +227,7 @@ const Products = () => {
                 {/* Price Range */}
                 <div className="space-y-2">
                   <label className="ml-1 text-xs font-bold tracking-wider text-gray-500 uppercase">
-                    Max Price: ${maxPrice === 'Any' ? '1000' : maxPrice}
+                    Max Price: {maxPrice === 'Any' ? formatPrice(1000) : formatPrice(maxPrice)}
                   </label>
                   <input
                     type="range"
@@ -223,79 +242,110 @@ const Products = () => {
               </div>
             </aside>
 
-        {/* --- PRODUCT GRID --- */}
-        <div className="container my-10">
-          {/* Mobile Filter Header */}
-          <div className="flex items-center justify-between md:hidden mb-10">
-            <h1 className="text-xl font-bold text-gray-700 uppercase">Store</h1>
-            <button
-              onClick={() => setIsSidebarOpen(prev => !prev)}
-              className="bg-primary flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold text-white shadow-sm"
-            >
-              <FiFilter /> Filters
-            </button>
+            {/* --- PRODUCT GRID --- */}
+            <div className="container my-10">
+              {/* Mobile Filter Header */}
+              <div className="mb-10 flex items-center justify-between md:hidden">
+                <h1 className="text-xl font-bold text-gray-700 uppercase">Store</h1>
+                <button
+                  onClick={() => setIsSidebarOpen((prev) => !prev)}
+                  className="bg-primary flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold text-white shadow-sm"
+                >
+                  <FiFilter /> Filters
+                </button>
+              </div>
+
+              <Suspense fallback={<LoadingSpinner />}>
+                <Await resolve={products}>
+                  {(resolvedProducts) => {
+                    const filtered = resolvedProducts.filter((p) => {
+                      const searchMatch =
+                        !searchTerm || p.name.toLowerCase().includes(searchTerm.toLowerCase());
+                      const catMatch =
+                        selectedCategory === 'Any' || p.category === selectedCategory;
+                      const brandMatch = selectedBrand === 'Any' || p.brand === selectedBrand;
+                      const genderMatch = selectedGender === 'Any' || p.gender === selectedGender;
+                      const sizeMatch =
+                        selectedSize === 'Any' || (p.sizes && p.sizes.includes(selectedSize));
+                      const ratingMatch = minRating === 'Any' || p.rating >= Number(minRating);
+                      const priceMatch = maxPrice === 'Any' || Number(p.price) <= Number(maxPrice);
+                      return (
+                        searchMatch &&
+                        catMatch &&
+                        brandMatch &&
+                        genderMatch &&
+                        sizeMatch &&
+                        ratingMatch &&
+                        priceMatch
+                      );
+                    });
+
+                    if (filtered.length === 0) return <NoResults />;
+
+                    const offset = currentPage * itemsPerPage;
+                    const currentItems = filtered.slice(offset, offset + itemsPerPage);
+
+                    return (
+                      <>
+                        {/* toolbar */}
+                        <div className="mb-8 flex items-center justify-between rounded-2xl bg-white p-4 shadow-sm">
+                          <h2 className="text-lg font-bold text-gray-800">
+                            All Products ({currentItems.length})
+                          </h2>
+
+                          <div className="flex items-center gap-2 rounded-xl bg-gray-100 p-1">
+                            <button
+                              onClick={() => setViewMode('list')}
+                              className={`rounded-lg p-2 transition-all ${viewMode === 'list' ? 'text-primary bg-white shadow-sm' : 'text-gray-400'}`}
+                            >
+                              <FiList size={20} />
+                            </button>
+                            <button
+                              onClick={() => setViewMode('grid')}
+                              className={`rounded-lg p-2 transition-all ${viewMode === 'grid' ? 'text-primary bg-white shadow-sm' : 'text-gray-400'}`}
+                            >
+                              <FiGrid size={20} />
+                            </button>
+                          </div>
+                        </div>
+                        {/* all products */}
+                        <div
+                          className={
+                            viewMode === 'grid'
+                              ? 'grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-3'
+                              : 'flex flex-col gap-4'
+                          }
+                        >
+                          {currentItems.map((product) =>
+                            viewMode === 'grid' ? (
+                              <ProductCard key={product.id} product={product} />
+                            ) : (
+                              <ProductListItem key={product.id} product={product} />
+                            ),
+                          )}
+                        </div>
+                        <div className="mt-12 flex cursor-pointer justify-center">
+                          <ReactPaginate
+                            pageCount={Math.ceil(filtered.length / itemsPerPage)}
+                            onPageChange={handlePageClick}
+                            containerClassName="flex gap-2 items-center"
+                            activeLinkClassName="!bg-primary !text-white"
+                            pageLinkClassName="w-10 h-10 flex items-center justify-center bg-white rounded-md shadow-sm hover:bg-gray-50 transition"
+                            previousLinkClassName="w-10 h-10 flex items-center justify-center bg-white rounded-md shadow-sm hover:bg-gray-50 transition"
+                            nextLinkClassName="w-10 h-10 flex items-center justify-center bg-white rounded-md shadow-sm hover:bg-gray-50 transition"
+                            disabledLinkClassName="opacity-50 cursor-not-allowed"
+                            previousLabel={<FiChevronLeft />}
+                            nextLabel={<FiChevronRight />}
+                            forcePage={currentPage}
+                          />
+                        </div>
+                      </>
+                    );
+                  }}
+                </Await>
+              </Suspense>
+            </div>
           </div>
-
-          <Suspense fallback={<LoadingSpinner />}>
-            <Await resolve={products}>
-              {(resolvedProducts) => {
-                const filtered = resolvedProducts.filter((p) => {
-                  const searchMatch =
-                    !searchTerm || p.name.toLowerCase().includes(searchTerm.toLowerCase());
-                  const catMatch =
-                    selectedCategory === 'Any' ||
-                    (p.categories && p.categories.includes(selectedCategory));
-                  const brandMatch = selectedBrand === 'Any' || p.brand === selectedBrand;
-                  const genderMatch = selectedGender === 'Any' || p.gender === selectedGender;
-                  const sizeMatch =
-                    selectedSize === 'Any' || (p.sizes && p.sizes.includes(selectedSize));
-                  const ratingMatch = minRating === 'Any' || p.rating >= Number(minRating);
-                  const priceMatch = maxPrice === 'Any' || Number(p.price) <= Number(maxPrice);
-                  return (
-                    searchMatch &&
-                    catMatch &&
-                    brandMatch &&
-                    genderMatch &&
-                    sizeMatch &&
-                    ratingMatch &&
-                    priceMatch
-                  );
-                });
-
-                if (filtered.length === 0) return <NoResults />;
-
-                const offset = currentPage * itemsPerPage;
-                const currentItems = filtered.slice(offset, offset + itemsPerPage);
-
-                return (
-                  <>
-                    <div className="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-3">
-                      {currentItems.map((product) => (
-                        <ProductCard key={product.id} product={product} />
-                      ))}
-                    </div>
-                    <div className="mt-12 flex cursor-pointer justify-center">
-                      <ReactPaginate
-                        pageCount={Math.ceil(filtered.length / itemsPerPage)}
-                        onPageChange={handlePageClick}
-                        containerClassName="flex gap-2 items-center"
-                        activeLinkClassName="!bg-primary !text-white"
-                        pageLinkClassName="w-10 h-10 flex items-center justify-center bg-white rounded-md shadow-sm hover:bg-gray-50 transition"
-                        previousLinkClassName="w-10 h-10 flex items-center justify-center bg-white rounded-md shadow-sm hover:bg-gray-50 transition"
-                        nextLinkClassName="w-10 h-10 flex items-center justify-center bg-white rounded-md shadow-sm hover:bg-gray-50 transition"
-                        disabledLinkClassName="opacity-50 cursor-not-allowed"
-                        previousLabel={<FiChevronLeft />}
-                        nextLabel={<FiChevronRight />}
-                        forcePage={currentPage}
-                      />
-                    </div>
-                  </>
-                );
-              }}
-            </Await>
-          </Suspense>
-        </div>
-      </div>
         </div>
       </div>
     </AnimatedPage>
@@ -338,15 +388,6 @@ const FilterDropdown = ({ label, value, onChange, options, isAsync, prefix = '' 
       </select>
       <FiChevronDown className="pointer-events-none absolute top-1/2 right-3 -translate-y-1/2 text-gray-400" />
     </div>
-  </div>
-);
-
-const ActiveTag = ({ label, onClear }) => (
-  <div className="bg-primary animate-in fade-in zoom-in flex items-center gap-2 rounded-md px-3 py-1.5 text-xs font-bold text-white shadow-sm duration-200">
-    {label}
-    <button onClick={onClear} className="transition hover:text-gray-200">
-      <FiX />
-    </button>
   </div>
 );
 

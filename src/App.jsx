@@ -38,7 +38,7 @@ const App = () => {
         // This fallback will be shown during initial route loading
         fallbackElement={<LoadingSpinner size="lg" />}
       />
-      <Toaster position="top-right" />
+      <Toaster position="bottom-right" />
     </ErrorBoundary>
   );
 };

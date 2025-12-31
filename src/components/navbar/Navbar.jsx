@@ -121,7 +121,7 @@ const Navbar = () => {
             {/* Nav Links */}
             <NavbarLinks pageNavLinks={pageNavLinks} />
 
-            {/* Navbar Right Section */}
+            {/* Navbar Right Seation */}
             <NavbarRight
               containerVariants={containerVariants}
               itemVariants={itemVariants}

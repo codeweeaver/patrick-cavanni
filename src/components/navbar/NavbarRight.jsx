@@ -2,7 +2,12 @@ import { motion } from "framer-motion";
 import { NavLink } from "react-router-dom";
 import { useCart } from "../../hooks/useCart";
 
-import { FiHelpCircle, FiSearch, FiShoppingCart, FiUser } from "react-icons/fi";
+import {
+  FiHelpCircle,
+  FiLogIn,
+  FiSearch,
+  FiShoppingCart,
+} from "react-icons/fi";
 import { useAuth } from "../../hooks/useAuth";
 import NavbarProfile from "./NavbarProfile";
 
@@ -29,7 +34,7 @@ const NavbarRight = ({ containerVariants, itemVariants, toggleSearch }) => {
 
       <span className="h-6 w-px bg-gray-300" />
 
-      <NavLink to="/cart">
+      <NavLink to="profile/cart">
         <motion.div
           className="group flex items-center space-x-1 text-gray-700 cursor-pointer relative"
           variants={itemVariants}
@@ -47,7 +52,7 @@ const NavbarRight = ({ containerVariants, itemVariants, toggleSearch }) => {
         </motion.div>
       </NavLink>
 
-      <NavLink to="/help-center">
+      <NavLink to="help-center">
         <motion.div
           className="group flex items-center space-x-1 text-gray-700 cursor-pointer"
           variants={itemVariants}
@@ -63,21 +68,19 @@ const NavbarRight = ({ containerVariants, itemVariants, toggleSearch }) => {
       </NavLink>
 
       {user ? (
-        <NavbarProfile user={user} />
+        <NavbarProfile />
       ) : (
-        <NavLink to="/login">
-          <motion.div
-            className="group flex items-center space-x-1 text-gray-700 cursor-pointer"
+        <NavLink to="login">
+          <motion.button
+            className="inline-flex items-center space-x-2 text-white bg-primary hover:bg-primary/90 cursor-pointer py-2 px-4 rounded-md"
             variants={itemVariants}
             whileHover="hover"
           >
-            <span className="relative text-gray-600 group-hover:text-primary">
-              <FiUser size={20} />
+            <span className="relative">
+              <FiLogIn size={16} />
             </span>
-            <span className="text-sm font-medium group-hover:text-primary max-sm:hidden">
-              Login
-            </span>
-          </motion.div>
+            <span className="text-sm font-medium max-sm:hidden">Login</span>
+          </motion.button>
         </NavLink>
       )}
     </motion.div>

@@ -138,16 +138,24 @@ const Footer = () => {
               transition={{ duration: 0.8, delay: 0.3 }}
               viewport={{ once: true }}
             />
-            <p className="text-gray-600 mb-4">
-              No 8, Ndele Street, Wuse Zone 3,
-              <br />
-              FCT Abuja, Nigeria
-            </p>
+            <Link
+              to="https://www.google.com/maps/search/?api=1&query=No+8,+Ndele+Street,+Wuse+Zone+3,+FCT+Abuja,+Nigeria"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-600 mb-4 hover:text-primary underline transition-colors"
+            >
+              <span className="text-xl mr-1">📍</span>
+              <span>
+                No 8, Ndele Street, <br /> Wuse Zone 3,
+                <br />
+                FCT Abuja, Nigeria
+              </span>
+            </Link>
             <Link
               to="tel:+2349087770900"
               className="text-md font-semibold inline-block group mb-3"
             >
-              <span className="text-2xl mr-1">📞</span>
+              <span className="text-xl mr-1">📞</span>
               <span className="group-hover:underline group-hover:text-primary font-medium">
                 +(234) 908 777 0900
               </span>
@@ -156,7 +164,7 @@ const Footer = () => {
               href="mailto:info@patrickcavanni.com"
               className="text-md inline-flex items-center gap-2 group"
             >
-              <span className="text-2xl">📧</span>
+              <span className="text-xl">📧</span>
               <span className="group-hover:underline group-hover:text-primary font-medium">
                 info@patrickcavanni.com
               </span>

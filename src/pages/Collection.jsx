@@ -1,4 +1,4 @@
-import AnimatedPage from "../components/AnimatedPage";
+import { AnimatedPage } from '../components/global/AnimatedPage';
 
 const Collection = () => {
   return (
@@ -6,17 +6,16 @@ const Collection = () => {
       <section className="store-page">
         <h1>Store</h1>
         <p>
-          Welcome to our Store page! Here you can browse and purchase a variety
-          of products that cater to your needs and preferences.
+          Welcome to our Store page! Here you can browse and purchase a variety of products that
+          cater to your needs and preferences.
         </p>
         <p>
-          We offer a seamless shopping experience with secure payment options
-          and reliable shipping services to ensure your orders reach you
-          promptly.
+          We offer a seamless shopping experience with secure payment options and reliable shipping
+          services to ensure your orders reach you promptly.
         </p>
         <p>
-          Explore our latest collections and take advantage of exclusive deals
-          and discounts available only in our Store.
+          Explore our latest collections and take advantage of exclusive deals and discounts
+          available only in our Store.
         </p>
       </section>
     </AnimatedPage>

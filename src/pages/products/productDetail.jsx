@@ -1,35 +1,37 @@
-import { useEffect, useState } from "react";
-import { FiHeart, FiShoppingCart } from "react-icons/fi";
-import { useLoaderData } from "react-router-dom";
-import { FreeMode, Navigation, Thumbs } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
-import LoadingSpinner from "../../components/global/LoadingSpinner";
+import { useEffect, useState } from 'react';
+import { FiHeart, FiShoppingCart } from 'react-icons/fi';
+import { useLoaderData } from 'react-router-dom';
+import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import LoadingSpinner from '../../components/global/LoadingSpinner';
+import { useAuth } from '../../hooks/useAuth.jsx';
+import { useCart } from '../../hooks/useCart.jsx';
 
 // Import Swiper styles
-import "swiper/css";
-import "swiper/css/free-mode";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/thumbs";
+import 'swiper/css';
+import 'swiper/css/free-mode';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/thumbs';
 
 // Loader function to fetch product data
 export const productsDetailLoader = async ({ params }) => {
-  const response = await fetch(
-    `http://localhost:3000/products/${params.productId}`
-  );
+  const response = await fetch(`http://localhost:3000/products/${params.productId}`);
   if (!response.ok) {
-    throw new Response("Product not found", { status: 404 });
+    throw new Response('Product not found', { status: 404 });
   }
   return await response.json();
 };
 
 const ProductDetail = () => {
+  const { addToCart } = useCart();
+  const { addToHistory } = useAuth();
   const product = useLoaderData();
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
-  const [selectedSize, setSelectedSize] = useState("");
+  const [selectedSize, setSelectedSize] = useState('');
   const [quantity, setQuantity] = useState(1);
   const [isFavorite, setIsFavorite] = useState(false);
-  const [selectedColor, setSelectedColor] = useState("");
+  const [selectedColor, setSelectedColor] = useState('');
 
   // Set default selected size and color when component mounts
   useEffect(() => {
@@ -39,19 +41,10 @@ const ProductDetail = () => {
     if (product?.colors?.length > 0) {
       setSelectedColor(product.colors[0]);
     }
-  }, [product]);
-
-  const handleAddToCart = () => {
-    console.log("Added to cart:", {
-      id: product.id,
-      name: product.name,
-      price: product.price,
-      size: selectedSize,
-      color: selectedColor,
-      quantity,
-      image: product.image?.[0],
-    });
-  };
+    if (product?.id) {
+      addToHistory('products', product.id);
+    }
+  }, [product, addToHistory]);
 
   if (!product) {
     return <LoadingSpinner />;
@@ -59,31 +52,28 @@ const ProductDetail = () => {
 
   return (
     <div className="container py-10">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
         {/* Main Product Image */}
         <div className="space-y-4">
-          <div className="relative bg-gray-100 rounded-lg overflow-hidden">
+          <div className="relative overflow-hidden rounded-lg bg-gray-100">
             <Swiper
               loop={false}
               spaceBetween={10}
               navigation={true}
               thumbs={{ swiper: thumbsSwiper }}
               modules={[Navigation, Thumbs]}
-              className="w-full h-full"
+              className="h-full w-full"
               style={{
-                "--swiper-navigation-color": "#000",
-                "--swiper-pagination-color": "#000",
+                '--swiper-navigation-color': '#000',
+                '--swiper-pagination-color': '#000',
               }}
             >
-              {product.image?.map((img, index) => (
-                <SwiperSlide
-                  key={index}
-                  className="flex items-center justify-center"
-                >
+              {product.images?.map((img, index) => (
+                <SwiperSlide key={index} className="flex items-center justify-center">
                   <img
                     src={img}
                     alt={`${product.name} ${index + 1}`}
-                    className="w-full h-full object-contain"
+                    className="h-full w-full object-contain"
                   />
                 </SwiperSlide>
               ))}
@@ -91,21 +81,17 @@ const ProductDetail = () => {
 
             <button
               onClick={() => setIsFavorite(!isFavorite)}
-              className="absolute top-4 right-4 p-2 bg-white rounded-full shadow-md z-10 hover:bg-gray-100 transition-colors"
-              aria-label={
-                isFavorite ? "Remove from favorites" : "Add to favorites"
-              }
+              className="absolute top-4 right-4 z-10 rounded-full bg-white p-2 shadow-md transition-colors hover:bg-gray-100"
+              aria-label={isFavorite ? 'Remove from favorites' : 'Add to favorites'}
             >
               <FiHeart
-                className={`w-5 h-5 ${
-                  isFavorite ? "text-red-500 fill-current" : "text-gray-600"
-                }`}
+                className={`h-5 w-5 ${isFavorite ? 'fill-current text-red-500' : 'text-gray-600'}`}
               />
             </button>
           </div>
 
           {/* Thumbnails */}
-          <div className="px-2 mt-4">
+          <div className="mt-4 px-2">
             <Swiper
               onSwiper={setThumbsSwiper}
               spaceBetween={10}
@@ -115,13 +101,13 @@ const ProductDetail = () => {
               modules={[FreeMode, Navigation, Thumbs]}
               className="product-thumbs"
             >
-              {product.image?.map((img, index) => (
+              {product.images?.map((img, index) => (
                 <SwiperSlide key={index} className="cursor-pointer">
-                  <div className="aspect-square bg-gray-100 rounded-md overflow-hidden border-2 border-transparent hover:border-gray-300 transition-colors">
+                  <div className="aspect-square overflow-hidden rounded-md border-2 border-transparent bg-gray-100 transition-colors hover:border-gray-300">
                     <img
                       src={img}
                       alt={`${product.name} thumbnail ${index + 1}`}
-                      className="w-full h-full object-cover"
+                      className="h-full w-full object-cover"
                     />
                   </div>
                 </SwiperSlide>
@@ -132,18 +118,16 @@ const ProductDetail = () => {
 
         {/* Product Info */}
         <div>
-          <h1 className="text-3xl font-bold mb-2">{product.name}</h1>
+          <h1 className="mb-2 text-3xl font-bold">{product.name}</h1>
 
           {/* Rating */}
-          <div className="flex items-center mb-4">
+          <div className="mb-4 flex items-center">
             <div className="flex text-yellow-400">
               {[...Array(5)].map((_, i) => (
                 <svg
                   key={i}
-                  className={`w-5 h-5 ${
-                    i < Math.floor(product.rating || 0)
-                      ? "text-yellow-400"
-                      : "text-gray-300"
+                  className={`h-5 w-5 ${
+                    i < Math.floor(product.rating || 0) ? 'text-yellow-400' : 'text-gray-300'
                   }`}
                   fill="currentColor"
                   viewBox="0 0 20 20"
@@ -152,54 +136,40 @@ const ProductDetail = () => {
                 </svg>
               ))}
             </div>
-            <span className="text-sm text-gray-500 ml-2">
-              ({product.reviews || 0} reviews)
-            </span>
+            <span className="ml-2 text-sm text-gray-500">({product.reviews || 0} reviews)</span>
           </div>
 
           {/* Price */}
           <div className="mb-6">
             <div className="flex items-center">
-              <span className="text-2xl font-bold">
-                ${product.price?.toFixed(2)}
-              </span>
+              <span className="text-2xl font-bold">${product.price?.toFixed(2)}</span>
               {product.originalPrice && (
                 <span className="ml-2 text-gray-500 line-through">
                   ${product.originalPrice.toFixed(2)}
                 </span>
               )}
               {product.originalPrice && (
-                <span className="ml-2 text-green-600 font-medium">
-                  {Math.round(
-                    (1 - product.price / product.originalPrice) * 100
-                  )}
-                  % OFF
+                <span className="ml-2 font-medium text-green-600">
+                  {Math.round((1 - product.price / product.originalPrice) * 100)}% OFF
                 </span>
               )}
             </div>
-            {!product.inStock && (
-              <span className="text-red-500 text-sm mt-1">Out of Stock</span>
-            )}
+            {!product.inStock && <span className="mt-1 text-sm text-red-500">Out of Stock</span>}
           </div>
 
           {/* Description */}
           <div className="mb-6">
-            <h3 className="text-lg font-medium mb-2">Description</h3>
+            <h3 className="mb-2 text-lg font-medium">Description</h3>
             <p className="text-gray-600">{product.description}</p>
           </div>
 
           {/* Categories */}
           {product.categories?.length > 0 && (
-            <div className="mt-6 pt-6 border-t border-gray-200 mb-6">
-              <h3 className="text-sm font-medium text-gray-500 mb-2">
-                Categories
-              </h3>
+            <div className="mt-6 mb-6 border-t border-gray-200 pt-6">
+              <h3 className="mb-2 text-sm font-medium text-gray-500">Categories</h3>
               <div className="flex flex-wrap gap-2">
                 {product.categories.map((category, index) => (
-                  <span
-                    key={index}
-                    className="px-3 py-1 bg-gray-100 text-sm rounded-full"
-                  >
+                  <span key={index} className="rounded-full bg-gray-100 px-3 py-1 text-sm">
                     {category}
                   </span>
                 ))}
@@ -210,16 +180,16 @@ const ProductDetail = () => {
           {/* Sizes */}
           {product.sizes?.length > 0 && (
             <div className="mb-6">
-              <h3 className="text-lg font-medium mb-3">Size</h3>
+              <h3 className="mb-3 text-lg font-medium">Size</h3>
               <div className="flex flex-wrap gap-2">
                 {product.sizes.map((size) => (
                   <button
                     key={size}
                     onClick={() => setSelectedSize(size)}
-                    className={`px-4 py-2 border rounded-md ${
+                    className={`rounded-md border px-4 py-2 ${
                       selectedSize === size
-                        ? "bg-black text-white border-black"
-                        : "border-gray-300 hover:border-black"
+                        ? 'border-black bg-black text-white'
+                        : 'border-gray-300 hover:border-black'
                     }`}
                   >
                     {size}
@@ -232,16 +202,16 @@ const ProductDetail = () => {
           {/* Colors */}
           {product.colors?.length > 0 && (
             <div className="mb-6">
-              <h3 className="text-lg font-medium mb-3">Color</h3>
+              <h3 className="mb-3 text-lg font-medium">Color</h3>
               <div className="flex gap-2">
                 {product.colors.map((color) => (
                   <button
                     key={color}
                     onClick={() => setSelectedColor(color)}
-                    className={`w-10 h-10 rounded-full border-2 ${
+                    className={`h-10 w-10 rounded-full border-2 ${
                       selectedColor === color
-                        ? "ring-2 ring-offset-2 ring-gray-900"
-                        : "border-gray-200"
+                        ? 'ring-2 ring-gray-900 ring-offset-2'
+                        : 'border-gray-200'
                     }`}
                     style={{ backgroundColor: color }}
                     title={color}
@@ -253,18 +223,18 @@ const ProductDetail = () => {
 
           {/* Quantity */}
           <div className="mb-6">
-            <h3 className="text-lg font-medium mb-3">Quantity</h3>
+            <h3 className="mb-3 text-lg font-medium">Quantity</h3>
             <div className="flex items-center">
               <button
                 onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                className="px-3 py-1 border rounded-l-md hover:bg-gray-50"
+                className="rounded-l-md border px-3 py-1 hover:bg-gray-50"
               >
                 -
               </button>
-              <span className="px-4 py-1 border-t border-b">{quantity}</span>
+              <span className="border-t border-b px-4 py-1">{quantity}</span>
               <button
                 onClick={() => setQuantity(quantity + 1)}
-                className="px-3 py-1 border rounded-r-md hover:bg-gray-50"
+                className="rounded-r-md border px-3 py-1 hover:bg-gray-50"
               >
                 +
               </button>
@@ -272,21 +242,21 @@ const ProductDetail = () => {
           </div>
 
           {/* Actions */}
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col gap-4 sm:flex-row">
             <button
-              onClick={handleAddToCart}
+              onClick={() => addToCart(product)}
               disabled={!product.inStock}
-              className={`px-8 py-3 rounded-md flex-1 flex items-center justify-center gap-2 ${
+              className={`flex flex-1 items-center justify-center gap-2 rounded-md px-8 py-3 ${
                 product.inStock
-                  ? "bg-black text-white hover:bg-gray-800"
-                  : "bg-gray-200 text-gray-500 cursor-not-allowed"
+                  ? 'bg-black text-white hover:bg-gray-800'
+                  : 'cursor-not-allowed bg-gray-200 text-gray-500'
               }`}
             >
-              <FiShoppingCart className="w-5 h-5" />
-              {product.inStock ? "Add to Cart" : "Out of Stock"}
+              <FiShoppingCart className="h-5 w-5" />
+              {product.inStock ? 'Add to Cart' : 'Out of Stock'}
             </button>
             <button
-              className="border border-black px-8 py-3 rounded-md hover:bg-gray-50 transition-colors flex-1"
+              className="flex-1 rounded-md border border-black px-8 py-3 transition-colors hover:bg-gray-50"
               disabled={!product.inStock}
             >
               Buy Now

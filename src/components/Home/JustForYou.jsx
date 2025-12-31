@@ -19,7 +19,7 @@ const products = [
     category: "Dresses",
     rating: 4.8,
   },
-  {
+  { 
     id: 2,
     name: "Leather Crossbody Bag",
     price: "$179.99",

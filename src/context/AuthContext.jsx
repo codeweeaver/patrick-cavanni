@@ -1,39 +1,37 @@
-import { createContext, useCallback, useMemo, useState } from "react";
-import { toast } from "react-hot-toast";
-import { useLoading } from "../hooks/useLoading";
+import { createContext, useCallback, useMemo, useRef, useState } from 'react';
+import { toast } from 'react-hot-toast';
+import { useLoading } from '../hooks/useLoading';
+import { apiClient } from '../utils/apiClient';
 
 const AuthContext = createContext(null);
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(
-    JSON.parse(
-      localStorage.getItem("user") || sessionStorage.getItem("user")
-    ) || null
+    JSON.parse(localStorage.getItem('user') || sessionStorage.getItem('user')) || null,
   );
   const [token, setToken] = useState(
-    JSON.parse(
-      localStorage.getItem("token") || sessionStorage.getItem("token")
-    ) || null
+    JSON.parse(localStorage.getItem('token') || sessionStorage.getItem('token')) || null,
   );
   const { startLoading, stopLoading } = useLoading();
+
+  const userRef = useRef(user);
+  userRef.current = user;
 
   const loginUser = useCallback(
     async (email, password, rememberMe = false) => {
       startLoading();
       try {
-        const res = await fetch("http://localhost:3000/users");
+        const res = await fetch('http://localhost:3000/users');
 
         if (!res.ok) {
           throw new Error(`Invalid Credientials`);
         }
         const data = await res.json();
 
-        const foundUser = data.find(
-          (u) => u.email === email && u.password === password
-        );
+        const foundUser = data.find((u) => u.email === email && u.password === password);
 
         if (!foundUser) {
-          throw new Error("Invalid email or password");
+          throw new Error('Invalid email or password');
         }
 
         const {
@@ -46,13 +44,13 @@ export const AuthProvider = ({ children }) => {
         setUser(userWithoutPassword);
 
         const storage = rememberMe ? localStorage : sessionStorage;
-        storage.setItem("user", JSON.stringify(userWithoutPassword));
+        storage.setItem('user', JSON.stringify(userWithoutPassword));
 
         const newToken = `sample-token-${Date.now()}`;
         setToken(newToken);
-        storage.setItem("token", JSON.stringify(newToken));
+        storage.setItem('token', JSON.stringify(newToken));
 
-        toast.success("Logged in successfully.");
+        toast.success('Logged in successfully.');
         return userWithoutPassword;
       } catch (error) {
         if (error?.message) {
@@ -65,21 +63,53 @@ export const AuthProvider = ({ children }) => {
         stopLoading();
       }
     },
-    [startLoading, stopLoading]
+    [startLoading, stopLoading],
   );
 
   const logOut = useCallback(async () => {
     try {
       setUser(null);
       setToken(null);
-      localStorage.removeItem("user");
-      localStorage.removeItem("token");
-      sessionStorage.removeItem("user");
-      sessionStorage.removeItem("token");
-      toast.success("Logged out successfully.");
+      localStorage.removeItem('user');
+      localStorage.removeItem('token');
+      sessionStorage.removeItem('user');
+      sessionStorage.removeItem('token');
     } catch (error) {
-      console.error("Error logging out:", error);
-      toast.error("Error logging out.");
+      console.error('Error logging out:', error);
+      toast.error('Error logging out.');
+    }
+  }, []);
+
+  const addToHistory = useCallback(async (type, id) => {
+    const currentUser = userRef.current;
+    if (!currentUser) return;
+
+    const currentHistory = currentUser.history?.[type] || [];
+
+    // Move to front if exists, otherwise just add to front
+    const updatedTypeHistory = [id, ...currentHistory.filter((itemId) => itemId !== id)].slice(
+      0,
+      20,
+    );
+
+    const updatedUser = {
+      ...currentUser,
+      history: {
+        ...currentUser.history,
+        [type]: updatedTypeHistory,
+      },
+    };
+
+    // Optimistically update UI
+    setUser(updatedUser);
+
+    // Persist to backend
+    try {
+      await apiClient.patch(`/users/${currentUser.id}`, {
+        history: updatedUser.history,
+      });
+    } catch (error) {
+      console.error('Failed to sync history with server', error);
     }
   }, []);
 
@@ -91,13 +121,12 @@ export const AuthProvider = ({ children }) => {
       loginUser,
       logOut,
       token,
+      addToHistory,
     }),
-    [user, token, loginUser, logOut]
+    [user, token, loginUser, logOut],
   );
 
-  return (
-    <AuthContext.Provider value={authValue}>{children}</AuthContext.Provider>
-  );
+  return <AuthContext.Provider value={authValue}>{children}</AuthContext.Provider>;
 };
 
 export default AuthContext;

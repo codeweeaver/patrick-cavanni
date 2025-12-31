@@ -7,7 +7,7 @@ const AuthLayout = () => {
   const location = useLocation();
 
   return (
-    <div className="bg-white flex h-screen overflow-hidden">
+    <div className="bg-white flex h-screen overflow-hidden font-primary">
       <div className="hidden md:block md:w-1/2 relative">
         <div className="absolute inset-0 bg-linear-to-bl from-primary/60 to-accent/80 z-10"></div>
         <div className="h-full flex items-center justify-center relative z-0">

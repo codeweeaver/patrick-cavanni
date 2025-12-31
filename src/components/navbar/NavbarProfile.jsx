@@ -16,7 +16,7 @@ const NavbarProfile = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { user, logOut } = useAuth();
 
-  console.log(user);
+  console.log("User object:", user); // Changed for clearer console output
 
   // Animation variants
   const menuVariants = {
@@ -84,7 +84,7 @@ const NavbarProfile = () => {
               exit="hidden"
               className="absolute right-0 mt-3 w-64 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden z-20"
             >
-              <div className="w-full flex items-center gap-2 px-4 py-2.5 text-sm font-semibold text-red-500 hover:bg-red-50 rounded-xl transition-colors">
+              <div className="w-full flex items-center gap-3 px-4 py-4 border-b border-gray-50">
                 <div className="relative">
                   <img
                     src="https://i.pravatar.cc/150?u=mahamud"
@@ -93,10 +93,9 @@ const NavbarProfile = () => {
                   />
                   <div className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-white rounded-full"></div>
                 </div>
-                {/* Header Info (Mobile style) */}
-                <div className="border-b border-gray-50 md:hidden">
-                  <p className="font-bold text-gray-900">{user.name}</p>
-                  <p className="text-xs text-gray-500">{user.email}</p>
+                <div className="flex-1 min-w-0">
+                  <p className="font-bold text-gray-900 truncate">{user.name}</p>
+                  <p className="text-xs text-gray-500 truncate">{user.email}</p>
                 </div>
               </div>
 
@@ -109,18 +108,21 @@ const NavbarProfile = () => {
                   label="View Profile"
                   onClick={() => setIsOpen(false)}
                 />
+
                 <DropdownItem
-                  to="settings"
-                  variants={itemVariants}
-                  icon={<FiSettings />}
-                  label="Account Settings"
-                  onClick={() => setIsOpen(false)}
-                />
-                <DropdownItem
-                  to="wishlist"
+                  to="profile/wishlist"
                   variants={itemVariants}
                   icon={<FiHeart />}
                   label="Wishlist"
+                  onClick={() => setIsOpen(false)}
+                />
+
+                <DropdownItem
+                  to="profile/orders"
+                  variants={itemVariants}
+                  icon={<FiArrowUpCircle />}
+                  label="Orders"
+
                   onClick={() => setIsOpen(false)}
                 />
               </div>
@@ -133,14 +135,15 @@ const NavbarProfile = () => {
                   label="Support"
                   onClick={() => setIsOpen(false)}
                 />
+
                 <DropdownItem
-                  to="upgrade"
+                  to="profile/settings"
                   variants={itemVariants}
-                  icon={<FiArrowUpCircle />}
-                  label="Upgrade Account"
-                  isAccent
+                  icon={<FiSettings />}
+                  label="Account Settings"
                   onClick={() => setIsOpen(false)}
                 />
+
               </div>
 
               <div className="p-2 border-t border-gray-50 bg-gray-50/50">

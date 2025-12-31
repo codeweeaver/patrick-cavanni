@@ -9,15 +9,14 @@ const Layout = () => {
   const location = useLocation();
 
   return (
-    <div className="text-gray-600 bg-gray-50 min-h-screen font-primary">
+    <div className="text-gray-600 bg-gray-50 min-h-screen">
       <ScrollToTop />
       <Navbar />
-      <AnimatePresence mode="wait">
-        <main className="min-h-[calc(100vh-200px)]">
+      <main className="min-h-[calc(100vh-200px)]">
+        <AnimatePresence mode="wait">
           <Outlet key={location.pathname} />
-        </main>
-        <ScrollToTop />
-      </AnimatePresence>
+        </AnimatePresence>
+      </main>
       <Footer />
     </div>
   );

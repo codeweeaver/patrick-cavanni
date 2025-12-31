@@ -13,66 +13,72 @@
 
 /* Custom container class */
 .container {
-  width: 90%;
-  max-width: 1280px;
-  margin: 0 auto;
+    width: 90%;
+    max-width: var(--breakpoint-xl);
+    margin: 0 auto;
 }
 
 /* Responsive container */
-@media (min-width: 640px) {
-  .container {
-    max-width: 640px;
-  }
+@media (min-width: var(--breakpoint-sm)) {
+    .container {
+        max-width: var(--breakpoint-sm);
+    }
 }
 
-@media (min-width: 768px) {
-  .container {
-    max-width: 768px;
-  }
+@media (min-width: var(--breakpoint-md)) {
+    .container {
+        max-width: var(--breakpoint-md);
+    }
 }
 
-@media (min-width: 1024px) {
-  .container {
-    max-width: 1024px;
-  }
+@media (min-width: var(--breakpoint-lg)) {
+    .container {
+        max-width: var(--breakpoint-lg);
+    }
 }
 
-@media (min-width: 1280px) {
-  .container {
-    max-width: 1280px;
-  }
+@media (min-width: var(--breakpoint-xl)) {
+    .container {
+        max-width: var(--breakpoint-xl);
+    }
 }
 
 /* Hide scrollbar for all browsers */
 .scrollbar-hide {
-  -ms-overflow-style: none !important; /* IE and Edge */
-  scrollbar-width: none !important; /* Firefox */
+    -ms-overflow-style: none !important; /* IE and Edge */
+    scrollbar-width: none !important; /* Firefox */
 }
 
 /* Hide scrollbar for Webkit browsers (Chrome, Safari, etc.) */
 .scrollbar-hide::-webkit-scrollbar {
-  display: none !important;
-  width: 0 !important;
-  height: 0 !important;
-  background: transparent !important;
-  -webkit-appearance: none !important;
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    background: transparent !important;
+    -webkit-appearance: none !important;
 }
 
 @media (min-width: 1536px) {
-  .container {
-    max-width: 1536px;
-  }
+    .container {
+        max-width: 1536px;
+    }
 }
 
 @theme {
-  /* fonts */
-  --font-secondary: "Roboto", sans-serif;
-  --font-primary: "Montserrat", sans-serif;
-  --font-accent: "Permanent Marker", cursive;
+    /* fonts */
+    --font-secondary: "Roboto", sans-serif;
+    --font-primary: "Montserrat", sans-serif;
+    --font-accent: "Permanent Marker", cursive;
 
-  /* colors */
-  --color-primary: #c99947;
-  --color-secondary: #2563eb;
-  --color-accent: #f14949;
-  --color-text: #222222;
+    /* colors */
+    --color-primary: #c99947;
+    --color-secondary: #2563eb;
+    --color-accent: #f14949;
+    --color-text: #222222;
+}
+
+@layer base {
+    body {
+        font-family: var(--font-primary), serif;
+    }
 }

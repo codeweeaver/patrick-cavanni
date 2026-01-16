@@ -123,7 +123,7 @@ export const AuthProvider = ({ children }) => {
       token,
       addToHistory,
     }),
-    [user, token, loginUser, logOut],
+    [user, token, loginUser, logOut, addToHistory],
   );
 
   return <AuthContext.Provider value={authValue}>{children}</AuthContext.Provider>;

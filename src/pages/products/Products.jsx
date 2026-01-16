@@ -1,4 +1,4 @@
-import { Suspense, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
   FiChevronDown,
   FiChevronLeft,
@@ -10,39 +10,20 @@ import {
   FiX,
 } from 'react-icons/fi'; // Added for icons
 import ReactPaginate from 'react-paginate';
-import { Await, useLoaderData, useSearchParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import AnimatedPage from '../../components/global/AnimatedPage';
 import LoadingSpinner from '../../components/global/LoadingSpinner';
 import ProductCard from '../../components/global/ProductCard';
 import ProductListItem from '../../components/global/ProductListItem';
 import { useCurrency } from '../../context/CurrencyContext';
 
-export const productsLoader = async () => {
-  const productsPromise = fetch('http://localhost:3000/products')
-    .then((res) => res.json())
-    .catch((error) => {
-      console.error('Failed to load products:', error);
-      return [];
-    });
-  const categoriesPromise = fetch('http://localhost:3000/categories')
-    .then((res) => res.json())
-    .catch(() => []);
-
-  const brandsPromise = fetch('http://localhost:3000/brands')
-    .then((res) => res.json())
-    .catch(() => ['nike', 'adidas', 'puma']); // Fallback
-
-  return {
-    products: productsPromise,
-    categories: categoriesPromise,
-    brands: brandsPromise,
-  };
-};
-
 const Products = () => {
-  const { products, categories, brands } = useLoaderData();
   const [searchParams, setSearchParams] = useSearchParams();
   const { formatPrice } = useCurrency();
+  const [products, setProducts] = useState([]);
+  const [categories, setCategories] = useState([]);
+  const [brands, setBrands] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   // --- Filter State ---
   const [searchTerm, setSearchTerm] = useState(searchParams.get('search') || '');
@@ -66,6 +47,33 @@ const Products = () => {
     maxPrice !== 'Any';
 
   const itemsPerPage = 9;
+
+  useEffect(() => {
+    const fetchData = async () => {
+      setIsLoading(true);
+      try {
+        const [productsRes, categoriesRes, brandsRes] = await Promise.allSettled([
+          fetch('http://localhost:3000/products').then((res) => res.json()),
+          fetch('http://localhost:3000/categories').then((res) => res.json()),
+          fetch('http://localhost:3000/brands').then((res) => res.json()),
+        ]);
+
+        if (productsRes.status === 'fulfilled') setProducts(productsRes.value);
+        else console.error('Failed to load products');
+
+        if (categoriesRes.status === 'fulfilled') setCategories(categoriesRes.value);
+        else setCategories([]);
+
+        if (brandsRes.status === 'fulfilled') setBrands(brandsRes.value);
+        else setBrands(['nike', 'adidas', 'puma']);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    fetchData();
+  }, []);
 
   // Reset page when filters change
   useEffect(() => {
@@ -169,7 +177,6 @@ const Products = () => {
                   value={selectedCategory}
                   onChange={setSelectedCategory}
                   options={categories}
-                  isAsync
                 />
 
                 {/* Brands */}
@@ -178,7 +185,6 @@ const Products = () => {
                   value={selectedBrand}
                   onChange={setSelectedBrand}
                   options={brands}
-                  isAsync
                 />
 
                 {/* Gender */}
@@ -255,95 +261,94 @@ const Products = () => {
                 </button>
               </div>
 
-              <Suspense fallback={<LoadingSpinner />}>
-                <Await resolve={products}>
-                  {(resolvedProducts) => {
-                    const filtered = resolvedProducts.filter((p) => {
-                      const searchMatch =
-                        !searchTerm || p.name.toLowerCase().includes(searchTerm.toLowerCase());
-                      const catMatch =
-                        selectedCategory === 'Any' || p.category === selectedCategory;
-                      const brandMatch = selectedBrand === 'Any' || p.brand === selectedBrand;
-                      const genderMatch = selectedGender === 'Any' || p.gender === selectedGender;
-                      const sizeMatch =
-                        selectedSize === 'Any' || (p.sizes && p.sizes.includes(selectedSize));
-                      const ratingMatch = minRating === 'Any' || p.rating >= Number(minRating);
-                      const priceMatch = maxPrice === 'Any' || Number(p.price) <= Number(maxPrice);
-                      return (
-                        searchMatch &&
-                        catMatch &&
-                        brandMatch &&
-                        genderMatch &&
-                        sizeMatch &&
-                        ratingMatch &&
-                        priceMatch
-                      );
-                    });
-
-                    if (filtered.length === 0) return <NoResults />;
-
-                    const offset = currentPage * itemsPerPage;
-                    const currentItems = filtered.slice(offset, offset + itemsPerPage);
-
+              {isLoading ? (
+                <LoadingSpinner />
+              ) : (
+                (() => {
+                  const filtered = products.filter((p) => {
+                    const searchMatch =
+                      !searchTerm || p.name.toLowerCase().includes(searchTerm.toLowerCase());
+                    const catMatch = selectedCategory === 'Any' || p.category === selectedCategory;
+                    const brandMatch = selectedBrand === 'Any' || p.brand === selectedBrand;
+                    const genderMatch = selectedGender === 'Any' || p.gender === selectedGender;
+                    const sizeMatch =
+                      selectedSize === 'Any' || (p.sizes && p.sizes.includes(selectedSize));
+                    const ratingMatch = minRating === 'Any' || p.rating >= Number(minRating);
+                    const priceMatch = maxPrice === 'Any' || Number(p.price) <= Number(maxPrice);
                     return (
-                      <>
-                        {/* toolbar */}
-                        <div className="mb-8 flex items-center justify-between rounded-2xl bg-white p-4 shadow-sm">
-                          <h2 className="text-lg font-bold text-gray-800">
-                            All Products ({currentItems.length})
-                          </h2>
-
-                          <div className="flex items-center gap-2 rounded-xl bg-gray-100 p-1">
-                            <button
-                              onClick={() => setViewMode('list')}
-                              className={`rounded-lg p-2 transition-all ${viewMode === 'list' ? 'text-primary bg-white shadow-sm' : 'text-gray-400'}`}
-                            >
-                              <FiList size={20} />
-                            </button>
-                            <button
-                              onClick={() => setViewMode('grid')}
-                              className={`rounded-lg p-2 transition-all ${viewMode === 'grid' ? 'text-primary bg-white shadow-sm' : 'text-gray-400'}`}
-                            >
-                              <FiGrid size={20} />
-                            </button>
-                          </div>
-                        </div>
-                        {/* all products */}
-                        <div
-                          className={
-                            viewMode === 'grid'
-                              ? 'grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-3'
-                              : 'flex flex-col gap-4'
-                          }
-                        >
-                          {currentItems.map((product) =>
-                            viewMode === 'grid' ? (
-                              <ProductCard key={product.id} product={product} />
-                            ) : (
-                              <ProductListItem key={product.id} product={product} />
-                            ),
-                          )}
-                        </div>
-                        <div className="mt-12 flex cursor-pointer justify-center">
-                          <ReactPaginate
-                            pageCount={Math.ceil(filtered.length / itemsPerPage)}
-                            onPageChange={handlePageClick}
-                            containerClassName="flex gap-2 items-center"
-                            activeLinkClassName="!bg-primary !text-white"
-                            pageLinkClassName="w-10 h-10 flex items-center justify-center bg-white rounded-md shadow-sm hover:bg-gray-50 transition"
-                            previousLinkClassName="w-10 h-10 flex items-center justify-center bg-white rounded-md shadow-sm hover:bg-gray-50 transition"
-                            nextLinkClassName="w-10 h-10 flex items-center justify-center bg-white rounded-md shadow-sm hover:bg-gray-50 transition"
-                            disabledLinkClassName="opacity-50 cursor-not-allowed"
-                            previousLabel={<FiChevronLeft />}
-                            nextLabel={<FiChevronRight />}
-                            forcePage={currentPage}
-                          />
-                        </div>
-                      </>
+                      searchMatch &&
+                      catMatch &&
+                      brandMatch &&
+                      genderMatch &&
+                      sizeMatch &&
+                      ratingMatch &&
+                      priceMatch
                     );
-                  }}
-                </Await>
-              </Suspense>
+                  });
+
+                  if (filtered.length === 0) return <NoResults />;
+
+                  const offset = currentPage * itemsPerPage;
+                  const currentItems = filtered.slice(offset, offset + itemsPerPage);
+
+                  return (
+                    <>
+                      {/* toolbar */}
+                      <div className="mb-8 flex items-center justify-between rounded-2xl bg-white p-4 shadow-sm">
+                        <h2 className="text-lg font-bold text-gray-800">
+                          All Products ({currentItems.length})
+                        </h2>
+
+                        <div className="flex items-center gap-2 rounded-xl bg-gray-100 p-1">
+                          <button
+                            onClick={() => setViewMode('list')}
+                            className={`rounded-lg p-2 transition-all ${viewMode === 'list' ? 'text-primary bg-white shadow-sm' : 'text-gray-400'}`}
+                          >
+                            <FiList size={20} />
+                          </button>
+                          <button
+                            onClick={() => setViewMode('grid')}
+                            className={`rounded-lg p-2 transition-all ${viewMode === 'grid' ? 'text-primary bg-white shadow-sm' : 'text-gray-400'}`}
+                          >
+                            <FiGrid size={20} />
+                          </button>
+                        </div>
+                      </div>
+                      {/* all products */}
+                      <div
+                        className={
+                          viewMode === 'grid'
+                            ? 'grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-3'
+                            : 'flex flex-col gap-4'
+                        }
+                      >
+                        {currentItems.map((product) =>
+                          viewMode === 'grid' ? (
+                            <ProductCard key={product.id} product={product} />
+                          ) : (
+                            <ProductListItem key={product.id} product={product} />
+                          ),
+                        )}
+                      </div>
+                      <div className="mt-12 flex cursor-pointer justify-center">
+                        <ReactPaginate
+                          pageCount={Math.ceil(filtered.length / itemsPerPage)}
+                          onPageChange={handlePageClick}
+                          containerClassName="flex gap-2 items-center"
+                          activeLinkClassName="!bg-primary !text-white"
+                          pageLinkClassName="w-10 h-10 flex items-center justify-center bg-white rounded-md shadow-sm hover:bg-gray-50 transition"
+                          previousLinkClassName="w-10 h-10 flex items-center justify-center bg-white rounded-md shadow-sm hover:bg-gray-50 transition"
+                          nextLinkClassName="w-10 h-10 flex items-center justify-center bg-white rounded-md shadow-sm hover:bg-gray-50 transition"
+                          disabledLinkClassName="opacity-50 cursor-not-allowed"
+                          previousLabel={<FiChevronLeft />}
+                          nextLabel={<FiChevronRight />}
+                          forcePage={currentPage}
+                        />
+                      </div>
+                    </>
+                  );
+                })()
+              )}
             </div>
           </div>
         </div>
@@ -354,7 +359,7 @@ const Products = () => {
 
 // --- Helper Components ---
 
-const FilterDropdown = ({ label, value, onChange, options, isAsync, prefix = '' }) => (
+const FilterDropdown = ({ label, value, onChange, options, prefix = '' }) => (
   <div className="space-y-2">
     <label className="ml-1 text-xs font-bold tracking-wider text-gray-500 uppercase">{label}</label>
     <div className="relative">
@@ -364,27 +369,12 @@ const FilterDropdown = ({ label, value, onChange, options, isAsync, prefix = '' 
         className="focus:ring-primary/20 w-full cursor-pointer appearance-none rounded-md border-none bg-[#FBFBFB] px-4 py-2.5 text-sm shadow-sm focus:ring-2"
       >
         <option value="Any">Any</option>
-        {isAsync ? (
-          <Suspense fallback={<option>Loading...</option>}>
-            <Await resolve={options}>
-              {(resolved) =>
-                resolved.map((opt, index) => (
-                  <option key={opt.name || index} value={opt.name || opt}>
-                    {prefix}
-                    {opt.name || opt}
-                  </option>
-                ))
-              }
-            </Await>
-          </Suspense>
-        ) : (
-          options.map((opt, index) => (
-            <option key={opt || index} value={opt}>
-              {prefix}
-              {opt}
-            </option>
-          ))
-        )}
+        {options.map((opt, index) => (
+          <option key={opt.name || opt || index} value={opt.name || opt}>
+            {prefix}
+            {opt.name || opt}
+          </option>
+        ))}
       </select>
       <FiChevronDown className="pointer-events-none absolute top-1/2 right-3 -translate-y-1/2 text-gray-400" />
     </div>

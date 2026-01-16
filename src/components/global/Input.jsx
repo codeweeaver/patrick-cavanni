@@ -1,154 +1,195 @@
-import { AnimatePresence, motion } from "framer-motion";
-import { forwardRef, useId } from "react";
-import PhoneInput from "react-phone-number-input";
-import flags from "react-phone-number-input/flags";
-import { InputError } from "./InputError";
+import { AnimatePresence, motion } from 'framer-motion';
+import { useId } from 'react';
+import { Controller, useFormContext } from 'react-hook-form';
+import { PhoneInput } from 'react-international-phone';
+import 'react-international-phone/style.css';
+import Select from 'react-select';
+import Flag from 'react-world-flags';
+import { findInputError, isFormInvalid } from '../../utils/index';
+import { InputError } from './InputError';
 
 const inputVariants = {
-  initial: { scale: 1, borderColor: "#D1D5DB" }, // gray-300
+  initial: { scale: 1, borderColor: '#D1D5DB' }, // gray-300
   focus: {
     scale: 1.0,
-    borderColor: "#4F46E5", // primary color (indigo-600)
-    boxShadow: "0 0 0 2px rgba(79, 70, 239, 0.2)", // focus ring
-    transition: { duration: 0.2, ease: "circOut" },
+    borderColor: '#4F46E5', // primary color (indigo-600)
+    boxShadow: '0 0 0 2px rgba(79, 70, 239, 0.2)', // focus ring
+    transition: { duration: 0.2, ease: 'circOut' },
   },
   error: {
-    borderColor: "#EF4444", // red-500
+    borderColor: '#EF4444', // red-500
     transition: { duration: 0.2 },
   },
 };
 
-export const Input = forwardRef(
-  (
-    {
-      id,
-      name,
-      label,
-      value,
-      icon,
-      error,
-      placeholder,
-      type = "text",
-      multiline = false,
-      select = false,
-      phone = false,
-      rows = 3,
-      className,
-      options = [],
-      onChange,
-      ...props
-    },
-    ref
-  ) => {
-    const generatedId = useId();
-    const inputId = id || generatedId;
+export const Input = ({
+  id,
+  name,
+  label,
+  icon,
+  placeholder,
+  type,
+  multiline = false,
+  select = false,
+  phone = false,
+  rows = 3,
+  className,
+  options = [],
+  isCountry = false,
+  country,
+  ...props
+}) => {
+  const generatedId = useId();
+  const inputId = id || generatedId;
 
-    const baseClasses =
-      "block w-full pl-10 pr-3 py-2 border rounded-md shadow-sm focus:outline-none placeholder-gray-400";
+  const {
+    register,
+    control,
+    setValue,
+    formState: { errors },
+  } = useFormContext();
 
-    return (
-      <div className={className || "flex flex-col w-full"}>
-        <div className="flex justify-between">
-          {label && (
-            <label
-              htmlFor={id}
-              className="block text-sm font-medium text-gray-700 mb-1"
-            >
-              {label}
-            </label>
-          )}
-          <AnimatePresence mode="wait">
-            {error && <InputError message={error} key={name} />}
-          </AnimatePresence>
-        </div>
+  const inputErrors = findInputError(errors, name);
+  const isInvalid = isFormInvalid(inputErrors);
 
-        <div className="relative">
-          {icon && (
-            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-              {icon}
-            </div>
+  const baseClasses = `block w-full ${icon ? 'pl-10' : 'pl-3'} pr-3 py-2 border rounded-md shadow-sm focus:outline-none placeholder-gray-400 transition-colors duration-200`;
+
+  // Helper to render the option content
+  const formatOptionLabel = (option) => (
+    <div className="flex items-center gap-2">
+      {isCountry && <Flag code={option.value} className="h-3 w-5 rounded-sm" />}
+      <span className="text-sm">{option.label}</span>
+    </div>
+  );
+
+  return (
+    <div className={className || 'flex w-full flex-col'}>
+      <div className="flex justify-between">
+        {label && (
+          <label
+            htmlFor={inputId}
+            className="mb-1 block text-sm font-medium whitespace-nowrap text-gray-700"
+          >
+            {label}
+          </label>
+        )}
+        <AnimatePresence mode="wait" initial={false}>
+          {isInvalid && (
+            <InputError message={inputErrors.error.message} key={inputErrors.error.message} />
           )}
-          {multiline ? (
-            <textarea
-              id={id}
-              name={name} // Keep name for form submission
-              className={`${baseClasses} min-h-[${rows}rem] ${
-                error ? "border-red-500" : "border-gray-300"
-              }`}
-              placeholder={placeholder}
-              rows={rows}
-              ref={ref}
-              {...props}
-            />
-          ) : select ? (
-            <select
-              id={id}
-              name={name}
-              className={`${baseClasses} text-gray-600 ${
-                error ? "border-red-500" : "border-gray-300"
-              }`}
-              ref={ref}
-              {...props}
-            >
-              <option value="" disabled>
-                {placeholder || "Select an option"}
-              </option>
-              {options.map((option) => (
-                <option key={option.value} value={option.value}>
-                  {option.label}
-                </option>
-              ))}
-            </select>
-          ) : phone ? (
-            <motion.div
-              className={`${baseClasses} focus-within:ring-2 focus-within:ring-primary focus-within:border-primary ${
-                error ? "border-red-500" : "border-gray-300"
-              }`}
-              variants={inputVariants}
-              initial="initial"
-              animate={error ? "error" : "initial"} // Animate based on error prop
-            >
-              <PhoneInput
-                id={inputId}
-                international
-                defaultCountry="NG"
-                name={name}
-                flags={flags}
-                value={value}
-                onChange={onChange}
-                ref={ref}
-                className="[&>input]:w-full [&>input]:h-full [&>input]:bg-transparent [&>input]:border-0 [&>input]:focus:ring-0 [&>input]:focus:outline-none [&>input]:p-0 [&>input]:text-gray-900"
-                numberInputProps={{
-                  className:
-                    "w-full h-full bg-transparent border-0 focus:ring-0 focus:outline-none p-0 text-gray-900",
-                }}
-                countrySelectProps={{
-                  className:
-                    "!bg-transparent !border-0 !p-0 !mr-2 !text-gray-700 hover:!text-primary transition-colors duration-200",
-                }}
-                {...props}
-              />
-            </motion.div>
-          ) : (
-            <motion.input
-              ref={ref}
-              onChange={onChange}
-              id={inputId}
-              name={name}
-              type={type}
-              placeholder={placeholder}
-              className={baseClasses}
-              variants={inputVariants}
-              initial="initial"
-              whileFocus="focus" // This now works correctly on motion.input
-              animate={error ? "error" : "focus"} // Animate to error state, otherwise stay in focus/initial
-              {...props}
-            />
-          )}
-        </div>
+        </AnimatePresence>
       </div>
-    );
-  }
-);
 
-Input.displayName = "Input";
+      <div className="relative">
+        {icon && (
+          <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+            {icon}
+          </div>
+        )}
+        {multiline ? (
+          <motion.textarea
+            id={inputId}
+            name={name} // Keep name for form submission
+            className={`${baseClasses} ${isInvalid ? 'border-red-500' : 'border-gray-300'}`}
+            placeholder={placeholder}
+            rows={rows}
+            style={{ minHeight: `${rows}rem` }}
+            variants={inputVariants}
+            initial="initial"
+            whileFocus="focus"
+            animate={isInvalid ? 'error' : 'initial'}
+            {...props}
+            {...register(name)} // Use register}
+          />
+        ) : select ? (
+          <Controller
+            name={name}
+            control={control}
+            render={({ field, fieldState: { error } }) => (
+              <Select
+                {...field}
+                options={options}
+                formatOptionLabel={formatOptionLabel}
+                // Convert string value from Hook Form to Object for React-Select
+                value={options.find((opt) => opt.value === field.value) || null}
+                // Convert Object back to string for Hook Form
+                onChange={(val) => {
+                  field.onChange(val ? val.value : '');
+                  if (isCountry) {
+                    setValue('phone', '');
+                  }
+                }}
+                placeholder={placeholder}
+                unstyled
+                classNames={{
+                  control: (state) =>
+                    `!min-h-[38px] !px-3 !border !rounded-md !shadow-sm !transition-all !duration-200 ${
+                      state.isFocused
+                        ? '!border-indigo-600 !ring-2 !ring-indigo-600/20'
+                        : '!border-gray-300'
+                    } ${error ? '!border-red-500' : ''}`,
+                  menu: () =>
+                    '!mt-2 !rounded-md !bg-white !shadow-xl !border !border-gray-100 !z-50',
+                  option: (state) =>
+                    `!px-3 !py-2 !text-sm !cursor-pointer ${
+                      state.isFocused
+                        ? '!bg-indigo-50 !text-indigo-900'
+                        : '!bg-transparent !text-gray-700'
+                    }`,
+                  noOptionsMessage: () => '!p-4 !text-sm !text-gray-500',
+                  placeholder: () => '!text-gray-400 !text-sm',
+                  singleValue: () => '!text-gray-900 !text-sm',
+                }}
+              />
+            )}
+          />
+        ) : phone ? (
+          <Controller
+            name={name}
+            control={control}
+            render={({ field: { onChange, value, ref } }) => (
+              <motion.div
+                variants={inputVariants}
+                initial="initial"
+                animate={isInvalid ? 'error' : 'initial'}
+                className={`flex items-center rounded-md border shadow-sm transition-all duration-200 focus-within:border-indigo-600 focus-within:ring-2 focus-within:ring-indigo-600/20 ${
+                  isInvalid ? 'border-red-500' : 'border-gray-300'
+                }`}
+              >
+                <PhoneInput
+                  key={country}
+                  ref={ref}
+                  defaultCountry={country ? country.toLowerCase() : 'ng'}
+                  value={value || ''}
+                  onChange={(phone) => onChange(phone)}
+                  className={`flex w-full items-center ${icon ? 'pl-10' : ''}`}
+                  inputClassName="!border-0 !bg-transparent !w-full !text-gray-900 !text-sm !h-10 !px-3 focus:!outline-none focus:!ring-0 placeholder:text-gray-400"
+                  countrySelectorStyleProps={{
+                    buttonClassName:
+                      '!border-0 !border-r !border-gray-200 !bg-transparent !h-10 !px-3 hover:!bg-gray-50 !rounded-l-md',
+                  }}
+                  placeholder={placeholder}
+                  {...props}
+                />
+              </motion.div>
+            )}
+          />
+        ) : (
+          <motion.input
+            id={inputId}
+            name={name}
+            type={type}
+            placeholder={placeholder}
+            className={baseClasses}
+            variants={inputVariants}
+            initial="initial"
+            whileFocus="focus" // This now works correctly on motion.input
+            animate={isInvalid ? 'error' : 'initial'}
+            {...props}
+            {...register(name)}
+          />
+        )}
+      </div>
+    </div>
+  );
+};

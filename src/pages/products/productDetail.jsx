@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
 import { FiHeart, FiShoppingCart } from 'react-icons/fi';
-import { useLoaderData } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import LoadingSpinner from '../../components/global/LoadingSpinner';
+import { useCurrency } from '../../context/CurrencyContext';
 import { useAuth } from '../../hooks/useAuth.jsx';
 import { useCart } from '../../hooks/useCart.jsx';
-import { useCurrency } from '../../context/CurrencyContext';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -15,25 +15,35 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/thumbs';
 
-// Loader function to fetch product data
-export const productsDetailLoader = async ({ params }) => {
-  const response = await fetch(`http://localhost:3000/products/${params.productId}`);
-  if (!response.ok) {
-    throw new Response('Product not found', { status: 404 });
-  }
-  return await response.json();
-};
-
 const ProductDetail = () => {
   const { addToCart } = useCart();
   const { addToHistory } = useAuth();
   const { formatPrice } = useCurrency();
-  const product = useLoaderData();
+  const { productId } = useParams();
+  const [product, setProduct] = useState(null);
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const [selectedSize, setSelectedSize] = useState('');
   const [quantity, setQuantity] = useState(1);
   const [isFavorite, setIsFavorite] = useState(false);
   const [selectedColor, setSelectedColor] = useState('');
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchProduct = async () => {
+      setLoading(true);
+      try {
+        const response = await fetch(`http://localhost:3000/products/${productId}`);
+        if (!response.ok) throw new Error('Product not found');
+        const data = await response.json();
+        setProduct(data);
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    if (productId) fetchProduct();
+  }, [productId]);
 
   // Set default selected size and color when component mounts
   useEffect(() => {
@@ -48,7 +58,7 @@ const ProductDetail = () => {
     }
   }, [product, addToHistory]);
 
-  if (!product) {
+  if (loading || !product) {
     return <LoadingSpinner />;
   }
 

@@ -1,7 +1,6 @@
-import { isValidPhoneNumber } from 'react-phone-number-input';
 import * as Yup from 'yup';
 
-export const registerSchema = Yup.object().shape({
+export const userSchema = Yup.object().shape({
   name: Yup.string()
     .required('Full name is required')
     .min(3, 'Name must be at least 3 characters')
@@ -21,26 +20,6 @@ export const registerSchema = Yup.object().shape({
 
   // This is where your snippet lives
   confirmPassword: Yup.string()
-    .required('Please confirm your password')
+    .required('confirm password')
     .oneOf([Yup.ref('password')], 'Passwords must match'),
-
-  phone: Yup.string()
-    .required('Phone number is required')
-    .test('is-valid-phone', 'Invalid phone number', (value) => {
-      return value ? isValidPhoneNumber(value) : false;
-    }),
-
-  street: Yup.string()
-    .required('Street address is required')
-    .min(5, 'Please provide a valid street address'),
-
-  city: Yup.string().required('City is required'),
-
-  zipCode: Yup.string()
-    .required('required')
-    .matches(/^[0-9a-zA-Z -]+$/, 'Invalid format'),
-
-  country: Yup.string().required('Please select a country'),
-  cart: Yup.array(),
-  wishlist: Yup.array(),
 });

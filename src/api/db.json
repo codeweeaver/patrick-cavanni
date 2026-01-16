@@ -136,7 +136,84 @@
           },
           "description": "A timeless classic that pairs well with anything in your wardrobe. Made from premium cotton for maximum comfort.",
           "createdAt": "2025-12-01T09:00:00.000Z",
-          "quantity": 1
+          "quantity": 3
+        },
+        {
+          "id": "2",
+          "name": "Slim Fit Jeans",
+          "slug": "slim-fit-jeans-nike-men",
+          "gender": "men",
+          "price": 89.99,
+          "originalPrice": 109.99,
+          "discount": 18,
+          "images": [
+            "https://images.unsplash.com/photo-1542272604-787c3835535d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1542272604-787c3835535d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1542272604-787c3835535d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1542272604-787c3835535d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+          ],
+          "category": "Pants",
+          "collection": "Cavanni Wardrobe",
+          "brand": "nike",
+          "colors": [
+            "blue",
+            "black"
+          ],
+          "sizes": [
+            "28",
+            "30",
+            "32",
+            "34",
+            "36"
+          ],
+          "rating": 4.3,
+          "reviews": 215,
+          "inventory": {
+            "status": "inStock",
+            "quantity": 45,
+            "sku": "NK-JEAN-002"
+          },
+          "description": "Slim fit jeans that offer both comfort and style. Perfect for any casual occasion.",
+          "createdAt": "2025-12-02T10:15:00.000Z",
+          "quantity": 2
+        },
+        {
+          "id": "3",
+          "name": "Oversized Blazer",
+          "slug": "oversized-blazer-versace-women",
+          "gender": "women",
+          "price": 129.99,
+          "originalPrice": 159.99,
+          "discount": 19,
+          "images": [
+            "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+          ],
+          "category": "Tops",
+          "collection": "Exclusive Collections",
+          "brand": "versace",
+          "colors": [
+            "black",
+            "beige",
+            "gray"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L"
+          ],
+          "rating": 4.7,
+          "reviews": 89,
+          "inventory": {
+            "status": "inStock",
+            "quantity": 15,
+            "sku": "VS-BLZ-003"
+          },
+          "description": "Make a statement with this elegant oversized blazer. Perfect for both office and evening wear.",
+          "createdAt": "2025-12-03T11:20:00.000Z",
+          "quantity": 2
         }
       ],
       "wishlist": [
@@ -411,6 +488,22 @@
       "cart": [],
       "wishlist": [],
       "createdAt": "2025-12-25T09:09:15.525Z"
+    },
+    {
+      "id": "bd8c",
+      "name": "Abigail Fuller",
+      "email": "netaluju@mailinator.com",
+      "password": "Pa$$w0rd!",
+      "confirmPassword": "Pa$$w0rd!",
+      "street": "Est consequuntur dol",
+      "city": "Asaba",
+      "zipCode": "48545",
+      "country": "NG",
+      "phone": "+23407019427556",
+      "role": "user",
+      "cart": [],
+      "wishlist": [],
+      "createdAt": "2026-01-15T18:30:09.203Z"
     }
   ],
   "products": [

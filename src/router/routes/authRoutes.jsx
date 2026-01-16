@@ -1,26 +1,18 @@
 // src/router/routes/authRoutes.jsx
-import { lazy, Suspense } from "react";
-import LoadingSpinner from "../../components/global/LoadingSpinner";
-import AuthLayout from "../../layouts/AuthLayout";
-import GuestGuard from "../guards/GuestGuard";
+import { lazy, Suspense } from 'react';
+import LoadingSpinner from '../../components/global/LoadingSpinner';
+import AuthLayout from '../../layouts/AuthLayout';
+import GuestGuard from '../guards/GuestGuard';
 
 // Actions & Components
-import { accountSecurityAction } from "../../pages/register/AccountSecurity";
-import Address, { addressAction } from "../../pages/register/Address";
-import { personalInfoAction } from "../../pages/register/PersonInfo";
+import Address from '../../pages/register/Address';
 
-const Register = lazy(() => import("../../pages/Register"));
-const Login = lazy(() => import("../../pages/Login"));
-const ForgotPassword = lazy(() => import("../../pages/ForgotPassword"));
-const AccountSecurity = lazy(() =>
-  import("../../pages/register/AccountSecurity")
-);
-const PesonalInfo = lazy(() => import("../../pages/register/PersonInfo"));
+const Register = lazy(() => import('../../pages/Register'));
+const Login = lazy(() => import('../../pages/Login'));
+const ForgotPassword = lazy(() => import('../../pages/ForgotPassword'));
+const AccountSecurity = lazy(() => import('../../pages/register/AccountSecurity'));
 
-
-const Suspended = ({ children }) => (
-  <Suspense fallback={<LoadingSpinner />}>{children}</Suspense>
-);
+const Suspended = ({ children }) => <Suspense fallback={<LoadingSpinner />}>{children}</Suspense>;
 
 export const authRoutes = [
   {
@@ -30,7 +22,7 @@ export const authRoutes = [
         element: <AuthLayout />,
         children: [
           {
-            path: "register",
+            path: 'register',
             element: (
               <Suspended>
                 <Register />
@@ -44,26 +36,15 @@ export const authRoutes = [
                     <AccountSecurity />
                   </Suspended>
                 ),
-                action: accountSecurityAction,
               },
               {
-                path: "personal-info",
-                element: (
-                  <Suspended>
-                    <PesonalInfo />
-                  </Suspended>
-                ),
-                action: personalInfoAction,
-              },
-              {
-                path: "address",
+                path: 'address',
                 element: <Address />,
-                action: addressAction,
               },
             ],
           },
           {
-            path: "login",
+            path: 'login',
             element: (
               <Suspended>
                 <Login />
@@ -71,7 +52,7 @@ export const authRoutes = [
             ),
           },
           {
-            path: "forgot-password",
+            path: 'forgot-password',
             element: (
               <Suspended>
                 <ForgotPassword />

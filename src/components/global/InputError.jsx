@@ -1,10 +1,10 @@
-import { motion } from "framer-motion";
-import { MdError } from "react-icons/md";
+import { motion } from 'framer-motion';
+import { MdError } from 'react-icons/md';
 
 export const InputError = ({ message }) => {
   return (
     <motion.p
-      className="flex items-center gap-1 px-2 text-xs text-red-500 bg-red-100 rounded-md max-w-[300px] whitespace-nowrap"
+      className="flex max-w-[300px] items-center gap-1 rounded-md bg-red-100 px-2 text-xs whitespace-nowrap text-red-500"
       {...framer_error}
     >
       <MdError />

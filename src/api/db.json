@@ -1,1697 +1,1254 @@
 {
-  "users": [
-    {
-      "id": "e9bf8r",
-      "email": "patrickcavanni@gmail.com",
-      "password": "Pa$$w0rd!",
-      "confirmPassword": "Pa$$w0rd!",
-      "name": "Patrick Cavani",
-      "phoneCountry": "NG",
-      "phone": "+234 908 777 0900",
-      "street": "No 8, Ndele Street, Wuse Zone 3",
-      "city": "Abuja",
-      "zipCode": "30343",
-      "country": "NG",
-      "role": "admin",
-      "cart": [],
-      "wishlist": [],
-      "createdAt": "2025-12-19T09:35:50.271Z"
-    },
-    {
-      "id": "e9b7",
-      "email": "seqycaj@mailinator.com",
-      "password": "Pa$$w0rd!",
-      "confirmPassword": "Pa$$w0rd!",
-      "name": "Armando Guerrero",
-      "phoneCountry": "NG",
-      "phone": "+234 701 942 7556",
-      "street": "Officia incididunt a",
-      "city": "Eius minus qui nostr",
-      "zipCode": "30343",
-      "country": "UK",
-      "role": "user",
-      "cart": [],
-      "wishlist": [],
-      "createdAt": "2025-12-19T09:35:50.271Z"
-    },
-    {
-      "id": "2c35",
-      "email": "mimi@mailinator.com",
-      "password": "Pa$$w0rd!",
-      "confirmPassword": "Pa$$w0rd!",
-      "name": "Hanae Acosta",
-      "phoneCountry": "NG",
-      "phone": "+234 701 942 7556",
-      "street": "Quaerat architecto d",
-      "city": "Aliqua Consequatur",
-      "zipCode": "26417",
-      "country": "NG",
-      "role": "user",
-      "cart": [],
-      "wishlist": [],
-      "createdAt": "2025-12-19T09:40:49.258Z"
-    },
-    {
-      "id": "cff4",
-      "email": "gugar@mailinator.com",
-      "password": "Pa$$w0rd!",
-      "confirmPassword": "Pa$$w0rd!",
-      "name": "Xyla Stevenson",
-      "phoneCountry": "NG",
-      "phone": "+234 701 942 7556",
-      "street": "Dignissimos vero ver",
-      "city": "Fugiat amet eu vol",
-      "zipCode": "36779",
-      "country": "NG",
-      "role": "user",
-      "cart": [],
-      "wishlist": [],
-      "createdAt": "2025-12-19T09:46:46.209Z"
-    },
-    {
-      "id": "eff9",
-      "email": "gykabep@mailinator.com",
-      "password": "Pa$$w0rd!",
-      "confirmPassword": "Pa$$w0rd!",
-      "name": "Ori Owen",
-      "phoneCountry": "NG",
-      "phone": "+234 701 942 7556",
-      "street": "Nihil voluptatem Do",
-      "city": "Accusantium id conse",
-      "zipCode": "25634",
-      "country": "GH",
-      "role": "user",
-      "cart": [],
-      "wishlist": [],
-      "createdAt": "2025-12-19T10:17:11.277Z"
-    },
-    {
-      "id": "9619",
-      "email": "banit@mailinator.com",
-      "password": "Pa$$w0rd!",
-      "confirmPassword": "Pa$$w0rd!",
-      "name": "Eaton Reid",
-      "phoneCountry": "NG",
-      "phone": "+234 701 942 7556",
-      "street": "Commodo unde unde do",
-      "city": "Quae maiores corrupt",
-      "zipCode": "86408",
-      "country": "NG",
-      "role": "user",
-      "cart": [
+    "users": [
         {
-          "id": "1",
-          "name": "Classic White Shirt",
-          "slug": "classic-white-shirt-gucci-unisex",
-          "gender": "unisex",
-          "price": 59.99,
-          "originalPrice": 79.99,
-          "discount": 25,
-          "images": [
-            "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-            "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-            "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-            "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-          ],
-          "category": "Tops",
-          "collection": "Cavanni Wardrobe",
-          "brand": "gucci",
-          "colors": [
-            "white",
-            "black",
-            "blue"
-          ],
-          "sizes": [
-            "S",
-            "M",
-            "L",
-            "XL"
-          ],
-          "rating": 4.5,
-          "reviews": 128,
-          "inventory": {
-            "status": "inStock",
-            "quantity": 50,
-            "sku": "GC-SHT-001"
-          },
-          "description": "A timeless classic that pairs well with anything in your wardrobe. Made from premium cotton for maximum comfort.",
-          "createdAt": "2025-12-01T09:00:00.000Z",
-          "quantity": 3
+            "name": "Josephine Huff",
+            "email": "josephine@mailinator.com",
+            "phone": "+2348339928293",
+            "password": "Pa$$w0rd!",
+            "comfirmPassword": "Pa$$w0rd!",
+            "terms": true,
+            "addressess": [
+                {
+                    "id": "addrs_1",
+                    "label": "Home",
+                    "isDefault": true,
+                    "country": "Nigeria",
+                    "state": "Adamawa",
+                    "city": "Yola",
+                    "zipCode": "10011",
+                    "street": "Accusamus fugiat lab"
+                }
+            ],
+            "role": "user",
+            "cart": [],
+            "wishlist": [],
+            "createdAt": "2026-01-20T14:08:42.663Z",
+            "id": 2
         },
         {
-          "id": "2",
-          "name": "Slim Fit Jeans",
-          "slug": "slim-fit-jeans-nike-men",
-          "gender": "men",
-          "price": 89.99,
-          "originalPrice": 109.99,
-          "discount": 18,
-          "images": [
-            "https://images.unsplash.com/photo-1542272604-787c3835535d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-            "https://images.unsplash.com/photo-1542272604-787c3835535d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-            "https://images.unsplash.com/photo-1542272604-787c3835535d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-            "https://images.unsplash.com/photo-1542272604-787c3835535d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-          ],
-          "category": "Pants",
-          "collection": "Cavanni Wardrobe",
-          "brand": "nike",
-          "colors": [
-            "blue",
-            "black"
-          ],
-          "sizes": [
-            "28",
-            "30",
-            "32",
-            "34",
-            "36"
-          ],
-          "rating": 4.3,
-          "reviews": 215,
-          "inventory": {
-            "status": "inStock",
-            "quantity": 45,
-            "sku": "NK-JEAN-002"
-          },
-          "description": "Slim fit jeans that offer both comfort and style. Perfect for any casual occasion.",
-          "createdAt": "2025-12-02T10:15:00.000Z",
-          "quantity": 2
-        },
-        {
-          "id": "3",
-          "name": "Oversized Blazer",
-          "slug": "oversized-blazer-versace-women",
-          "gender": "women",
-          "price": 129.99,
-          "originalPrice": 159.99,
-          "discount": 19,
-          "images": [
-            "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-            "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-            "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-            "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-          ],
-          "category": "Tops",
-          "collection": "Exclusive Collections",
-          "brand": "versace",
-          "colors": [
-            "black",
-            "beige",
-            "gray"
-          ],
-          "sizes": [
-            "S",
-            "M",
-            "L"
-          ],
-          "rating": 4.7,
-          "reviews": 89,
-          "inventory": {
-            "status": "inStock",
-            "quantity": 15,
-            "sku": "VS-BLZ-003"
-          },
-          "description": "Make a statement with this elegant oversized blazer. Perfect for both office and evening wear.",
-          "createdAt": "2025-12-03T11:20:00.000Z",
-          "quantity": 2
+            "name": "SULAIMAN ADAMU",
+            "email": "sulemanadams8888@gmail.com",
+            "phone": "+2347019427556",
+            "password": "Pa$$w0rd!",
+            "comfirmPassword": "Pa$$w0rd!",
+            "terms": true,
+            "addressess": [
+                {
+                    "id": "a1352e76-e56e-42e5-8f1b-0f2af8f19214",
+                    "label": "Work",
+                    "isDefault": true,
+                    "country": "Nigeria",
+                    "state": "Abuja Federal Capital Territory",
+                    "city": "Abuja",
+                    "zipCode": "10011",
+                    "street": "apt 30, wuse 2"
+                },
+                {
+                    "id": "6d9297f7-3441-4496-9fa8-b99a203d9776",
+                    "label": "Office",
+                    "isDefault": false,
+                    "country": "Nigeria",
+                    "state": "Akwa Ibom",
+                    "city": "Ikot Ekpene",
+                    "zipCode": "10011",
+                    "street": "Est consequuntur dol"
+                },
+                {
+                    "id": "addrs_1",
+                    "label": "Home",
+                    "isDefault": false,
+                    "country": "Nigeria",
+                    "state": "Enugu",
+                    "city": "Awgu",
+                    "zipCode": "10011",
+                    "street": "Layin Shahada, Ring Road"
+                }
+            ],
+            "role": "user",
+            "cart": [],
+            "wishlist": [],
+            "createdAt": "2026-01-20T14:20:28.208Z",
+            "id": 3
         }
-      ],
-      "wishlist": [
+    ],
+    "products": [
         {
-          "id": "1",
-          "name": "Classic White Shirt",
-          "slug": "classic-white-shirt-gucci-unisex",
-          "gender": "unisex",
-          "price": 59.99,
-          "originalPrice": 79.99,
-          "discount": 25,
-          "images": [
-            "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-            "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-            "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-            "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-          ],
-          "category": "Tops",
-          "collection": "Cavanni Wardrobe",
-          "brand": "gucci",
-          "colors": [
-            "white",
-            "black",
-            "blue"
-          ],
-          "sizes": [
-            "S",
-            "M",
-            "L",
-            "XL"
-          ],
-          "rating": 4.5,
-          "reviews": 128,
-          "inventory": {
-            "status": "inStock",
-            "quantity": 50,
-            "sku": "GC-SHT-001"
-          },
-          "description": "A timeless classic that pairs well with anything in your wardrobe. Made from premium cotton for maximum comfort.",
-          "createdAt": "2025-12-01T09:00:00.000Z"
+            "id": "1",
+            "name": "Classic White Shirt",
+            "slug": "classic-white-shirt-gucci-unisex",
+            "gender": "unisex",
+            "price": 59.99,
+            "originalPrice": 79.99,
+            "discount": 25,
+            "images": [
+                "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+            ],
+            "category": "Tops",
+            "collection": "Cavanni Wardrobe",
+            "brand": "gucci",
+            "colors": [
+                "white",
+                "black",
+                "blue"
+            ],
+            "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+            ],
+            "rating": 4.5,
+            "reviews": 128,
+            "inventory": {
+                "status": "inStock",
+                "quantity": 50,
+                "sku": "GC-SHT-001"
+            },
+            "description": "A timeless classic that pairs well with anything in your wardrobe. Made from premium cotton for maximum comfort.",
+            "createdAt": "2025-12-01T09:00:00.000Z"
         },
         {
-          "id": "5",
-          "name": "Leather Crossbody Bag",
-          "slug": "leather-crossbody-bag-fendi-women",
-          "gender": "women",
-          "price": 149.99,
-          "originalPrice": 179.99,
-          "discount": 17,
-          "images": [
-            "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-            "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-            "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-            "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-          ],
-          "category": "Accessories",
-          "collection": "Exclusive Collections",
-          "brand": "fendi",
-          "colors": [
-            "black",
-            "brown",
-            "tan"
-          ],
-          "sizes": [
-            "One Size"
-          ],
-          "rating": 4.8,
-          "reviews": 243,
-          "inventory": {
-            "status": "inStock",
-            "quantity": 10,
-            "sku": "FD-BAG-005"
-          },
-          "description": "A versatile leather crossbody bag that complements any outfit. Perfect for everyday use.",
-          "createdAt": "2025-12-05T16:55:00.000Z"
+            "id": "2",
+            "name": "Slim Fit Jeans",
+            "slug": "slim-fit-jeans-nike-men",
+            "gender": "men",
+            "price": 89.99,
+            "originalPrice": 109.99,
+            "discount": 18,
+            "images": [
+                "https://images.unsplash.com/photo-1542272604-787c3835535d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1542272604-787c3835535d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1542272604-787c3835535d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1542272604-787c3835535d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+            ],
+            "category": "Pants",
+            "collection": "Cavanni Wardrobe",
+            "brand": "nike",
+            "colors": [
+                "blue",
+                "black"
+            ],
+            "sizes": [
+                "28",
+                "30",
+                "32",
+                "34",
+                "36"
+            ],
+            "rating": 4.3,
+            "reviews": 215,
+            "inventory": {
+                "status": "inStock",
+                "quantity": 45,
+                "sku": "NK-JEAN-002"
+            },
+            "description": "Slim fit jeans that offer both comfort and style. Perfect for any casual occasion.",
+            "createdAt": "2025-12-02T10:15:00.000Z"
         },
         {
-          "id": "7",
-          "name": "Wide-Leg Jumpsuit",
-          "slug": "wide-leg-jumpsuit-gucci-women",
-          "gender": "women",
-          "price": 119.99,
-          "originalPrice": 149.99,
-          "discount": 20,
-          "images": [
-            "https://images.unsplash.com/photo-1534215754734-18e55d13e021?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-            "https://images.unsplash.com/photo-1534215754734-18e55d13e021?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-            "https://images.unsplash.com/photo-1534215754734-18e55d13e021?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-            "https://images.unsplash.com/photo-1534215754734-18e55d13e021?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-          ],
-          "category": "Dress",
-          "collection": "Exclusive Collections",
-          "brand": "gucci",
-          "colors": [
-            "black",
-            "navy",
-            "olive"
-          ],
-          "sizes": [
-            "S",
-            "M",
-            "L"
-          ],
-          "rating": 4.7,
-          "reviews": 98,
-          "inventory": {
-            "status": "inStock",
-            "quantity": 12,
-            "sku": "GC-JMP-007"
-          },
-          "description": "Effortlessly stylish wide-leg jumpsuit for any occasion.",
-          "createdAt": "2025-12-07T12:30:00.000Z"
+            "id": "3",
+            "name": "Oversized Blazer",
+            "slug": "oversized-blazer-versace-women",
+            "gender": "women",
+            "price": 129.99,
+            "originalPrice": 159.99,
+            "discount": 19,
+            "images": [
+                "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+            ],
+            "category": "Tops",
+            "collection": "Exclusive Collections",
+            "brand": "versace",
+            "colors": [
+                "black",
+                "beige",
+                "gray"
+            ],
+            "sizes": [
+                "S",
+                "M",
+                "L"
+            ],
+            "rating": 4.7,
+            "reviews": 89,
+            "inventory": {
+                "status": "inStock",
+                "quantity": 15,
+                "sku": "VS-BLZ-003"
+            },
+            "description": "Make a statement with this elegant oversized blazer. Perfect for both office and evening wear.",
+            "createdAt": "2025-12-03T11:20:00.000Z"
         },
         {
-          "id": "11",
-          "name": "Knit Beanie",
-          "slug": "knit-beanie-rolex-unisex",
-          "gender": "unisex",
-          "price": 14.99,
-          "discount": 25,
-          "images": [
-            "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-            "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-            "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-            "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-          ],
-          "category": "Accessories",
-          "collection": "Cavanni Wardrobe",
-          "brand": "rolex",
-          "colors": [
-            "black",
-            "gray",
-            "navy"
-          ],
-          "sizes": [
-            "One Size"
-          ],
-          "rating": 1.8,
-          "reviews": 31,
-          "inventory": {
-            "status": "inStock",
-            "quantity": 150,
-            "sku": "RX-HET-011"
-          },
-          "description": "Basic knit beanie, some customers found it to be too small or not as warm as expected.",
-          "createdAt": "2025-12-11T08:30:00.000Z"
+            "id": "4",
+            "name": "Knit Sweater",
+            "slug": "knit-sweater-rolex-unisex",
+            "gender": "unisex",
+            "price": 79.99,
+            "originalPrice": 99.99,
+            "discount": 20,
+            "images": [
+                "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+            ],
+            "category": "Tops",
+            "collection": "Cavanni Wardrobe",
+            "brand": "rolex",
+            "colors": [
+                "beige",
+                "brown",
+                "gray"
+            ],
+            "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+            ],
+            "rating": 4.6,
+            "reviews": 176,
+            "inventory": {
+                "status": "inStock",
+                "quantity": 30,
+                "sku": "RX-SWT-004"
+            },
+            "description": "Stay cozy and stylish with this soft knit sweater. Perfect for the colder months.",
+            "createdAt": "2025-12-04T14:40:00.000Z"
         },
         {
-          "id": "19",
-          "name": "Designer Handbag",
-          "slug": "designer-handbag-fendi-women",
-          "gender": "women",
-          "price": 299.99,
-          "originalPrice": 349.99,
-          "discount": 14,
-          "images": [
-            "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-            "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-            "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-            "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-          ],
-          "category": "Accessories",
-          "collection": "Exclusive Collections",
-          "brand": "fendi",
-          "colors": [
-            "black",
-            "brown",
-            "navy"
-          ],
-          "sizes": [
-            "One Size"
-          ],
-          "rating": 4.7,
-          "reviews": 243,
-          "inventory": {
-            "status": "inStock",
-            "quantity": 5,
-            "sku": "FD-HBG-019"
-          },
-          "description": "Elegant designer handbag with multiple compartments and premium hardware.",
-          "createdAt": "2025-12-19T10:45:00.000Z"
+            "id": "5",
+            "name": "Leather Crossbody Bag",
+            "slug": "leather-crossbody-bag-fendi-women",
+            "gender": "women",
+            "price": 149.99,
+            "originalPrice": 179.99,
+            "discount": 17,
+            "images": [
+                "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+            ],
+            "category": "Accessories",
+            "collection": "Exclusive Collections",
+            "brand": "fendi",
+            "colors": [
+                "black",
+                "brown",
+                "tan"
+            ],
+            "sizes": [
+                "One Size"
+            ],
+            "rating": 4.8,
+            "reviews": 243,
+            "inventory": {
+                "status": "inStock",
+                "quantity": 10,
+                "sku": "FD-BAG-005"
+            },
+            "description": "A versatile leather crossbody bag that complements any outfit. Perfect for everyday use.",
+            "createdAt": "2025-12-05T16:55:00.000Z"
         },
         {
-          "id": "27",
-          "name": "Embroidered Cape",
-          "slug": "embroidered-cape-haute-couture-burberry",
-          "gender": "unisex",
-          "price": 340,
-          "originalPrice": 500,
-          "discount": 32,
-          "images": [
-            "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-            "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-            "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-            "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-          ],
-          "category": "Outerwear",
-          "collection": "Haute Couture",
-          "brand": "burberry",
-          "colors": [
-            "gold",
-            "cream"
-          ],
-          "sizes": [
-            "One Size"
-          ],
-          "rating": 4.9,
-          "reviews": 5,
-          "inventory": {
-            "status": "inStock",
-            "quantity": 5,
-            "sku": "BB-H-027"
-          },
-          "description": "Stunning embroidered cape for a unique silhouette.",
-          "createdAt": "2025-12-27T10:15:00.000Z"
+            "id": "6",
+            "name": "High-Waisted Trousers",
+            "slug": "high-waisted-trousers-burberry-unisex",
+            "gender": "unisex",
+            "price": 69.99,
+            "originalPrice": 89.99,
+            "discount": 22,
+            "images": [
+                "https://images.unsplash.com/photo-1573891960643-6af2f2121783?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1573891960643-6af2f2121783?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1573891960643-6af2f2121783?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1573891960643-6af2f2121783?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+            ],
+            "category": "Pants",
+            "collection": "Cavanni Wardrobe",
+            "brand": "burberry",
+            "colors": [
+                "black",
+                "beige",
+                "navy"
+            ],
+            "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+            ],
+            "rating": 4.4,
+            "reviews": 132,
+            "inventory": {
+                "status": "inStock",
+                "quantity": 25,
+                "sku": "BB-TRS-006"
+            },
+            "description": "Elegant high-waisted trousers that offer both comfort and sophistication.",
+            "createdAt": "2025-12-06T09:12:00.000Z"
+        },
+        {
+            "id": "7",
+            "name": "Wide-Leg Jumpsuit",
+            "slug": "wide-leg-jumpsuit-gucci-women",
+            "gender": "women",
+            "price": 119.99,
+            "originalPrice": 149.99,
+            "discount": 20,
+            "images": [
+                "https://images.unsplash.com/photo-1534215754734-18e55d13e021?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1534215754734-18e55d13e021?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1534215754734-18e55d13e021?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1534215754734-18e55d13e021?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+            ],
+            "category": "Dress",
+            "collection": "Exclusive Collections",
+            "brand": "gucci",
+            "colors": [
+                "black",
+                "navy",
+                "olive"
+            ],
+            "sizes": [
+                "S",
+                "M",
+                "L"
+            ],
+            "rating": 4.7,
+            "reviews": 98,
+            "inventory": {
+                "status": "inStock",
+                "quantity": 12,
+                "sku": "GC-JMP-007"
+            },
+            "description": "Effortlessly stylish wide-leg jumpsuit for any occasion.",
+            "createdAt": "2025-12-07T12:30:00.000Z"
+        },
+        {
+            "id": "8",
+            "name": "Basic T-Shirt",
+            "slug": "basic-tshirt-carter-men",
+            "gender": "men",
+            "price": 19.99,
+            "originalPrice": 29.99,
+            "discount": 33,
+            "images": [
+                "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+            ],
+            "category": "Tops",
+            "collection": "Cavanni Wardrobe",
+            "brand": "carter",
+            "colors": [
+                "white",
+                "black",
+                "gray"
+            ],
+            "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+            ],
+            "rating": 2.1,
+            "reviews": 45,
+            "inventory": {
+                "status": "inStock",
+                "quantity": 100,
+                "sku": "CT-TSH-008"
+            },
+            "description": "Basic cotton t-shirt that fits well but may shrink after washing.",
+            "createdAt": "2025-12-08T15:20:00.000Z"
+        },
+        {
+            "id": "9",
+            "name": "Casual Denim Shorts",
+            "slug": "casual-denim-shorts-nike-unisex",
+            "gender": "unisex",
+            "price": 34.99,
+            "originalPrice": 44.99,
+            "discount": 22,
+            "images": [
+                "https://images.unsplash.com/photo-1600978257452-c6f315b8a668?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1600978257452-c6f315b8a668?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1600978257452-c6f315b8a668?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1600978257452-c6f315b8a668?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+            ],
+            "category": "Pants",
+            "collection": "Cavanni Wardrobe",
+            "brand": "nike",
+            "colors": [
+                "blue",
+                "black"
+            ],
+            "sizes": [
+                "S",
+                "M",
+                "L"
+            ],
+            "rating": 2.8,
+            "reviews": 67,
+            "inventory": {
+                "status": "inStock",
+                "quantity": 40,
+                "sku": "NK-SRT-009"
+            },
+            "description": "Casual denim shorts, comfortable but may fade after several washes.",
+            "createdAt": "2025-12-09T10:05:00.000Z"
+        },
+        {
+            "id": "10",
+            "name": "Canvas Sneakers",
+            "slug": "canvas-sneakers-versace-unisex",
+            "gender": "unisex",
+            "price": 45.99,
+            "originalPrice": 59.99,
+            "discount": 23,
+            "images": [
+                "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+            ],
+            "category": "Footwear",
+            "collection": "Exclusive Collections",
+            "brand": "versace",
+            "colors": [
+                "white",
+                "black"
+            ],
+            "sizes": [
+                "7",
+                "8",
+                "9",
+                "10",
+                "11"
+            ],
+            "rating": 2.8,
+            "reviews": 63,
+            "inventory": {
+                "status": "inStock",
+                "quantity": 60,
+                "sku": "VS-SNK-010"
+            },
+            "description": "Affordable canvas sneakers that wear out quickly with regular use.",
+            "createdAt": "2025-12-10T14:45:00.000Z"
+        },
+        {
+            "id": "11",
+            "name": "Knit Beanie",
+            "slug": "knit-beanie-rolex-unisex",
+            "gender": "unisex",
+            "price": 14.99,
+            "discount": 25,
+            "images": [
+                "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+            ],
+            "category": "Accessories",
+            "collection": "Cavanni Wardrobe",
+            "brand": "rolex",
+            "colors": [
+                "black",
+                "gray",
+                "navy"
+            ],
+            "sizes": [
+                "One Size"
+            ],
+            "rating": 1.8,
+            "reviews": 31,
+            "inventory": {
+                "status": "inStock",
+                "quantity": 150,
+                "sku": "RX-HET-011"
+            },
+            "description": "Basic knit beanie, some customers found it to be too small or not as warm as expected.",
+            "createdAt": "2025-12-11T08:30:00.000Z"
+        },
+        {
+            "id": "12",
+            "name": "Denim Jacket",
+            "slug": "denim-jacket-fendi-unisex",
+            "gender": "unisex",
+            "price": 79.99,
+            "originalPrice": 99.99,
+            "discount": 20,
+            "images": [
+                "https://images.unsplash.com/photo-1551028719-00167d1e1beb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1551028719-00167d1e1beb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1551028719-00167d1e1beb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1551028719-00167d1e1beb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+            ],
+            "category": "Outerwear",
+            "collection": "Exclusive Collections",
+            "brand": "fendi",
+            "colors": [
+                "blue",
+                "black"
+            ],
+            "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+            ],
+            "rating": 2.2,
+            "reviews": 47,
+            "inventory": {
+                "status": "inStock",
+                "quantity": 20,
+                "sku": "FD-JKT-012"
+            },
+            "description": "Classic denim jacket with some reported issues with zipper and buttons.",
+            "createdAt": "2025-12-12T13:45:00.000Z"
+        },
+        {
+            "id": "13",
+            "name": "Plaid Scarf",
+            "slug": "plaid-scarf-burberry-unisex",
+            "gender": "unisex",
+            "price": 24.99,
+            "discount": 17,
+            "images": [
+                "https://images.unsplash.com/photo-1576566588028-4147f3842f27?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1576566588028-4147f3842f27?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1576566588028-4147f3842f27?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1576566588028-4147f3842f27?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+            ],
+            "category": "Accessories",
+            "collection": "Exclusive Collections",
+            "brand": "burberry",
+            "colors": [
+                "red/black",
+                "blue/black",
+                "green/black"
+            ],
+            "sizes": [
+                "One Size"
+            ],
+            "rating": 2.7,
+            "reviews": 52,
+            "inventory": {
+                "status": "lowStock",
+                "quantity": 5,
+                "sku": "BB-SCF-013"
+            },
+            "description": "Warm plaid scarf, some customers found the material to be scratchy.",
+            "createdAt": "2025-12-13T10:30:00.000Z"
+        },
+        {
+            "id": "14",
+            "name": "Cargo Pants",
+            "slug": "cargo-pants-gucci-men",
+            "gender": "men",
+            "price": 54.99,
+            "originalPrice": 64.99,
+            "discount": 15,
+            "images": [
+                "https://images.unsplash.com/photo-1542272604-787c3835535d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1542272604-787c3835535d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1542272604-787c3835535d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1542272604-787c3835535d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+            ],
+            "category": "Pants",
+            "collection": "Cavanni Wardrobe",
+            "brand": "gucci",
+            "colors": [
+                "khaki",
+                "olive",
+                "black"
+            ],
+            "sizes": [
+                "30",
+                "32",
+                "34",
+                "36"
+            ],
+            "rating": 2,
+            "reviews": 36,
+            "inventory": {
+                "status": "inStock",
+                "quantity": 35,
+                "sku": "GC-CRG-014"
+            },
+            "description": "Utility cargo pants with some reported fit and durability issues.",
+            "createdAt": "2025-12-14T15:20:00.000Z"
+        },
+        {
+            "id": "15",
+            "name": "Graphic Tee",
+            "slug": "graphic-tee-carter-men",
+            "gender": "men",
+            "price": 24.99,
+            "discount": 29,
+            "images": [
+                "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+            ],
+            "category": "Tops",
+            "collection": "Cavanni Wardrobe",
+            "brand": "carter",
+            "colors": [
+                "white",
+                "black",
+                "gray"
+            ],
+            "sizes": [
+                "S",
+                "M",
+                "L"
+            ],
+            "rating": 1.9,
+            "reviews": 29,
+            "inventory": {
+                "status": "inStock",
+                "quantity": 80,
+                "sku": "CT-GRP-015"
+            },
+            "description": "Basic graphic t-shirt with some reports of print fading quickly after washing.",
+            "createdAt": "2025-12-15T11:30:00.000Z"
+        },
+        {
+            "id": "16",
+            "name": "Ankle Socks",
+            "slug": "ankle-socks-nike-unisex",
+            "gender": "unisex",
+            "price": 9.99,
+            "discount": 23,
+            "images": [
+                "https://images.unsplash.com/photo-1589674781759-8d68fefbcafd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1589674781759-8d68fefbcafd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1589674781759-8d68fefbcafd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1589674781759-8d68fefbcafd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+            ],
+            "category": "Accessories",
+            "collection": "Cavanni Wardrobe",
+            "brand": "nike",
+            "colors": [
+                "white",
+                "black",
+                "gray"
+            ],
+            "sizes": [
+                "One Size"
+            ],
+            "rating": 2.4,
+            "reviews": 41,
+            "inventory": {
+                "status": "inStock",
+                "quantity": 200,
+                "sku": "NK-SCK-016"
+            },
+            "description": "Pack of 3 ankle socks that may lose elasticity after a few washes.",
+            "createdAt": "2025-12-16T10:10:00.000Z"
+        },
+        {
+            "id": "17",
+            "name": "Cotton Tank Top",
+            "slug": "cotton-tank-top-versace-women",
+            "gender": "women",
+            "price": 14.99,
+            "originalPrice": 19.99,
+            "discount": 25,
+            "images": [
+                "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+            ],
+            "category": "Tops",
+            "collection": "Exclusive Collections",
+            "brand": "versace",
+            "colors": [
+                "white",
+                "black",
+                "gray",
+                "pink"
+            ],
+            "sizes": [
+                "S",
+                "M",
+                "L"
+            ],
+            "rating": 2.5,
+            "reviews": 38,
+            "inventory": {
+                "status": "inStock",
+                "quantity": 45,
+                "sku": "VS-TNK-017"
+            },
+            "description": "Basic cotton tank top that may lose shape after washing.",
+            "createdAt": "2025-12-17T12:45:00.000Z"
+        },
+        {
+            "id": "18",
+            "name": "Premium Leather Jacket",
+            "slug": "premium-leather-jacket-rolex-men",
+            "gender": "men",
+            "price": 349.99,
+            "originalPrice": 399.99,
+            "discount": 13,
+            "images": [
+                "https://images.unsplash.com/photo-1551028719-00167d1e1beb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1551028719-00167d1e1beb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1551028719-00167d1e1beb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1551028719-00167d1e1beb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+            ],
+            "category": "Outerwear",
+            "collection": "Cavanni Wardrobe",
+            "brand": "rolex",
+            "colors": [
+                "black",
+                "brown"
+            ],
+            "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+            ],
+            "rating": 4.8,
+            "reviews": 187,
+            "inventory": {
+                "status": "inStock",
+                "quantity": 8,
+                "sku": "RX-LTH-018"
+            },
+            "description": "Handcrafted premium leather jacket with a perfect fit. The leather softens beautifully with wear.",
+            "createdAt": "2025-12-18T16:20:00.000Z"
+        },
+        {
+            "id": "19",
+            "name": "Designer Handbag",
+            "slug": "designer-handbag-fendi-women",
+            "gender": "women",
+            "price": 299.99,
+            "originalPrice": 349.99,
+            "discount": 14,
+            "images": [
+                "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+            ],
+            "category": "Accessories",
+            "collection": "Exclusive Collections",
+            "brand": "fendi",
+            "colors": [
+                "black",
+                "brown",
+                "navy"
+            ],
+            "sizes": [
+                "One Size"
+            ],
+            "rating": 4.7,
+            "reviews": 243,
+            "inventory": {
+                "status": "inStock",
+                "quantity": 5,
+                "sku": "FD-HBG-019"
+            },
+            "description": "Elegant designer handbag with multiple compartments and premium hardware.",
+            "createdAt": "2025-12-19T10:45:00.000Z"
+        },
+        {
+            "id": "20",
+            "name": "Wool Overcoat",
+            "slug": "wool-overcoat-burberry-unisex",
+            "gender": "unisex",
+            "price": 279.99,
+            "originalPrice": 329.99,
+            "discount": 15,
+            "images": [
+                "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+            ],
+            "category": "Outerwear",
+            "collection": "Cavanni Wardrobe",
+            "brand": "burberry",
+            "colors": [
+                "black",
+                "gray",
+                "camel"
+            ],
+            "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+            ],
+            "rating": 4.6,
+            "reviews": 156,
+            "inventory": {
+                "status": "inStock",
+                "quantity": 10,
+                "sku": "BB-OVC-020"
+            },
+            "description": "Classic wool overcoat with a tailored fit. The high-quality wool blend provides excellent warmth.",
+            "createdAt": "2025-12-20T11:15:00.000Z"
+        },
+        {
+            "id": "21",
+            "name": "Silk Blouse",
+            "slug": "silk-blouse-gucci-women",
+            "gender": "women",
+            "price": 129.99,
+            "originalPrice": 159.99,
+            "discount": 19,
+            "images": [
+                "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+            ],
+            "category": "Tops",
+            "collection": "Exclusive Collections",
+            "brand": "gucci",
+            "colors": [
+                "white",
+                "black",
+                "blush"
+            ],
+            "sizes": [
+                "XS",
+                "S",
+                "M",
+                "L"
+            ],
+            "rating": 4.5,
+            "reviews": 178,
+            "inventory": {
+                "status": "inStock",
+                "quantity": 15,
+                "sku": "GC-BLS-021"
+            },
+            "description": "Elegant silk blouse with a flattering cut. The lightweight fabric drapes beautifully.",
+            "createdAt": "2025-12-21T09:30:00.000Z"
+        },
+        {
+            "id": "22",
+            "name": "Suede Boots",
+            "slug": "suede-boots-carter-unisex",
+            "gender": "unisex",
+            "price": 189.99,
+            "originalPrice": 229.99,
+            "discount": 17,
+            "images": [
+                "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+            ],
+            "category": "Footwear",
+            "collection": "Cavanni Wardrobe",
+            "brand": "carter",
+            "colors": [
+                "brown",
+                "black",
+                "taupe"
+            ],
+            "sizes": [
+                "6",
+                "7",
+                "8",
+                "9",
+                "10"
+            ],
+            "rating": 4.8,
+            "reviews": 267,
+            "inventory": {
+                "status": "inStock",
+                "quantity": 18,
+                "sku": "CT-BTS-022"
+            },
+            "description": "Stylish suede boots with a comfortable block heel.",
+            "createdAt": "2025-12-22T14:45:00.000Z"
+        },
+        {
+            "id": "23",
+            "name": "Linen Suit",
+            "slug": "linen-suit-nike-men",
+            "gender": "men",
+            "price": 299.99,
+            "originalPrice": 349.99,
+            "discount": 14,
+            "images": [
+                "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+            ],
+            "category": "Suits",
+            "collection": "Exclusive Collections",
+            "brand": "nike",
+            "colors": [
+                "beige",
+                "light gray",
+                "navy"
+            ],
+            "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+            ],
+            "rating": 4.4,
+            "reviews": 132,
+            "inventory": {
+                "status": "inStock",
+                "quantity": 6,
+                "sku": "NK-SUT-023"
+            },
+            "description": "Breathable linen suit perfect for warm weather.",
+            "createdAt": "2025-12-23T11:20:00.000Z"
+        },
+        {
+            "id": "24",
+            "name": "Silk Gown",
+            "slug": "silk-gown-haute-couture-gucci",
+            "gender": "women",
+            "price": 450,
+            "originalPrice": 600,
+            "discount": 25,
+            "images": [
+                "https://images.unsplash.com/photo-1534215754734-18e55d13e021?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1534215754734-18e55d13e021?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1534215754734-18e55d13e021?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1534215754734-18e55d13e021?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+            ],
+            "category": "Dress",
+            "collection": "Haute Couture",
+            "brand": "gucci",
+            "colors": [
+                "gold",
+                "black"
+            ],
+            "sizes": [
+                "S",
+                "M"
+            ],
+            "rating": 4.9,
+            "reviews": 12,
+            "inventory": {
+                "status": "lowStock",
+                "quantity": 2,
+                "sku": "GC-H-024"
+            },
+            "description": "Exquisite silk gown for special occasions.",
+            "createdAt": "2025-12-24T18:30:00.000Z"
+        },
+        {
+            "id": "25",
+            "name": "Bespoke Tuxedo",
+            "slug": "bespoke-tuxedo-haute-couture-versace",
+            "gender": "men",
+            "price": 850,
+            "originalPrice": 1200,
+            "discount": 29,
+            "images": [
+                "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+            ],
+            "category": "Suits",
+            "collection": "Haute Couture",
+            "brand": "versace",
+            "colors": [
+                "midnight black"
+            ],
+            "sizes": [
+                "M",
+                "L",
+                "XL"
+            ],
+            "rating": 5,
+            "reviews": 8,
+            "inventory": {
+                "status": "lowStock",
+                "quantity": 1,
+                "sku": "VS-H-025"
+            },
+            "description": "Hand-stitched tuxedo of unmatched quality.",
+            "createdAt": "2025-12-25T20:15:00.000Z"
+        },
+        {
+            "id": "26",
+            "name": "Velvet Evening Gown",
+            "slug": "velvet-gown-haute-couture-fendi",
+            "gender": "women",
+            "price": 620,
+            "originalPrice": 900,
+            "discount": 31,
+            "images": [
+                "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+            ],
+            "category": "Dress",
+            "collection": "Haute Couture",
+            "brand": "fendi",
+            "colors": [
+                "emerald",
+                "ruby"
+            ],
+            "sizes": [
+                "S",
+                "M"
+            ],
+            "rating": 4.8,
+            "reviews": 15,
+            "inventory": {
+                "status": "lowStock",
+                "quantity": 3,
+                "sku": "FD-H-026"
+            },
+            "description": "Luxurious velvet gown with intricate details.",
+            "createdAt": "2025-12-26T14:40:00.000Z"
+        },
+        {
+            "id": "27",
+            "name": "Embroidered Cape",
+            "slug": "embroidered-cape-haute-couture-burberry",
+            "gender": "unisex",
+            "price": 340,
+            "originalPrice": 500,
+            "discount": 32,
+            "images": [
+                "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+            ],
+            "category": "Outerwear",
+            "collection": "Haute Couture",
+            "brand": "burberry",
+            "colors": [
+                "gold",
+                "cream"
+            ],
+            "sizes": [
+                "One Size"
+            ],
+            "rating": 4.9,
+            "reviews": 5,
+            "inventory": {
+                "status": "inStock",
+                "quantity": 5,
+                "sku": "BB-H-027"
+            },
+            "description": "Stunning embroidered cape for a unique silhouette.",
+            "createdAt": "2025-12-27T10:15:00.000Z"
         }
-      ],
-      "createdAt": "2025-12-19T10:18:06.085Z",
-      "history": {
-        "products": [
-          "5"
-        ]
-      }
-    },
-    {
-      "id": "4ef5",
-      "email": "qekoxy@mailinator.com",
-      "password": "Pa$$w0rd!",
-      "confirmPassword": "Pa$$w0rd!",
-      "name": "SULAIMAN ADAMU",
-      "phoneCountry": "NG",
-      "phone": "+234 701 942 7556",
-      "street": "Est consequuntur dol",
-      "city": "Earum autem assumend",
-      "zipCode": "45964",
-      "country": "NG",
-      "role": "user",
-      "cart": [],
-      "wishlist": [],
-      "createdAt": "2025-12-19T10:20:04.257Z"
-    },
-    {
-      "id": "c697",
-      "email": "jahulir@mailinator.com",
-      "password": "Pa$$w0rd!",
-      "confirmPassword": "Pa$$w0rd!",
-      "name": "Anika Strickland",
-      "phoneCountry": "NG",
-      "phone": "+234 701 942 7556",
-      "street": "Laborum cupidatat de",
-      "city": "Tempore consequat ",
-      "zipCode": "15281",
-      "country": "NG",
-      "role": "user",
-      "cart": [],
-      "wishlist": [],
-      "createdAt": "2025-12-23T15:12:59.009Z"
-    },
-    {
-      "id": "bc5e",
-      "email": "duwuky@mailinator.com",
-      "password": "Pa$$w0rd!",
-      "confirmPassword": "Pa$$w0rd!",
-      "name": "Kevyn Barnes",
-      "phoneCountry": "NG",
-      "phone": "+234 701 942 7556",
-      "street": "Pariatur Qui sint ",
-      "city": "Ea voluptatem Minim",
-      "zipCode": "90471",
-      "country": "CA",
-      "role": "user",
-      "cart": [],
-      "wishlist": [],
-      "createdAt": "2025-12-25T09:09:15.525Z"
-    },
-    {
-      "id": "bd8c",
-      "name": "Abigail Fuller",
-      "email": "netaluju@mailinator.com",
-      "password": "Pa$$w0rd!",
-      "confirmPassword": "Pa$$w0rd!",
-      "street": "Est consequuntur dol",
-      "city": "Asaba",
-      "zipCode": "48545",
-      "country": "NG",
-      "phone": "+23407019427556",
-      "role": "user",
-      "cart": [],
-      "wishlist": [],
-      "createdAt": "2026-01-15T18:30:09.203Z"
-    }
-  ],
-  "products": [
-    {
-      "id": "1",
-      "name": "Classic White Shirt",
-      "slug": "classic-white-shirt-gucci-unisex",
-      "gender": "unisex",
-      "price": 59.99,
-      "originalPrice": 79.99,
-      "discount": 25,
-      "images": [
-        "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-      ],
-      "category": "Tops",
-      "collection": "Cavanni Wardrobe",
-      "brand": "gucci",
-      "colors": [
-        "white",
-        "black",
-        "blue"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "rating": 4.5,
-      "reviews": 128,
-      "inventory": {
-        "status": "inStock",
-        "quantity": 50,
-        "sku": "GC-SHT-001"
-      },
-      "description": "A timeless classic that pairs well with anything in your wardrobe. Made from premium cotton for maximum comfort.",
-      "createdAt": "2025-12-01T09:00:00.000Z"
-    },
-    {
-      "id": "2",
-      "name": "Slim Fit Jeans",
-      "slug": "slim-fit-jeans-nike-men",
-      "gender": "men",
-      "price": 89.99,
-      "originalPrice": 109.99,
-      "discount": 18,
-      "images": [
-        "https://images.unsplash.com/photo-1542272604-787c3835535d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1542272604-787c3835535d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1542272604-787c3835535d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1542272604-787c3835535d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-      ],
-      "category": "Pants",
-      "collection": "Cavanni Wardrobe",
-      "brand": "nike",
-      "colors": [
-        "blue",
-        "black"
-      ],
-      "sizes": [
-        "28",
-        "30",
-        "32",
-        "34",
-        "36"
-      ],
-      "rating": 4.3,
-      "reviews": 215,
-      "inventory": {
-        "status": "inStock",
-        "quantity": 45,
-        "sku": "NK-JEAN-002"
-      },
-      "description": "Slim fit jeans that offer both comfort and style. Perfect for any casual occasion.",
-      "createdAt": "2025-12-02T10:15:00.000Z"
-    },
-    {
-      "id": "3",
-      "name": "Oversized Blazer",
-      "slug": "oversized-blazer-versace-women",
-      "gender": "women",
-      "price": 129.99,
-      "originalPrice": 159.99,
-      "discount": 19,
-      "images": [
-        "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-      ],
-      "category": "Tops",
-      "collection": "Exclusive Collections",
-      "brand": "versace",
-      "colors": [
-        "black",
-        "beige",
-        "gray"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L"
-      ],
-      "rating": 4.7,
-      "reviews": 89,
-      "inventory": {
-        "status": "inStock",
-        "quantity": 15,
-        "sku": "VS-BLZ-003"
-      },
-      "description": "Make a statement with this elegant oversized blazer. Perfect for both office and evening wear.",
-      "createdAt": "2025-12-03T11:20:00.000Z"
-    },
-    {
-      "id": "4",
-      "name": "Knit Sweater",
-      "slug": "knit-sweater-rolex-unisex",
-      "gender": "unisex",
-      "price": 79.99,
-      "originalPrice": 99.99,
-      "discount": 20,
-      "images": [
-        "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-      ],
-      "category": "Tops",
-      "collection": "Cavanni Wardrobe",
-      "brand": "rolex",
-      "colors": [
-        "beige",
-        "brown",
-        "gray"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "rating": 4.6,
-      "reviews": 176,
-      "inventory": {
-        "status": "inStock",
-        "quantity": 30,
-        "sku": "RX-SWT-004"
-      },
-      "description": "Stay cozy and stylish with this soft knit sweater. Perfect for the colder months.",
-      "createdAt": "2025-12-04T14:40:00.000Z"
-    },
-    {
-      "id": "5",
-      "name": "Leather Crossbody Bag",
-      "slug": "leather-crossbody-bag-fendi-women",
-      "gender": "women",
-      "price": 149.99,
-      "originalPrice": 179.99,
-      "discount": 17,
-      "images": [
-        "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-      ],
-      "category": "Accessories",
-      "collection": "Exclusive Collections",
-      "brand": "fendi",
-      "colors": [
-        "black",
-        "brown",
-        "tan"
-      ],
-      "sizes": [
-        "One Size"
-      ],
-      "rating": 4.8,
-      "reviews": 243,
-      "inventory": {
-        "status": "inStock",
-        "quantity": 10,
-        "sku": "FD-BAG-005"
-      },
-      "description": "A versatile leather crossbody bag that complements any outfit. Perfect for everyday use.",
-      "createdAt": "2025-12-05T16:55:00.000Z"
-    },
-    {
-      "id": "6",
-      "name": "High-Waisted Trousers",
-      "slug": "high-waisted-trousers-burberry-unisex",
-      "gender": "unisex",
-      "price": 69.99,
-      "originalPrice": 89.99,
-      "discount": 22,
-      "images": [
-        "https://images.unsplash.com/photo-1573891960643-6af2f2121783?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1573891960643-6af2f2121783?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1573891960643-6af2f2121783?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1573891960643-6af2f2121783?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-      ],
-      "category": "Pants",
-      "collection": "Cavanni Wardrobe",
-      "brand": "burberry",
-      "colors": [
-        "black",
-        "beige",
-        "navy"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "rating": 4.4,
-      "reviews": 132,
-      "inventory": {
-        "status": "inStock",
-        "quantity": 25,
-        "sku": "BB-TRS-006"
-      },
-      "description": "Elegant high-waisted trousers that offer both comfort and sophistication.",
-      "createdAt": "2025-12-06T09:12:00.000Z"
-    },
-    {
-      "id": "7",
-      "name": "Wide-Leg Jumpsuit",
-      "slug": "wide-leg-jumpsuit-gucci-women",
-      "gender": "women",
-      "price": 119.99,
-      "originalPrice": 149.99,
-      "discount": 20,
-      "images": [
-        "https://images.unsplash.com/photo-1534215754734-18e55d13e021?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1534215754734-18e55d13e021?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1534215754734-18e55d13e021?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1534215754734-18e55d13e021?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-      ],
-      "category": "Dress",
-      "collection": "Exclusive Collections",
-      "brand": "gucci",
-      "colors": [
-        "black",
-        "navy",
-        "olive"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L"
-      ],
-      "rating": 4.7,
-      "reviews": 98,
-      "inventory": {
-        "status": "inStock",
-        "quantity": 12,
-        "sku": "GC-JMP-007"
-      },
-      "description": "Effortlessly stylish wide-leg jumpsuit for any occasion.",
-      "createdAt": "2025-12-07T12:30:00.000Z"
-    },
-    {
-      "id": "8",
-      "name": "Basic T-Shirt",
-      "slug": "basic-tshirt-carter-men",
-      "gender": "men",
-      "price": 19.99,
-      "originalPrice": 29.99,
-      "discount": 33,
-      "images": [
-        "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-      ],
-      "category": "Tops",
-      "collection": "Cavanni Wardrobe",
-      "brand": "carter",
-      "colors": [
-        "white",
-        "black",
-        "gray"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "rating": 2.1,
-      "reviews": 45,
-      "inventory": {
-        "status": "inStock",
-        "quantity": 100,
-        "sku": "CT-TSH-008"
-      },
-      "description": "Basic cotton t-shirt that fits well but may shrink after washing.",
-      "createdAt": "2025-12-08T15:20:00.000Z"
-    },
-    {
-      "id": "9",
-      "name": "Casual Denim Shorts",
-      "slug": "casual-denim-shorts-nike-unisex",
-      "gender": "unisex",
-      "price": 34.99,
-      "originalPrice": 44.99,
-      "discount": 22,
-      "images": [
-        "https://images.unsplash.com/photo-1600978257452-c6f315b8a668?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1600978257452-c6f315b8a668?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1600978257452-c6f315b8a668?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1600978257452-c6f315b8a668?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-      ],
-      "category": "Pants",
-      "collection": "Cavanni Wardrobe",
-      "brand": "nike",
-      "colors": [
-        "blue",
-        "black"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L"
-      ],
-      "rating": 2.8,
-      "reviews": 67,
-      "inventory": {
-        "status": "inStock",
-        "quantity": 40,
-        "sku": "NK-SRT-009"
-      },
-      "description": "Casual denim shorts, comfortable but may fade after several washes.",
-      "createdAt": "2025-12-09T10:05:00.000Z"
-    },
-    {
-      "id": "10",
-      "name": "Canvas Sneakers",
-      "slug": "canvas-sneakers-versace-unisex",
-      "gender": "unisex",
-      "price": 45.99,
-      "originalPrice": 59.99,
-      "discount": 23,
-      "images": [
-        "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-      ],
-      "category": "Footwear",
-      "collection": "Exclusive Collections",
-      "brand": "versace",
-      "colors": [
-        "white",
-        "black"
-      ],
-      "sizes": [
-        "7",
-        "8",
-        "9",
-        "10",
-        "11"
-      ],
-      "rating": 2.8,
-      "reviews": 63,
-      "inventory": {
-        "status": "inStock",
-        "quantity": 60,
-        "sku": "VS-SNK-010"
-      },
-      "description": "Affordable canvas sneakers that wear out quickly with regular use.",
-      "createdAt": "2025-12-10T14:45:00.000Z"
-    },
-    {
-      "id": "11",
-      "name": "Knit Beanie",
-      "slug": "knit-beanie-rolex-unisex",
-      "gender": "unisex",
-      "price": 14.99,
-      "discount": 25,
-      "images": [
-        "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-      ],
-      "category": "Accessories",
-      "collection": "Cavanni Wardrobe",
-      "brand": "rolex",
-      "colors": [
-        "black",
-        "gray",
-        "navy"
-      ],
-      "sizes": [
-        "One Size"
-      ],
-      "rating": 1.8,
-      "reviews": 31,
-      "inventory": {
-        "status": "inStock",
-        "quantity": 150,
-        "sku": "RX-HET-011"
-      },
-      "description": "Basic knit beanie, some customers found it to be too small or not as warm as expected.",
-      "createdAt": "2025-12-11T08:30:00.000Z"
-    },
-    {
-      "id": "12",
-      "name": "Denim Jacket",
-      "slug": "denim-jacket-fendi-unisex",
-      "gender": "unisex",
-      "price": 79.99,
-      "originalPrice": 99.99,
-      "discount": 20,
-      "images": [
-        "https://images.unsplash.com/photo-1551028719-00167d1e1beb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1551028719-00167d1e1beb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1551028719-00167d1e1beb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1551028719-00167d1e1beb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-      ],
-      "category": "Outerwear",
-      "collection": "Exclusive Collections",
-      "brand": "fendi",
-      "colors": [
-        "blue",
-        "black"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "rating": 2.2,
-      "reviews": 47,
-      "inventory": {
-        "status": "inStock",
-        "quantity": 20,
-        "sku": "FD-JKT-012"
-      },
-      "description": "Classic denim jacket with some reported issues with zipper and buttons.",
-      "createdAt": "2025-12-12T13:45:00.000Z"
-    },
-    {
-      "id": "13",
-      "name": "Plaid Scarf",
-      "slug": "plaid-scarf-burberry-unisex",
-      "gender": "unisex",
-      "price": 24.99,
-      "discount": 17,
-      "images": [
-        "https://images.unsplash.com/photo-1576566588028-4147f3842f27?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1576566588028-4147f3842f27?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1576566588028-4147f3842f27?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1576566588028-4147f3842f27?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-      ],
-      "category": "Accessories",
-      "collection": "Exclusive Collections",
-      "brand": "burberry",
-      "colors": [
-        "red/black",
-        "blue/black",
-        "green/black"
-      ],
-      "sizes": [
-        "One Size"
-      ],
-      "rating": 2.7,
-      "reviews": 52,
-      "inventory": {
-        "status": "lowStock",
-        "quantity": 5,
-        "sku": "BB-SCF-013"
-      },
-      "description": "Warm plaid scarf, some customers found the material to be scratchy.",
-      "createdAt": "2025-12-13T10:30:00.000Z"
-    },
-    {
-      "id": "14",
-      "name": "Cargo Pants",
-      "slug": "cargo-pants-gucci-men",
-      "gender": "men",
-      "price": 54.99,
-      "originalPrice": 64.99,
-      "discount": 15,
-      "images": [
-        "https://images.unsplash.com/photo-1542272604-787c3835535d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1542272604-787c3835535d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1542272604-787c3835535d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1542272604-787c3835535d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-      ],
-      "category": "Pants",
-      "collection": "Cavanni Wardrobe",
-      "brand": "gucci",
-      "colors": [
-        "khaki",
-        "olive",
-        "black"
-      ],
-      "sizes": [
-        "30",
-        "32",
-        "34",
-        "36"
-      ],
-      "rating": 2,
-      "reviews": 36,
-      "inventory": {
-        "status": "inStock",
-        "quantity": 35,
-        "sku": "GC-CRG-014"
-      },
-      "description": "Utility cargo pants with some reported fit and durability issues.",
-      "createdAt": "2025-12-14T15:20:00.000Z"
-    },
-    {
-      "id": "15",
-      "name": "Graphic Tee",
-      "slug": "graphic-tee-carter-men",
-      "gender": "men",
-      "price": 24.99,
-      "discount": 29,
-      "images": [
-        "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-      ],
-      "category": "Tops",
-      "collection": "Cavanni Wardrobe",
-      "brand": "carter",
-      "colors": [
-        "white",
-        "black",
-        "gray"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L"
-      ],
-      "rating": 1.9,
-      "reviews": 29,
-      "inventory": {
-        "status": "inStock",
-        "quantity": 80,
-        "sku": "CT-GRP-015"
-      },
-      "description": "Basic graphic t-shirt with some reports of print fading quickly after washing.",
-      "createdAt": "2025-12-15T11:30:00.000Z"
-    },
-    {
-      "id": "16",
-      "name": "Ankle Socks",
-      "slug": "ankle-socks-nike-unisex",
-      "gender": "unisex",
-      "price": 9.99,
-      "discount": 23,
-      "images": [
-        "https://images.unsplash.com/photo-1589674781759-8d68fefbcafd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1589674781759-8d68fefbcafd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1589674781759-8d68fefbcafd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1589674781759-8d68fefbcafd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-      ],
-      "category": "Accessories",
-      "collection": "Cavanni Wardrobe",
-      "brand": "nike",
-      "colors": [
-        "white",
-        "black",
-        "gray"
-      ],
-      "sizes": [
-        "One Size"
-      ],
-      "rating": 2.4,
-      "reviews": 41,
-      "inventory": {
-        "status": "inStock",
-        "quantity": 200,
-        "sku": "NK-SCK-016"
-      },
-      "description": "Pack of 3 ankle socks that may lose elasticity after a few washes.",
-      "createdAt": "2025-12-16T10:10:00.000Z"
-    },
-    {
-      "id": "17",
-      "name": "Cotton Tank Top",
-      "slug": "cotton-tank-top-versace-women",
-      "gender": "women",
-      "price": 14.99,
-      "originalPrice": 19.99,
-      "discount": 25,
-      "images": [
-        "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-      ],
-      "category": "Tops",
-      "collection": "Exclusive Collections",
-      "brand": "versace",
-      "colors": [
-        "white",
-        "black",
-        "gray",
-        "pink"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L"
-      ],
-      "rating": 2.5,
-      "reviews": 38,
-      "inventory": {
-        "status": "inStock",
-        "quantity": 45,
-        "sku": "VS-TNK-017"
-      },
-      "description": "Basic cotton tank top that may lose shape after washing.",
-      "createdAt": "2025-12-17T12:45:00.000Z"
-    },
-    {
-      "id": "18",
-      "name": "Premium Leather Jacket",
-      "slug": "premium-leather-jacket-rolex-men",
-      "gender": "men",
-      "price": 349.99,
-      "originalPrice": 399.99,
-      "discount": 13,
-      "images": [
-        "https://images.unsplash.com/photo-1551028719-00167d1e1beb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1551028719-00167d1e1beb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1551028719-00167d1e1beb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1551028719-00167d1e1beb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-      ],
-      "category": "Outerwear",
-      "collection": "Cavanni Wardrobe",
-      "brand": "rolex",
-      "colors": [
-        "black",
-        "brown"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "rating": 4.8,
-      "reviews": 187,
-      "inventory": {
-        "status": "inStock",
-        "quantity": 8,
-        "sku": "RX-LTH-018"
-      },
-      "description": "Handcrafted premium leather jacket with a perfect fit. The leather softens beautifully with wear.",
-      "createdAt": "2025-12-18T16:20:00.000Z"
-    },
-    {
-      "id": "19",
-      "name": "Designer Handbag",
-      "slug": "designer-handbag-fendi-women",
-      "gender": "women",
-      "price": 299.99,
-      "originalPrice": 349.99,
-      "discount": 14,
-      "images": [
-        "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-      ],
-      "category": "Accessories",
-      "collection": "Exclusive Collections",
-      "brand": "fendi",
-      "colors": [
-        "black",
-        "brown",
-        "navy"
-      ],
-      "sizes": [
-        "One Size"
-      ],
-      "rating": 4.7,
-      "reviews": 243,
-      "inventory": {
-        "status": "inStock",
-        "quantity": 5,
-        "sku": "FD-HBG-019"
-      },
-      "description": "Elegant designer handbag with multiple compartments and premium hardware.",
-      "createdAt": "2025-12-19T10:45:00.000Z"
-    },
-    {
-      "id": "20",
-      "name": "Wool Overcoat",
-      "slug": "wool-overcoat-burberry-unisex",
-      "gender": "unisex",
-      "price": 279.99,
-      "originalPrice": 329.99,
-      "discount": 15,
-      "images": [
-        "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-      ],
-      "category": "Outerwear",
-      "collection": "Cavanni Wardrobe",
-      "brand": "burberry",
-      "colors": [
-        "black",
-        "gray",
-        "camel"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "rating": 4.6,
-      "reviews": 156,
-      "inventory": {
-        "status": "inStock",
-        "quantity": 10,
-        "sku": "BB-OVC-020"
-      },
-      "description": "Classic wool overcoat with a tailored fit. The high-quality wool blend provides excellent warmth.",
-      "createdAt": "2025-12-20T11:15:00.000Z"
-    },
-    {
-      "id": "21",
-      "name": "Silk Blouse",
-      "slug": "silk-blouse-gucci-women",
-      "gender": "women",
-      "price": 129.99,
-      "originalPrice": 159.99,
-      "discount": 19,
-      "images": [
-        "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-      ],
-      "category": "Tops",
-      "collection": "Exclusive Collections",
-      "brand": "gucci",
-      "colors": [
-        "white",
-        "black",
-        "blush"
-      ],
-      "sizes": [
-        "XS",
-        "S",
-        "M",
-        "L"
-      ],
-      "rating": 4.5,
-      "reviews": 178,
-      "inventory": {
-        "status": "inStock",
-        "quantity": 15,
-        "sku": "GC-BLS-021"
-      },
-      "description": "Elegant silk blouse with a flattering cut. The lightweight fabric drapes beautifully.",
-      "createdAt": "2025-12-21T09:30:00.000Z"
-    },
-    {
-      "id": "22",
-      "name": "Suede Boots",
-      "slug": "suede-boots-carter-unisex",
-      "gender": "unisex",
-      "price": 189.99,
-      "originalPrice": 229.99,
-      "discount": 17,
-      "images": [
-        "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-      ],
-      "category": "Footwear",
-      "collection": "Cavanni Wardrobe",
-      "brand": "carter",
-      "colors": [
-        "brown",
-        "black",
-        "taupe"
-      ],
-      "sizes": [
-        "6",
-        "7",
-        "8",
-        "9",
-        "10"
-      ],
-      "rating": 4.8,
-      "reviews": 267,
-      "inventory": {
-        "status": "inStock",
-        "quantity": 18,
-        "sku": "CT-BTS-022"
-      },
-      "description": "Stylish suede boots with a comfortable block heel.",
-      "createdAt": "2025-12-22T14:45:00.000Z"
-    },
-    {
-      "id": "23",
-      "name": "Linen Suit",
-      "slug": "linen-suit-nike-men",
-      "gender": "men",
-      "price": 299.99,
-      "originalPrice": 349.99,
-      "discount": 14,
-      "images": [
-        "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-      ],
-      "category": "Suits",
-      "collection": "Exclusive Collections",
-      "brand": "nike",
-      "colors": [
-        "beige",
-        "light gray",
-        "navy"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "rating": 4.4,
-      "reviews": 132,
-      "inventory": {
-        "status": "inStock",
-        "quantity": 6,
-        "sku": "NK-SUT-023"
-      },
-      "description": "Breathable linen suit perfect for warm weather.",
-      "createdAt": "2025-12-23T11:20:00.000Z"
-    },
-    {
-      "id": "24",
-      "name": "Silk Gown",
-      "slug": "silk-gown-haute-couture-gucci",
-      "gender": "women",
-      "price": 450,
-      "originalPrice": 600,
-      "discount": 25,
-      "images": [
-        "https://images.unsplash.com/photo-1534215754734-18e55d13e021?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1534215754734-18e55d13e021?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1534215754734-18e55d13e021?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1534215754734-18e55d13e021?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-      ],
-      "category": "Dress",
-      "collection": "Haute Couture",
-      "brand": "gucci",
-      "colors": [
-        "gold",
-        "black"
-      ],
-      "sizes": [
-        "S",
-        "M"
-      ],
-      "rating": 4.9,
-      "reviews": 12,
-      "inventory": {
-        "status": "lowStock",
-        "quantity": 2,
-        "sku": "GC-H-024"
-      },
-      "description": "Exquisite silk gown for special occasions.",
-      "createdAt": "2025-12-24T18:30:00.000Z"
-    },
-    {
-      "id": "25",
-      "name": "Bespoke Tuxedo",
-      "slug": "bespoke-tuxedo-haute-couture-versace",
-      "gender": "men",
-      "price": 850,
-      "originalPrice": 1200,
-      "discount": 29,
-      "images": [
-        "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-      ],
-      "category": "Suits",
-      "collection": "Haute Couture",
-      "brand": "versace",
-      "colors": [
-        "midnight black"
-      ],
-      "sizes": [
-        "M",
-        "L",
-        "XL"
-      ],
-      "rating": 5,
-      "reviews": 8,
-      "inventory": {
-        "status": "lowStock",
-        "quantity": 1,
-        "sku": "VS-H-025"
-      },
-      "description": "Hand-stitched tuxedo of unmatched quality.",
-      "createdAt": "2025-12-25T20:15:00.000Z"
-    },
-    {
-      "id": "26",
-      "name": "Velvet Evening Gown",
-      "slug": "velvet-gown-haute-couture-fendi",
-      "gender": "women",
-      "price": 620,
-      "originalPrice": 900,
-      "discount": 31,
-      "images": [
-        "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-      ],
-      "category": "Dress",
-      "collection": "Haute Couture",
-      "brand": "fendi",
-      "colors": [
-        "emerald",
-        "ruby"
-      ],
-      "sizes": [
-        "S",
-        "M"
-      ],
-      "rating": 4.8,
-      "reviews": 15,
-      "inventory": {
-        "status": "lowStock",
-        "quantity": 3,
-        "sku": "FD-H-026"
-      },
-      "description": "Luxurious velvet gown with intricate details.",
-      "createdAt": "2025-12-26T14:40:00.000Z"
-    },
-    {
-      "id": "27",
-      "name": "Embroidered Cape",
-      "slug": "embroidered-cape-haute-couture-burberry",
-      "gender": "unisex",
-      "price": 340,
-      "originalPrice": 500,
-      "discount": 32,
-      "images": [
-        "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-      ],
-      "category": "Outerwear",
-      "collection": "Haute Couture",
-      "brand": "burberry",
-      "colors": [
-        "gold",
-        "cream"
-      ],
-      "sizes": [
-        "One Size"
-      ],
-      "rating": 4.9,
-      "reviews": 5,
-      "inventory": {
-        "status": "inStock",
-        "quantity": 5,
-        "sku": "BB-H-027"
-      },
-      "description": "Stunning embroidered cape for a unique silhouette.",
-      "createdAt": "2025-12-27T10:15:00.000Z"
-    }
-  ],
-  "categories": [
-    {
-      "name": "Accessories",
-      "id": "660b"
-    },
-    {
-      "name": "Tops",
-      "id": "b16b"
-    },
-    {
-      "name": "Pants",
-      "id": "bb87"
-    },
-    {
-      "name": "Dress",
-      "id": "b4cd"
-    },
-    {
-      "name": "Cavanni Wardrobe",
-      "id": "6b06"
-    },
-    {
-      "name": "Exclusive Collections",
-      "id": "cb8e"
-    }
-  ],
-  "brands": [
-    {
-      "name": "gucci",
-      "id": "ced1"
-    },
-    {
-      "name": "carter",
-      "id": "018a"
-    },
-    {
-      "name": "nike",
-      "id": "ec79"
-    },
-    {
-      "name": "versace",
-      "id": "72d7"
-    },
-    {
-      "name": "rolex",
-      "id": "3a3f"
-    },
-    {
-      "name": "fendi",
-      "id": "73cd"
-    },
-    {
-      "name": "burberry",
-      "id": "39fa"
-    }
-  ],
-  "blogs": [
-    {
-      "id": "1",
-      "title": "2023 FALL FASHION GUIDE: MUST-HAVE TRENDS",
-      "image": "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-      "tags": [
-        "#Trending",
-        "#Outfits",
-        "#FashionWeek"
-      ],
-      "date": "2 days ago",
-      "excerpt": "Discover the top trends dominating the fashion scene this fall...",
-      "views": 1245,
-      "likes": 342
-    },
-    {
-      "id": "2",
-      "title": "10 ESSENTIAL ACCESSORIES TO ELEVATE YOUR WARDROBE",
-      "image": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-      "tags": [
-        "#Accessories",
-        "#StyleTips",
-        "#Luxury"
-      ],
-      "date": "5 days ago",
-      "excerpt": "Transform any outfit with these statement accessories...",
-      "views": 987,
-      "likes": 256
-    },
-    {
-      "id": "3",
-      "title": "SUSTAINABLE FASHION: BRANDS MAKING A DIFFERENCE",
-      "image": "https://images.unsplash.com/photo-1485462537746-965f33f7f6a7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-      "tags": [
-        "#Sustainable",
-        "#EcoFriendly",
-        "#EthicalFashion"
-      ],
-      "date": "1 week ago",
-      "excerpt": "Discover fashion brands that are changing the industry...",
-      "views": 1567,
-      "likes": 421
-    },
-    {
-      "id": "4",
-      "title": "THE ULTIMATE DENIM GUIDE: FINDING YOUR PERFECT FIT",
-      "image": "https://images.unsplash.com/photo-1542272604-787c3835535d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-      "tags": [
-        "#Denim",
-        "#StyleGuide",
-        "#FashionTips"
-      ],
-      "date": "2 weeks ago",
-      "excerpt": "Everything you need to know about finding jeans that fit perfectly...",
-      "views": 2043,
-      "likes": 532
-    },
-    {
-      "id": "5",
-      "title": "LUXURY WATCHES: TIMELESS PIECES FOR EVERY STYLE",
-      "image": "https://images.unsplash.com/photo-1523170335258-f5ed11844a49?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-      "tags": [
-        "#Luxury",
-        "#Watches",
-        "#Accessories"
-      ],
-      "date": "3 weeks ago",
-      "excerpt": "Explore the most coveted timepieces of the season...",
-      "views": 1876,
-      "likes": 498
-    },
-    {
-      "id": "6",
-      "title": "STREET STYLE INSPIRATION FROM FASHION WEEKS",
-      "image": "https://images.unsplash.com/photo-1485462537746-965f33f7f6a7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-      "tags": [
-        "#StreetStyle",
-        "#FashionWeek",
-        "#Trending"
-      ],
-      "date": "1 month ago",
-      "excerpt": "The best street style looks from fashion capitals around the world...",
-      "views": 2310,
-      "likes": 678
-    },
-    {
-      "id": "7",
-      "title": "SUSTAINABLE FASHION: BRANDS MAKING A DIFFERENCE",
-      "image": "https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-      "tags": [
-        "#Sustainable",
-        "#EcoFriendly",
-        "#EthicalFashion"
-      ],
-      "date": "3 weeks ago",
-      "excerpt": "Discover fashion brands that are leading the way in sustainability and ethical production...",
-      "views": 1890,
-      "likes": 423
-    },
-    {
-      "id": "8",
-      "title": "THE ART OF LAYERING: WINTER STYLE GUIDE",
-      "image": "https://images.unsplash.com/photo-1485965373059-f07aacff3d26?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-      "tags": [
-        "#WinterFashion",
-        "#Layering",
-        "#StyleGuide"
-      ],
-      "date": "1 month ago",
-      "excerpt": "Master the art of layering with these essential winter fashion tips and tricks...",
-      "views": 2450,
-      "likes": 567
-    },
-    {
-      "id": "9",
-      "title": "VINTAGE FASHION: HOW TO SHOP AND STYLE",
-      "image": "https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-      "tags": [
-        "#Vintage",
-        "#Thrifting",
-        "#RetroStyle"
-      ],
-      "date": "2 months ago",
-      "excerpt": "A complete guide to finding and styling vintage fashion pieces like a pro...",
-      "views": 2100,
-      "likes": 489
-    },
-    {
-      "id": "10",
-      "title": "LUXURY STAPLES: INVESTMENT PIECES WORTH THE SPLURGE",
-      "image": "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-      "tags": [
-        "#Luxury",
-        "#InvestmentPieces",
-        "#FashionEssentials"
-      ],
-      "date": "2 weeks ago",
-      "excerpt": "These luxury fashion pieces are worth the investment for your timeless wardrobe...",
-      "views": 1780,
-      "likes": 512
-    }
-  ]
+    ],
+    "categories": [
+        {
+            "name": "Accessories",
+            "id": "660b"
+        },
+        {
+            "name": "Tops",
+            "id": "b16b"
+        },
+        {
+            "name": "Pants",
+            "id": "bb87"
+        },
+        {
+            "name": "Dress",
+            "id": "b4cd"
+        }
+    ],
+    "brands": [
+        {
+            "name": "gucci",
+            "id": "ced1"
+        },
+        {
+            "name": "carter",
+            "id": "018a"
+        },
+        {
+            "name": "nike",
+            "id": "ec79"
+        },
+        {
+            "name": "versace",
+            "id": "72d7"
+        },
+        {
+            "name": "rolex",
+            "id": "3a3f"
+        },
+        {
+            "name": "fendi",
+            "id": "73cd"
+        },
+        {
+            "name": "burberry",
+            "id": "39fa"
+        }
+    ],
+    "blogs": [
+        {
+            "id": "1",
+            "title": "2023 FALL FASHION GUIDE: MUST-HAVE TRENDS",
+            "image": "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+            "tags": [
+                "#Trending",
+                "#Outfits",
+                "#FashionWeek"
+            ],
+            "date": "2 days ago",
+            "excerpt": "Discover the top trends dominating the fashion scene this fall...",
+            "views": 1245,
+            "likes": 342
+        },
+        {
+            "id": "2",
+            "title": "10 ESSENTIAL ACCESSORIES TO ELEVATE YOUR WARDROBE",
+            "image": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+            "tags": [
+                "#Accessories",
+                "#StyleTips",
+                "#Luxury"
+            ],
+            "date": "5 days ago",
+            "excerpt": "Transform any outfit with these statement accessories...",
+            "views": 987,
+            "likes": 256
+        },
+        {
+            "id": "3",
+            "title": "SUSTAINABLE FASHION: BRANDS MAKING A DIFFERENCE",
+            "image": "https://images.unsplash.com/photo-1485462537746-965f33f7f6a7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+            "tags": [
+                "#Sustainable",
+                "#EcoFriendly",
+                "#EthicalFashion"
+            ],
+            "date": "1 week ago",
+            "excerpt": "Discover fashion brands that are changing the industry...",
+            "views": 1567,
+            "likes": 421
+        },
+        {
+            "id": "4",
+            "title": "THE ULTIMATE DENIM GUIDE: FINDING YOUR PERFECT FIT",
+            "image": "https://images.unsplash.com/photo-1542272604-787c3835535d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+            "tags": [
+                "#Denim",
+                "#StyleGuide",
+                "#FashionTips"
+            ],
+            "date": "2 weeks ago",
+            "excerpt": "Everything you need to know about finding jeans that fit perfectly...",
+            "views": 2043,
+            "likes": 532
+        },
+        {
+            "id": "5",
+            "title": "LUXURY WATCHES: TIMELESS PIECES FOR EVERY STYLE",
+            "image": "https://images.unsplash.com/photo-1523170335258-f5ed11844a49?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+            "tags": [
+                "#Luxury",
+                "#Watches",
+                "#Accessories"
+            ],
+            "date": "3 weeks ago",
+            "excerpt": "Explore the most coveted timepieces of the season...",
+            "views": 1876,
+            "likes": 498
+        },
+        {
+            "id": "6",
+            "title": "STREET STYLE INSPIRATION FROM FASHION WEEKS",
+            "image": "https://images.unsplash.com/photo-1485462537746-965f33f7f6a7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+            "tags": [
+                "#StreetStyle",
+                "#FashionWeek",
+                "#Trending"
+            ],
+            "date": "1 month ago",
+            "excerpt": "The best street style looks from fashion capitals around the world...",
+            "views": 2310,
+            "likes": 678
+        },
+        {
+            "id": "7",
+            "title": "SUSTAINABLE FASHION: BRANDS MAKING A DIFFERENCE",
+            "image": "https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+            "tags": [
+                "#Sustainable",
+                "#EcoFriendly",
+                "#EthicalFashion"
+            ],
+            "date": "3 weeks ago",
+            "excerpt": "Discover fashion brands that are leading the way in sustainability and ethical production...",
+            "views": 1890,
+            "likes": 423
+        },
+        {
+            "id": "8",
+            "title": "THE ART OF LAYERING: WINTER STYLE GUIDE",
+            "image": "https://images.unsplash.com/photo-1485965373059-f07aacff3d26?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+            "tags": [
+                "#WinterFashion",
+                "#Layering",
+                "#StyleGuide"
+            ],
+            "date": "1 month ago",
+            "excerpt": "Master the art of layering with these essential winter fashion tips and tricks...",
+            "views": 2450,
+            "likes": 567
+        },
+        {
+            "id": "9",
+            "title": "VINTAGE FASHION: HOW TO SHOP AND STYLE",
+            "image": "https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+            "tags": [
+                "#Vintage",
+                "#Thrifting",
+                "#RetroStyle"
+            ],
+            "date": "2 months ago",
+            "excerpt": "A complete guide to finding and styling vintage fashion pieces like a pro...",
+            "views": 2100,
+            "likes": 489
+        },
+        {
+            "id": "10",
+            "title": "LUXURY STAPLES: INVESTMENT PIECES WORTH THE SPLURGE",
+            "image": "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+            "tags": [
+                "#Luxury",
+                "#InvestmentPieces",
+                "#FashionEssentials"
+            ],
+            "date": "2 weeks ago",
+            "excerpt": "These luxury fashion pieces are worth the investment for your timeless wardrobe...",
+            "views": 1780,
+            "likes": 512
+        }
+    ]
 }

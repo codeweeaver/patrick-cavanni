@@ -1,69 +1,88 @@
-import { AnimatePresence, motion } from "framer-motion";
-import { useEffect } from "react";
-import { createPortal } from "react-dom";
-import { FiX } from "react-icons/fi";
+import { AnimatePresence, motion } from 'framer-motion';
+import { useEffect, useId } from 'react';
+import { createPortal } from 'react-dom';
+import { FiX } from 'react-icons/fi';
 
 const Modal = ({ isOpen, onClose, title, children, footer }) => {
-  // Prevent body scroll when modal is open
+  const titleId = useId();
+
+  // Handle side-effects when modal is open/closed
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
-    }
-    return () => {
-      document.body.style.overflow = "unset";
+    const handleEscape = (event) => {
+      if (event.key === 'Escape') {
+        onClose();
+      }
     };
-  }, [isOpen]);
+
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+      document.addEventListener('keydown', handleEscape);
+    }
+
+    return () => {
+      document.body.style.overflow = 'unset';
+      document.removeEventListener('keydown', handleEscape);
+    };
+  }, [isOpen, onClose]);
 
   return createPortal(
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
           className="fixed inset-0 z-50 flex items-center justify-center p-4"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby={titleId}
         >
           {/* Backdrop */}
-          <div
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2, ease: 'easeOut' }}
             onClick={onClose}
             className="absolute inset-0 bg-black/50 backdrop-blur-sm"
           />
 
           {/* Modal Content */}
           <motion.div
-            initial={{ scale: 0.95, y: 20 }}
-            animate={{ scale: 1, y: 0 }}
-            exit={{ scale: 0.95, y: 20 }}
-            className="relative bg-white w-full max-w-md rounded-xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]"
+            initial={{ scale: 0.95, y: 20, opacity: 0 }}
+            animate={{ scale: 1, y: 0, opacity: 1 }}
+            exit={{ scale: 0.95, y: 20, opacity: 0 }}
+            transition={{ duration: 0.2, ease: 'easeOut' }}
+            className="relative flex max-h-[90vh] w-full max-w-md flex-col overflow-hidden rounded-xl bg-white shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header */}
-            <div className="flex items-center justify-between p-6 border-b border-gray-100">
-              <h3 className="text-xl font-bold text-gray-900">{title}</h3>
-              <button
-                onClick={onClose}
-                className="p-2 hover:bg-gray-100 rounded-full transition-colors text-gray-500 hover:text-gray-700"
-              >
-                <FiX className="w-5 h-5" />
-              </button>
-            </div>
+            {title && (
+              <div className="flex items-center justify-between border-b p-6 pr-12">
+                <h3 id={titleId} className="text-xl font-bold text-gray-900">
+                  {title}
+                </h3>
+              </div>
+            )}
+
+            {/* Close Button */}
+            <button
+              onClick={onClose}
+              className="absolute top-4 right-4 z-10 rounded-full p-2 text-gray-500 transition-colors hover:bg-gray-100 hover:text-gray-700"
+              aria-label="Close modal"
+            >
+              <FiX className="h-5 w-5" />
+            </button>
 
             {/* Body */}
-            <div className="p-6 overflow-y-auto">{children}</div>
+            <div className="overflow-y-auto p-6">{children}</div>
 
             {/* Footer */}
             {footer && (
-              <div className="p-6 border-t border-gray-100 bg-gray-50 flex justify-end gap-3">
-                {footer}
-              </div>
+              <div className="flex justify-end gap-3 border-t bg-gray-50 p-6">{footer}</div>
             )}
           </motion.div>
         </motion.div>
       )}
     </AnimatePresence>,
-    document.body
+    document.body,
   );
 };
 

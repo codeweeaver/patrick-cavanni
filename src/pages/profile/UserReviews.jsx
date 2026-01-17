@@ -1,4 +1,4 @@
-import AnimatedPage from "../../components/global/AnimatedPage";
+import AnimatedPage from '../../components/global/AnimatedPage';
 
 const UserReviews = () => {
   return (

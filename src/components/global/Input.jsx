@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useId } from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
 import { PhoneInput } from 'react-international-phone';
@@ -36,7 +36,9 @@ export const Input = ({
   className,
   options = [],
   isCountry = false,
+  errorClass,
   country,
+  disabled,
   ...props
 }) => {
   const generatedId = useId();
@@ -63,7 +65,7 @@ export const Input = ({
   );
 
   return (
-    <div className={className || 'flex w-full flex-col'}>
+    <div className={className || 'relative flex w-full flex-col'}>
       <div className="flex justify-between">
         {label && (
           <label
@@ -73,11 +75,13 @@ export const Input = ({
             {label}
           </label>
         )}
-        <AnimatePresence mode="wait" initial={false}>
-          {isInvalid && (
-            <InputError message={inputErrors.error.message} key={inputErrors.error.message} />
-          )}
-        </AnimatePresence>
+        {isInvalid && (
+          <InputError
+            message={inputErrors.error.message}
+            key={inputErrors.error.message}
+            className={errorClass}
+          />
+        )}
       </div>
 
       <div className="relative">
@@ -120,6 +124,7 @@ export const Input = ({
                   }
                 }}
                 placeholder={placeholder}
+                isDisabled={disabled}
                 unstyled
                 classNames={{
                   control: (state) =>
@@ -159,7 +164,7 @@ export const Input = ({
                 <PhoneInput
                   key={country}
                   ref={ref}
-                  defaultCountry={country ? country.toLowerCase() : 'ng'}
+                  defaultCountry={country?.toLowerCase()}
                   value={value || ''}
                   onChange={(phone) => onChange(phone)}
                   className={`flex w-full items-center ${icon ? 'pl-10' : ''}`}

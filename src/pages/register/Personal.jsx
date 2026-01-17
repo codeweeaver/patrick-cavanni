@@ -1,10 +1,11 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import { motion } from 'framer-motion';
 import { FormProvider, useForm } from 'react-hook-form';
-import { FiMail } from 'react-icons/fi';
-import { useNavigate } from 'react-router-dom';
+import { FaGoogle } from 'react-icons/fa';
+import { FiMail, FiUser } from 'react-icons/fi';
+import { Link, useNavigate } from 'react-router-dom';
 import { Input } from '../../components/global/Input';
-import { userSchema } from '../../schema';
+import { personalSchema } from '../../schema/personalSchema';
 
 const itemVariants = {
   hidden: { y: 20, opacity: 0 },
@@ -14,21 +15,20 @@ const itemVariants = {
 const Personal = () => {
   const navigate = useNavigate();
 
-  const savedData = JSON.parse(localStorage.getItem('personalData') || '{}');
+  const savedData = JSON.parse(sessionStorage.getItem('personalData') || '{}');
 
   const methods = useForm({
     defaultValues: {
       name: savedData.name || '',
       email: savedData.email || '',
-      password: savedData.password || '',
-      confirmPassword: savedData.confirmPassword || '',
+      phone: savedData.phone || '',
     },
-    resolver: yupResolver(userSchema),
+    resolver: yupResolver(personalSchema),
   });
 
   const onSubmit = (data) => {
-    localStorage.setItem('personalData', JSON.stringify(data));
-    navigate('/register/address');
+    sessionStorage.setItem('personalData', JSON.stringify(data));
+    navigate('/register/security');
   };
 
   return (
@@ -42,7 +42,7 @@ const Personal = () => {
               type="name"
               id="name"
               placeholder="enter your full name"
-              icon={<FiMail />}
+              icon={<FiUser />}
             />
           </motion.div>
           <motion.div variants={itemVariants}>
@@ -63,7 +63,6 @@ const Personal = () => {
               label="Phone Number"
               placeholder="+123456789"
               id="phone"
-              country="ng"
             />
           </motion.div>
 
@@ -75,6 +74,28 @@ const Personal = () => {
               Continue
             </button>
           </motion.div>
+
+          <div className="relative mt-6">
+            <div className="absolute inset-0 flex items-center">
+              <div className="w-full border-t border-gray-300" />
+            </div>
+            <div className="relative flex justify-center text-sm">
+              <span className="bg-white px-2 text-gray-500">OR</span>
+            </div>
+          </div>
+
+          {/* signup with social media */}
+          <div className="mt-6 flex items-center justify-center gap-5">
+            {/* Google */}
+            <Link
+              to="/auth/google"
+              className="flex w-full items-center justify-center gap-3 rounded-lg bg-[#DB4437] px-6 py-3 text-white transition-colors hover:bg-[#c53929]"
+              aria-label="Login with Google"
+            >
+              <FaGoogle className="h-5 w-5" />
+              <span>Login with Google</span>
+            </Link>
+          </div>
         </motion.div>
       </form>
     </FormProvider>

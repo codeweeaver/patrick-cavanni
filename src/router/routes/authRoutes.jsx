@@ -5,12 +5,12 @@ import AuthLayout from '../../layouts/AuthLayout';
 import GuestGuard from '../guards/GuestGuard';
 
 // Actions & Components
-import Address from '../../pages/register/Address';
-
 const Register = lazy(() => import('../../pages/Register'));
 const Login = lazy(() => import('../../pages/Login'));
 const ForgotPassword = lazy(() => import('../../pages/ForgotPassword'));
-const AccountSecurity = lazy(() => import('../../pages/register/AccountSecurity'));
+const Personal = lazy(() => import('../../pages/register/Personal'));
+const Security = lazy(() => import('../../pages/register/Security'));
+const Address = lazy(() => import('../../pages/register/Address'));
 
 const Suspended = ({ children }) => <Suspense fallback={<LoadingSpinner />}>{children}</Suspense>;
 
@@ -33,13 +33,25 @@ export const authRoutes = [
                 index: true,
                 element: (
                   <Suspended>
-                    <AccountSecurity />
+                    <Personal />
+                  </Suspended>
+                ),
+              },
+              {
+                path: 'security',
+                element: (
+                  <Suspended>
+                    <Security />
                   </Suspended>
                 ),
               },
               {
                 path: 'address',
-                element: <Address />,
+                element: (
+                  <Suspended>
+                    <Address />
+                  </Suspended>
+                ),
               },
             ],
           },

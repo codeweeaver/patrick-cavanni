@@ -20,15 +20,25 @@ import HelpReturn from '../../pages/help/HelpReturn';
 import HelpShipping from '../../pages/help/HelpShipping';
 
 // src/router/routes/userRoutes.jsx
+import CheckoutLayout from '../../layouts/CheckoutLayout';
 import UserProfileLayout from '../../layouts/UserProfileLayout';
+import CreateAddress from '../../pages/profile/CreateAddress';
 import AuthGuard from '../guards/AuthGuard';
 
+//User Profiles Pages
 const UserOrders = lazy(() => import('../../pages/profile/UserOrders'));
 const UserSettings = lazy(() => import('../../pages/profile/UserSettings'));
 const UserWishlist = lazy(() => import('../../pages/profile/UserWishlist'));
 const UserReviews = lazy(() => import('../../pages/profile/UserReviews'));
 const UserOverview = lazy(() => import('../../pages/profile/UserOverview'));
-const UserCart = lazy(() => import('../../pages/profile/UserCart'));
+const AddressList = lazy(() => import('../../pages/profile/AddressList'));
+const EditAddress = lazy(() => import('../../pages/profile/EditAddress'));
+
+// Checkout Pages
+const Cart = lazy(() => import('../../pages/Cart'));
+const CheckoutAddresses = lazy(() => import('../../pages/checkout/CheckoutAddresses'));
+const CheckoutPayment = lazy(() => import('../../pages/checkout/CheckoutPayment'));
+const CheckoutShipping = lazy(() => import('../../pages/checkout/CheckoutShipping'));
 
 const Suspended = ({ children }) => <Suspense fallback={<LoadingSpinner />}>{children}</Suspense>;
 
@@ -96,6 +106,48 @@ export const publicRoutes = [
         element: <AuthGuard allowedRoles={['user']} />,
         children: [
           {
+            path: '/cart',
+            element: (
+              <Suspended>
+                <Cart />
+              </Suspended>
+            ),
+          },
+          {
+            path: '/checkout',
+            element: (
+              <Suspended>
+                <CheckoutLayout />
+              </Suspended>
+            ),
+            children: [
+              {
+                index: true,
+                element: (
+                  <Suspended>
+                    <CheckoutAddresses />
+                  </Suspended>
+                ),
+              },
+              {
+                path: 'shipping',
+                element: (
+                  <Suspended>
+                    <CheckoutShipping />
+                  </Suspended>
+                ),
+              },
+              {
+                path: 'payment',
+                element: (
+                  <Suspended>
+                    <CheckoutPayment />
+                  </Suspended>
+                ),
+              },
+            ],
+          },
+          {
             path: '/profile',
             element: <UserProfileLayout />,
             children: [
@@ -108,18 +160,34 @@ export const publicRoutes = [
                 ),
               },
               {
-                path: 'orders',
+                path: 'address',
                 element: (
                   <Suspended>
-                    <UserOrders />
+                    <AddressList />
                   </Suspended>
                 ),
               },
               {
-                path: 'cart',
+                path: 'address/create',
                 element: (
                   <Suspended>
-                    <UserCart />
+                    <CreateAddress />
+                  </Suspended>
+                ),
+              },
+              {
+                path: 'address/edit/:addressId',
+                element: (
+                  <Suspended>
+                    <EditAddress />
+                  </Suspended>
+                ),
+              },
+              {
+                path: 'orders',
+                element: (
+                  <Suspended>
+                    <UserOrders />
                   </Suspended>
                 ),
               },

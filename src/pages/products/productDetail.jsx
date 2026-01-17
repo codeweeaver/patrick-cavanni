@@ -32,12 +32,27 @@ const ProductDetail = () => {
     const fetchProduct = async () => {
       setLoading(true);
       try {
-        const response = await fetch(`http://localhost:3000/products/${productId}`);
-        if (!response.ok) throw new Error('Product not found');
+        const baseUrl = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+        // Try fetching by ID first
+        let response = await fetch(`${baseUrl}/products/${productId}`);
+
+        if (!response.ok) {
+          // If not found by ID, try fetching by slug
+          const slugResponse = await fetch(`${baseUrl}/products?slug=${productId}`);
+          if (slugResponse.ok) {
+            const data = await slugResponse.json();
+            if (Array.isArray(data) && data.length > 0) {
+              setProduct(data[0]);
+              return;
+            }
+          }
+          throw new Error('Product not found');
+        }
+
         const data = await response.json();
         setProduct(data);
       } catch (error) {
-        console.error(error);
+        console.error('Error fetching product:', error);
       } finally {
         setLoading(false);
       }

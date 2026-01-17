@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:3000';
+const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000';
 
 /**
  * Custom API Fetch Helper
@@ -26,19 +26,25 @@ export async function apiClient(endpoint, { body, ...customConfig } = {}) {
 
     if (!response.ok) {
       const errorData = await response.json().catch(() => ({}));
-      throw new Error(errorData.message || 'Something went wrong with the request');
+      const error = new Error(errorData.message || 'Something went wrong with the request');
+      error.status = response.status;
+      error.data = errorData;
+      throw error;
     }
 
     // json-server returns an empty object or null for 204 No Content (DELETE)
     return response.status === 204 ? {} : await response.json();
   } catch (error) {
-    console.error(`API Error: ${error.message}`);
-    return Promise.reject(error.message);
+    console.error(`API Error:`, error);
+    return Promise.reject(error);
   }
 }
 
 // Convenience methods
 apiClient.get = (endpoint, customConfig) => apiClient(endpoint, { ...customConfig, method: 'GET' });
-apiClient.post = (endpoint, body, customConfig) => apiClient(endpoint, { ...customConfig, method: 'POST', body });
-apiClient.patch = (endpoint, body, customConfig) => apiClient(endpoint, { ...customConfig, method: 'PATCH', body });
-apiClient.delete = (endpoint, customConfig) => apiClient(endpoint, { ...customConfig, method: 'DELETE' });
+apiClient.post = (endpoint, body, customConfig) =>
+  apiClient(endpoint, { ...customConfig, method: 'POST', body });
+apiClient.patch = (endpoint, body, customConfig) =>
+  apiClient(endpoint, { ...customConfig, method: 'PATCH', body });
+apiClient.delete = (endpoint, customConfig) =>
+  apiClient(endpoint, { ...customConfig, method: 'DELETE' });

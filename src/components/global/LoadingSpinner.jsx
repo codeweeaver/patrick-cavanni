@@ -1,7 +1,7 @@
-import { HashLoader } from "react-spinners";
+import { HashLoader } from 'react-spinners';
 const LoadingSpinner = () => {
   return (
-    <div className="flex items-center justify-center h-screen bg-black/50 z-50 absolute inset-0">
+    <div className="absolute inset-0 z-50 flex h-screen items-center justify-center bg-black/50">
       <HashLoader color="#c99947" cssOverride={{}} size={40} />
     </div>
   );

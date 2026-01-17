@@ -1,4 +1,4 @@
-import { isValidPhoneNumber } from 'react-phone-number-input';
+import { isValidPhoneNumber } from 'libphonenumber-js';
 import * as Yup from 'yup';
 
 export const registerSchema = Yup.object().shape({
@@ -20,9 +20,11 @@ export const registerSchema = Yup.object().shape({
     .matches(/[0-9]/, 'Must contain one number'),
 
   // This is where your snippet lives
-  confirmPassword: Yup.string()
+  comfirmPassword: Yup.string()
     .required('Please confirm your password')
     .oneOf([Yup.ref('password')], 'Passwords must match'),
+
+  terms: Yup.boolean().oneOf([true], 'You must accept the terms and conditions'),
 
   phone: Yup.string()
     .required('Phone number is required')
@@ -35,6 +37,8 @@ export const registerSchema = Yup.object().shape({
     .min(5, 'Please provide a valid street address'),
 
   city: Yup.string().required('City is required'),
+
+  state: Yup.string().required('State is required'),
 
   zipCode: Yup.string()
     .required('required')

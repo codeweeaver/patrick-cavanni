@@ -1,7 +1,8 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import { City, State } from 'country-state-city';
 import { motion } from 'framer-motion';
-import { useEffect, useMemo } from 'react';
+import parsePhoneNumber from 'libphonenumber-js';
+import { useEffect, useMemo, useRef } from 'react';
 import { FormProvider, useForm, useWatch } from 'react-hook-form';
 import toast from 'react-hot-toast';
 import { FiFlag, FiMap } from 'react-icons/fi';
@@ -9,6 +10,7 @@ import { useNavigate } from 'react-router-dom';
 import countryList from 'react-select-country-list';
 import { Input } from '../../components/global/Input';
 import { locationSchema } from '../../schema/locationSchema';
+import { apiClient } from '../../utils/apiClient';
 
 const itemVariants = {
   hidden: { y: 20, opacity: 0 },
@@ -18,15 +20,47 @@ const itemVariants = {
 const Address = () => {
   const navigate = useNavigate();
 
-  const savedData = JSON.parse(localStorage.getItem('addressData') || '{}');
+  const savedData = useMemo(() => JSON.parse(sessionStorage.getItem('addressData') || '{}'), []);
+  const personalData = useMemo(
+    () => JSON.parse(sessionStorage.getItem('personalData') || '{}'),
+    [],
+  );
+
+  useEffect(() => {
+    if (Object.keys(personalData).length === 0) {
+      navigate('/register', { replace: true });
+      return;
+    }
+    const securityData = JSON.parse(sessionStorage.getItem('securityData') || '{}');
+    if (Object.keys(securityData).length === 0) {
+      navigate('/register/security', { replace: true });
+    }
+  }, [navigate, personalData]);
+
+  // Auto-detect country from phone number if no address country is saved
+  let defaultCountry = savedData.country;
+  let isCountryLocked = false;
+  if (personalData.phone) {
+    try {
+      const phoneNumber = parsePhoneNumber(personalData.phone);
+      if (phoneNumber && phoneNumber.country) {
+        defaultCountry = phoneNumber.country;
+        isCountryLocked = true;
+      }
+    } catch (error) {
+      console.error('Could not parse phone number from personalData:', personalData.phone, error);
+      // Fallback to unlocked country select, which is the default behavior.
+    }
+  }
 
   const methods = useForm({
     defaultValues: {
       street: savedData.street || '',
       city: savedData.city || '',
       zipCode: savedData.zipCode || '',
-      country: savedData.country || 'NG',
-      phone: savedData.phone || '',
+      country: defaultCountry || 'NG',
+      state: savedData.state || '',
+      label: savedData.label || 'Home',
     },
     resolver: yupResolver(locationSchema),
   });
@@ -36,10 +70,14 @@ const Address = () => {
   const { control, setValue } = methods;
 
   // Watch Country
-  const watchedCountry = useWatch({ control, name: 'country', defaultValue: 'NG' });
+  const watchedCountry = useWatch({ control, name: 'country' });
 
   // Watch State
   const watchedState = useWatch({ control, name: 'state' });
+
+  // Refs to track previous values for cascading resets
+  const previousCountry = useRef(watchedCountry);
+  const previousState = useRef(watchedState);
 
   // Generate State Options
   const stateOptions = useMemo(() => {
@@ -61,46 +99,61 @@ const Address = () => {
 
   // Reset downstream fields when parents change
   useEffect(() => {
-    setValue('state', '');
-    setValue('city', '');
-    setValue('zipCode', '');
+    if (watchedCountry !== previousCountry.current) {
+      setValue('state', '');
+      setValue('city', '');
+      setValue('zipCode', '');
+      previousCountry.current = watchedCountry;
+    }
   }, [watchedCountry, setValue]);
 
   useEffect(() => {
-    setValue('city', '');
+    if (watchedState !== previousState.current) {
+      setValue('city', '');
+      previousState.current = watchedState;
+    }
   }, [watchedState, setValue]);
 
   const handleBack = () => {
     const currentValues = methods.getValues();
-    localStorage.setItem('addressData', JSON.stringify(currentValues));
-    navigate('/register');
+    sessionStorage.setItem('addressData', JSON.stringify(currentValues));
+    navigate('/register/security');
   };
 
   const onSubmit = async (data) => {
     try {
-      const securityData = JSON.parse(localStorage.getItem('accountSecurityData') || '{}');
+      const securityData = JSON.parse(sessionStorage.getItem('securityData') || '{}');
+
+      // Convert codes to full text for Country and State
+      const countryLabel = countryList().getLabel(data.country);
+      const stateObj = State.getStateByCodeAndCountry(data.state, data.country);
 
       const finalData = {
+        ...personalData,
         ...securityData,
-        ...data,
+        addressess: [
+          {
+            id: crypto.randomUUID(),
+            label: 'Home',
+            isDefault: true,
+            country: countryLabel || data.country,
+            state: stateObj ? stateObj.name : data.state,
+            city: data.city,
+            zipCode: data.zipCode,
+            street: data.street,
+          },
+        ],
         role: 'user',
         cart: [],
         wishlist: [],
         createdAt: new Date().toISOString(),
       };
 
-      const response = await fetch('http://localhost:3000/users', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(finalData),
-      });
+      await apiClient.post('/users', finalData);
 
-      if (!response.ok) {
-        throw new Error('Failed to create user');
-      }
-
-      localStorage.removeItem('accountSecurityData');
-      localStorage.removeItem('addressData');
+      sessionStorage.removeItem('personalData');
+      sessionStorage.removeItem('securityData');
+      sessionStorage.removeItem('addressData');
 
       toast.success('Account created successfully.');
       navigate('/login');
@@ -129,6 +182,7 @@ const Address = () => {
               options={countryList().getData()}
               id="country"
               placeholder="Select Country"
+              disabled={isCountryLocked}
             />
           </motion.div>
 

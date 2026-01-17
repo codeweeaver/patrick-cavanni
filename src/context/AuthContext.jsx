@@ -12,6 +12,7 @@ export const AuthProvider = ({ children }) => {
   const [token, setToken] = useState(
     JSON.parse(localStorage.getItem('token') || sessionStorage.getItem('token')) || null,
   );
+  const [error, setError] = useState(null);
   const { startLoading, stopLoading } = useLoading();
 
   const userRef = useRef(user);
@@ -21,7 +22,7 @@ export const AuthProvider = ({ children }) => {
     async (email, password, rememberMe = false) => {
       startLoading();
       try {
-        const res = await fetch('http://localhost:3000/users');
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/users`);
 
         if (!res.ok) {
           throw new Error(`Invalid Credientials`);
@@ -36,7 +37,7 @@ export const AuthProvider = ({ children }) => {
 
         const {
           password: _password,
-          confirmPassword: _confirmPassword,
+          comfirmPassword: _comfirmPassword,
           createdAt: _createdAt,
           ...userWithoutPassword
         } = foundUser;
@@ -53,11 +54,8 @@ export const AuthProvider = ({ children }) => {
         toast.success('Logged in successfully.');
         return userWithoutPassword;
       } catch (error) {
-        if (error?.message) {
-          toast.error(error.message);
-        } else {
-          toast.error(error.message);
-        }
+        const message = error.message || 'Login failed';
+        toast.error(message);
         throw error; // <-- Crucial: Re-throw the error
       } finally {
         stopLoading();
@@ -79,6 +77,57 @@ export const AuthProvider = ({ children }) => {
       toast.error('Error logging out.');
     }
   }, []);
+
+  const deleteUser = useCallback(
+    async (id) => {
+      try {
+        startLoading();
+        await apiClient.delete(`/users/${id}`);
+
+        if (user?.id === id) {
+          await logOut();
+        }
+
+        toast.success('User deleted successfully.');
+        return true;
+      } catch (error) {
+        const message = error.message || 'Failed to delete user';
+        setError(message);
+        toast.error(message);
+        return false;
+      } finally {
+        stopLoading();
+      }
+    },
+    [startLoading, stopLoading, user, logOut],
+  );
+
+  const updateUser = useCallback(
+    async (id, updatedUser) => {
+      try {
+        startLoading();
+        const res = await apiClient.patch(`/users/${id}`, updatedUser);
+
+        // Update local state with the response from server
+        setUser(res);
+
+        // Update storage (check which one is currently in use)
+        const storage = localStorage.getItem('user') ? localStorage : sessionStorage;
+        storage.setItem('user', JSON.stringify(res));
+
+        toast.success('User updated successfully.');
+        return true;
+      } catch (error) {
+        const message = error.message || 'Failed to update user';
+        setError(message);
+        toast.error(message);
+        return false;
+      } finally {
+        stopLoading();
+      }
+    },
+    [startLoading, stopLoading],
+  );
 
   const addToHistory = useCallback(async (type, id) => {
     const currentUser = userRef.current;
@@ -119,11 +168,14 @@ export const AuthProvider = ({ children }) => {
     () => ({
       user,
       loginUser,
+      deleteUser,
+      updateUser,
       logOut,
       token,
+      error,
       addToHistory,
     }),
-    [user, token, loginUser, logOut, addToHistory],
+    [user, token, error, loginUser, logOut, addToHistory, deleteUser, updateUser],
   );
 
   return <AuthContext.Provider value={authValue}>{children}</AuthContext.Provider>;

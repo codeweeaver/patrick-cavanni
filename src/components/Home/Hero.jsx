@@ -1,53 +1,53 @@
-import { motion } from "framer-motion";
-import { useRef } from "react";
-import { Autoplay, Pagination } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { motion } from 'framer-motion';
+import { useRef } from 'react';
+import { Autoplay, Pagination } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import local hero images
-import hero1 from "../../assets/images/hero/hero1.png";
-import hero2 from "../../assets/images/hero/hero2.png";
-import hero3 from "../../assets/images/hero/hero3.png";
+import hero1 from '../../assets/images/hero/hero1.png';
+import hero2 from '../../assets/images/hero/hero2.png';
+import hero3 from '../../assets/images/hero/hero3.png';
 
 const heroSlides = [
   {
     id: 1,
-    title: "Designer Spotlight",
-    subtitle: "Discover the latest trends in fashion",
+    title: 'Designer Spotlight',
+    subtitle: 'Discover the latest trends in fashion',
     description:
-      "A designer dedicated to infusing luxury with creative freedom, bringing unique expressions to fashion",
-    buttonText: "Shop Now",
-    buttonLink: "/products",
+      'A designer dedicated to infusing luxury with creative freedom, bringing unique expressions to fashion',
+    buttonText: 'Shop Now',
+    buttonLink: '/products',
     image: hero1,
-    bgColor: "bg-gray-100",
+    bgColor: 'bg-gray-100',
   },
   {
     id: 2,
-    title: "Craftsmanship",
-    subtitle: "Art of Crafting Luxury",
+    title: 'Craftsmanship',
+    subtitle: 'Art of Crafting Luxury',
     description:
-      "Our pieces are made with the highest quality materials and attention to detail, blending tradition with innovation.",
-    buttonText: "Explore Deals",
-    buttonLink: "/deals",
+      'Our pieces are made with the highest quality materials and attention to detail, blending tradition with innovation.',
+    buttonText: 'Explore Deals',
+    buttonLink: '/deals',
     image: hero2,
-    bgColor: "bg-blue-50",
+    bgColor: 'bg-blue-50',
   },
   {
     id: 3,
-    title: "Exclusive Collections",
-    subtitle: "Curated for the Discerning Eye",
+    title: 'Exclusive Collections',
+    subtitle: 'Curated for the Discerning Eye',
     description:
-      "Discover our limited-edition pieces that redefine luxury and style, perfect for any occasion.",
-    buttonText: "Browse Collection",
-    buttonLink: "/collection",
+      'Discover our limited-edition pieces that redefine luxury and style, perfect for any occasion.',
+    buttonText: 'Browse Collection',
+    buttonLink: '/collection',
     image: hero3,
-    bgColor: "bg-amber-50",
+    bgColor: 'bg-amber-50',
   },
 ];
 
 const Hero = () => {
   const swiperRef = useRef(null);
   return (
-    <section className="relative bg-gray-900 min-h-[70vh] flex items-center">
+    <section className="relative flex min-h-[70vh] items-center bg-gray-900">
       <Swiper
         direction="horizontal"
         spaceBetween={0}
@@ -59,17 +59,17 @@ const Hero = () => {
         }}
         pagination={{
           clickable: true,
-          el: ".custom-pagination",
+          el: '.custom-pagination',
           renderBullet: (index, className) => {
             return `<span class="${className} inline-block w-3 h-3 mx-2 rounded-full bg-white/50 hover:bg-white transition-all duration-300"></span>`;
           },
         }}
         modules={[Autoplay, Pagination]}
-        className="w-full h-full absolute inset-0"
+        className="absolute inset-0 h-full w-full"
         style={{
-          "--swiper-pagination-color": "#ffffff",
-          "--swiper-pagination-bullet-size": "10px",
-          "--swiper-pagination-bullet-horizontal-gap": "6px",
+          '--swiper-pagination-color': '#ffffff',
+          '--swiper-pagination-bullet-size': '10px',
+          '--swiper-pagination-bullet-horizontal-gap': '6px',
         }}
         onSwiper={(swiper) => (swiperRef.current = swiper)}
       >
@@ -80,34 +80,34 @@ const Hero = () => {
               className="absolute inset-0 bg-cover bg-center"
               style={{
                 backgroundImage: `url(${slide.image})`,
-                backgroundSize: "cover",
-                backgroundPosition: "50% 20%",
-                backgroundRepeat: "no-repeat",
+                backgroundSize: 'cover',
+                backgroundPosition: '50% 20%',
+                backgroundRepeat: 'no-repeat',
               }}
             >
-              <div className="absolute inset-0 bg-black/40 z-10"></div>
+              <div className="absolute inset-0 z-10 bg-black/40"></div>
             </div>
 
             {/* Content */}
-            <div className="relative z-20 h-[80vh] flex items-center justify-center text-center px-4">
+            <div className="relative z-20 flex h-[80vh] items-center justify-center px-4 text-center">
               <motion.div
-                className="max-w-4xl mx-auto text-white"
+                className="mx-auto max-w-4xl text-white"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
               >
-                <span className="inline-block bg-accent text-white text-sm font-medium px-4 py-1.5 rounded-full mb-6">
+                <span className="bg-accent mb-6 inline-block rounded-full px-4 py-1.5 text-sm font-medium text-white">
                   {slide.subtitle}
                 </span>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                <h1 className="mb-6 text-4xl leading-tight font-bold md:text-5xl lg:text-6xl">
                   {slide.title}
                 </h1>
-                <p className="text-lg md:text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
+                <p className="mx-auto mb-8 max-w-2xl text-lg text-gray-200 md:text-xl">
                   {slide.description}
                 </p>
                 <motion.a
                   href={slide.buttonLink}
-                  className="inline-block bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-full font-medium text-lg transition-colors duration-300"
+                  className="bg-primary hover:bg-primary/90 inline-block rounded-full px-8 py-4 text-lg font-medium text-white transition-colors duration-300"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -119,7 +119,7 @@ const Hero = () => {
         ))}
 
         {/* Pagination */}
-        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-100 flex space-x-2 custom-pagination" />
+        <div className="custom-pagination absolute bottom-10 left-1/2 z-100 flex -translate-x-1/2 transform space-x-2" />
       </Swiper>
     </section>
   );

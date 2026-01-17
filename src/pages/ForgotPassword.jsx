@@ -1,42 +1,34 @@
-import { FaGoogle } from "react-icons/fa";
-import {
-  FiArrowLeft,
-  FiFacebook,
-  FiLinkedin,
-  FiMail,
-  FiTwitter,
-} from "react-icons/fi";
-import { Link, useNavigate } from "react-router-dom";
+import { FaGoogle } from 'react-icons/fa';
+import { FiArrowLeft, FiFacebook, FiLinkedin, FiMail, FiTwitter } from 'react-icons/fi';
+import { Link, useNavigate } from 'react-router-dom';
 
-const Login = () => {
+const ForgotPassword = () => {
   const navigate = useNavigate();
   return (
-    <div className="p-8 relative">
+    <div className="relative p-8">
       <button
-        className="absolute z-50 left-5 -top-5 w-10 h-10 rounded-full shadow-md flex items-center justify-center hover:text-primary hover:scale-105 transform transition-all"
+        className="hover:text-primary absolute -top-5 left-5 z-50 flex h-10 w-10 transform items-center justify-center rounded-full shadow-md transition-all hover:scale-105"
         tooltip="go back to login"
         onClick={() => navigate(-1)}
       >
         <FiArrowLeft />
       </button>
-      <div className="text-center my-8">
-        <p className="text-gray-600 text-xl">
+      <div className="my-8 text-center">
+        <p className="text-xl text-gray-600">
           Enter the email address or mobile number associated with your account.
         </p>
       </div>
 
       <form className="space-y-6">
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
-            Email
-          </label>
+          <label className="mb-1 block text-sm font-medium text-gray-700">Email</label>
           <div className="relative">
-            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+            <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
               <FiMail className="h-5 w-5 text-gray-400" />
             </div>
             <input
               type="email"
-              className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
+              className="focus:ring-primary focus:border-primary block w-full rounded-md border border-gray-300 py-2 pr-3 pl-10 shadow-sm focus:ring-2 focus:outline-none"
               placeholder="Enter your email"
             />
           </div>
@@ -45,7 +37,7 @@ const Login = () => {
         <div>
           <button
             type="submit"
-            className="w-full flex justify-center py-3 px-6 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary/90 hover:bg-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary uppercase hover:scale-101 transition-all"
+            className="bg-primary/90 hover:bg-primary focus:ring-primary flex w-full justify-center rounded-md border border-transparent px-6 py-3 text-sm font-medium text-white uppercase shadow-sm transition-all hover:scale-101 focus:ring-2 focus:ring-offset-2 focus:outline-none"
           >
             Send
           </button>
@@ -56,7 +48,7 @@ const Login = () => {
             <div className="w-full border-t border-gray-300" />
           </div>
           <div className="relative flex justify-center text-sm">
-            <span className="px-2 bg-white text-gray-500">OR</span>
+            <span className="bg-white px-2 text-gray-500">OR</span>
           </div>
         </div>
 
@@ -65,16 +57,16 @@ const Login = () => {
           {/* Facebook */}
           <Link
             to="/auth/facebook"
-            className="flex items-center justify-center rounded-lg bg-[#3b5998] text-white hover:bg-[#344e86] transition-colors w-10 h-10"
+            className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#3b5998] text-white transition-colors hover:bg-[#344e86]"
             aria-label="Login with Facebook"
           >
-            <FiFacebook className="w-5 h-5" />
+            <FiFacebook className="h-5 w-5" />
           </Link>
 
           {/* Twitter */}
           <Link
             to="/auth/twitter"
-            className="flex items-center justify-center rounded-lg bg-[#1DA1F2] text-white hover:bg-[#1a8cd8] transition-colors  w-10 h-10"
+            className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#1DA1F2] text-white transition-colors hover:bg-[#1a8cd8]"
             aria-label="Login with Twitter"
           >
             <FiTwitter className="h-5 w-5" />
@@ -83,7 +75,7 @@ const Login = () => {
           {/* Google */}
           <Link
             to="/auth/google"
-            className="flex items-center justify-center rounded-lg bg-[#DB4437] text-white hover:bg-[#c53929] transition-colors w-10 h-10"
+            className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#DB4437] text-white transition-colors hover:bg-[#c53929]"
             aria-label="Login with Google"
           >
             <FaGoogle className="h-5 w-5" />
@@ -92,7 +84,7 @@ const Login = () => {
           {/* LinkedIn */}
           <Link
             to="/auth/linkedin"
-            className="aspect-square flex items-center justify-center rounded-lg bg-[#0077B5] text-white hover:bg-[#00669b] transition-colors  w-10 h-10"
+            className="flex aspect-square h-10 w-10 items-center justify-center rounded-lg bg-[#0077B5] text-white transition-colors hover:bg-[#00669b]"
             aria-label="Login with LinkedIn"
           >
             <FiLinkedin className="h-5 w-5" />
@@ -103,4 +95,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default ForgotPassword;

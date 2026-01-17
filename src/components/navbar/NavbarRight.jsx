@@ -1,10 +1,8 @@
 import { motion } from 'framer-motion';
-import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useCart } from '../../hooks/useCart';
 
 import { FiHelpCircle, FiLogIn, FiSearch, FiShoppingCart } from 'react-icons/fi';
-import { useCurrency } from '../../context/CurrencyContext';
 import { useAuth } from '../../hooks/useAuth';
 import NavbarProfile from './NavbarProfile';
 import ToggleCurrency from './ToggleCurrency';
@@ -12,14 +10,6 @@ import ToggleCurrency from './ToggleCurrency';
 const NavbarRight = ({ containerVariants, itemVariants, toggleSearch }) => {
   const { cartCount } = useCart();
   const { user } = useAuth();
-  const { currency, setCurrency } = useCurrency();
-  const [isCurrencyOpen, setIsCurrencyOpen] = useState(false);
-
-  const currencies = [
-    { code: 'USD', flag: '🇺🇸', label: 'USD' },
-    { code: 'NGN', flag: '🇳🇬', label: 'NGN' },
-  ];
-  const activeCurrency = currencies.find((c) => c.code === currency) || currencies[0];
 
   return (
     <motion.div
@@ -41,9 +31,9 @@ const NavbarRight = ({ containerVariants, itemVariants, toggleSearch }) => {
       <span className="h-6 w-px bg-gray-300" />
 
       {/* Currency Toggle */}
-      <ToggleCurrency />
+      <ToggleCurrency itemVariants={itemVariants} />
 
-      <NavLink to="profile/cart">
+      <NavLink to="/cart">
         <motion.div
           className="group relative flex cursor-pointer items-center space-x-1 text-gray-700"
           variants={itemVariants}

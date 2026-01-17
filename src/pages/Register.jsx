@@ -3,32 +3,31 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { FiCheck } from 'react-icons/fi';
 import { Link, Outlet, useLocation } from 'react-router-dom';
 
+const steps = [
+  { path: '/register', label: 'Personal' },
+  { path: '/register/security', label: 'Security' },
+  { path: '/register/address', label: 'Address' },
+];
+
 const Register = () => {
   const location = useLocation();
-  const steps = [
-    { path: '/register', label: 'Account' },
-    { path: '/register/address', label: 'Address' },
-  ];
 
   const getCurrentStepIndex = () => {
     const currentPath = location.pathname;
-    if (currentPath.includes('address')) return 1;
+    if (currentPath.includes('address')) return 2;
+    if (currentPath.includes('security')) return 1;
     return 0;
   };
 
   const currentStepIndex = getCurrentStepIndex();
 
   return (
-    <div className="flex min-h-screen items-center justify-center py-12">
+    <div className="p-8">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4, ease: 'easeOut' }}
-        className="relative w-full max-w-md overflow-hidden rounded-2xl border border-gray-100 bg-white p-8 shadow-xl"
       >
-        {/* Top Accent Line */}
-        <div className="from-primary/60 to-primary absolute top-0 left-0 h-1.5 w-full bg-linear-to-r" />
-
         {/* Header */}
         <div className="mb-10 text-center">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900">Create Account</h2>
@@ -44,7 +43,7 @@ const Register = () => {
         </div>
 
         {/* Step Indicator */}
-        <div className="relative mx-auto mb-12 max-w-[150px]">
+        <div className="relative mx-auto mb-12 max-w-[300px]">
           {/* Progress Bar Background */}
           <div className="absolute top-1/2 left-0 h-0.5 w-full -translate-y-1/2 bg-gray-200" />
 

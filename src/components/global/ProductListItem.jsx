@@ -52,7 +52,7 @@ const ProductListItem = ({ product, badge }) => {
             <span className="text-primary text-xs font-bold tracking-wider uppercase">
               {product.brand}
             </span>
-            <Link to={`/products/${product.id}`}>
+            <Link to={`/products/${product.slug || product.id}`}>
               <h3 className="hover:text-primary text-lg font-bold text-gray-900 transition-colors">
                 {product.name}
               </h3>
@@ -71,9 +71,7 @@ const ProductListItem = ({ product, badge }) => {
           </div>
 
           <div className="text-left sm:text-right">
-            <div className="text-xl font-black text-gray-900">
-              {formatPrice(product.price)}
-            </div>
+            <div className="text-xl font-black text-gray-900">{formatPrice(product.price)}</div>
             {product.originalPrice && (
               <div className="text-sm text-gray-400 line-through">
                 {formatPrice(product.originalPrice)}
@@ -105,7 +103,7 @@ const ProductListItem = ({ product, badge }) => {
             />
           </button>
           <Link
-            to={`/products/${product.id}`}
+            to={`/products/${product.slug || product.id}`}
             className="rounded-xl border border-gray-200 p-2.5 transition-colors hover:bg-gray-50"
           >
             <FiEye className="text-gray-600" />

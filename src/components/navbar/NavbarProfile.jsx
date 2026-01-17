@@ -137,7 +137,6 @@ const NavbarProfile = () => {
                   label="Account Settings"
                   onClick={() => setIsOpen(false)}
                 />
-
               </div>
 
               <div className="border-t border-gray-50 bg-gray-50/50 p-2">

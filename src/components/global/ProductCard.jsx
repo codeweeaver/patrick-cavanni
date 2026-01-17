@@ -65,7 +65,7 @@ const ProductCard = ({ product, badge, delay = 0 }) => {
         {/* Quick Actions */}
         <div className="group-hover:bg-opacity-10 absolute inset-0 flex items-center justify-center space-x-4 bg-black/60 opacity-0 transition-all duration-300 group-hover:opacity-100">
           <Link
-            to={`/products/${product.id}`}
+            to={`/products/${product.slug || product.id}`}
             className="hover:bg-accent flex h-10 w-10 items-center justify-center rounded-full bg-white text-gray-800 transition-colors hover:text-white"
           >
             <FiEye className="h-5 w-5" />
@@ -84,7 +84,7 @@ const ProductCard = ({ product, badge, delay = 0 }) => {
         <div className="flex items-center justify-between">
           {/* name and rating column */}
           <div>
-            <Link to={`/products/${product.id}`} className="mb-1 block">
+            <Link to={`/products/${product.slug || product.id}`} className="mb-1 block">
               <h3 className="hover:text-primary text-sm font-semibold text-gray-800 transition-colors">
                 {product.name}
               </h3>

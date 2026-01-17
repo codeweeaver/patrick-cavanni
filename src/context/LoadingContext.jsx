@@ -1,5 +1,5 @@
-import { createContext, useState } from "react";
-import LoadingSpinner from "../components/global/LoadingSpinner";
+import { createContext, useState } from 'react';
+import LoadingSpinner from '../components/global/LoadingSpinner';
 
 const LoadingContext = createContext(null);
 

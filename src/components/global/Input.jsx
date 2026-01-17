@@ -37,6 +37,8 @@ export const Input = ({
   options = [],
   isCountry = false,
   country,
+  disabled,
+  errorPosition = 'default',
   ...props
 }) => {
   const generatedId = useId();
@@ -63,7 +65,7 @@ export const Input = ({
   );
 
   return (
-    <div className={className || 'flex w-full flex-col'}>
+    <div className={className || 'relative flex w-full flex-col'}>
       <div className="flex justify-between">
         {label && (
           <label
@@ -73,11 +75,13 @@ export const Input = ({
             {label}
           </label>
         )}
-        <AnimatePresence mode="wait" initial={false}>
-          {isInvalid && (
-            <InputError message={inputErrors.error.message} key={inputErrors.error.message} />
-          )}
-        </AnimatePresence>
+        {errorPosition === 'default' && (
+          <AnimatePresence mode="wait" initial={false}>
+            {isInvalid && (
+              <InputError message={inputErrors.error.message} key={inputErrors.error.message} />
+            )}
+          </AnimatePresence>
+        )}
       </div>
 
       <div className="relative">
@@ -120,6 +124,7 @@ export const Input = ({
                   }
                 }}
                 placeholder={placeholder}
+                isDisabled={disabled}
                 unstyled
                 classNames={{
                   control: (state) =>
@@ -159,7 +164,7 @@ export const Input = ({
                 <PhoneInput
                   key={country}
                   ref={ref}
-                  defaultCountry={country ? country.toLowerCase() : 'ng'}
+                  defaultCountry={country?.toLowerCase()}
                   value={value || ''}
                   onChange={(phone) => onChange(phone)}
                   className={`flex w-full items-center ${icon ? 'pl-10' : ''}`}
@@ -190,6 +195,18 @@ export const Input = ({
           />
         )}
       </div>
+
+      {errorPosition === 'bottom' && (
+        <AnimatePresence mode="wait" initial={false}>
+          {isInvalid && (
+            <InputError
+              message={inputErrors.error.message}
+              key={inputErrors.error.message}
+              className="absolute left-1/2 mt-3 -translate-x-1/2 transform"
+            />
+          )}
+        </AnimatePresence>
+      )}
     </div>
   );
 };

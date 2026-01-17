@@ -1,24 +1,24 @@
-import { motion, useAnimation } from "framer-motion";
-import { FaArrowsRotate, FaHeadset, FaRegPaperPlane } from "react-icons/fa6";
+import { motion, useAnimation } from 'framer-motion';
+import { FaArrowsRotate, FaHeadset, FaRegPaperPlane } from 'react-icons/fa6';
 
 const assuranceItems = [
   {
     id: 1,
-    icon: <FaRegPaperPlane className="w-5 h-5" />,
-    title: "Fast Shipping",
-    description: "Free shipping on all orders over $50",
+    icon: <FaRegPaperPlane className="h-5 w-5" />,
+    title: 'Fast Shipping',
+    description: 'Free shipping on all orders over $50',
   },
   {
     id: 2,
-    icon: <FaArrowsRotate className="w-5 h-5" />,
-    title: "Money Back Guarantee",
-    description: "30 days return policy for all orders",
+    icon: <FaArrowsRotate className="h-5 w-5" />,
+    title: 'Money Back Guarantee',
+    description: '30 days return policy for all orders',
   },
   {
     id: 3,
-    icon: <FaHeadset className="w-5 h-5" />,
-    title: "Online Support 24/7",
-    description: "24/7 customer support via email, phone, and live chat",
+    icon: <FaHeadset className="h-5 w-5" />,
+    title: 'Online Support 24/7',
+    description: '24/7 customer support via email, phone, and live chat',
   },
 ];
 
@@ -45,14 +45,14 @@ const item = {
 
 const Assurance = () => {
   return (
-    <section className="py-12 md:py-16 bg-primary/5">
-      <div className="max-w-5xl mx-auto px-4">
+    <section className="bg-primary/5 py-12 md:py-16">
+      <div className="mx-auto max-w-5xl px-4">
         <motion.div
           variants={container}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, margin: "-50px" }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+          viewport={{ once: true, margin: '-50px' }}
+          className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
         >
           {assuranceItems.map((itemData) => {
             const controls = useAnimation();
@@ -61,7 +61,7 @@ const Assurance = () => {
               <motion.div
                 key={itemData.id}
                 variants={item}
-                className="group relative bg-white p-6 rounded-lg border border-green-400/80 border-dotted transition-all text-center overflow-hidden"
+                className="group relative overflow-hidden rounded-lg border border-dotted border-green-400/80 bg-white p-6 text-center transition-all"
                 onHoverStart={() => {
                   if (itemData.id === 1) {
                     controls.start({
@@ -75,7 +75,7 @@ const Assurance = () => {
                       rotate: 180,
                       transition: {
                         duration: 0.6,
-                        type: "spring",
+                        type: 'spring',
                         bounce: 0.4,
                       },
                     });
@@ -86,7 +86,7 @@ const Assurance = () => {
                       transition: {
                         duration: 0.8,
                         times: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 1],
-                        ease: "easeInOut",
+                        ease: 'easeInOut',
                       },
                     });
                   } else {
@@ -106,18 +106,14 @@ const Assurance = () => {
               >
                 <div className="relative">
                   <motion.div
-                    className="w-12 h-12 rounded-full bg-gray-50 flex items-center justify-center mx-auto mb-4"
+                    className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-gray-50"
                     animate={controls}
                   >
                     <span className="text-primary">{itemData.icon}</span>
                   </motion.div>
                 </div>
-                <h3 className="text-lg font-medium text-gray-900 mb-1.5">
-                  {itemData.title}
-                </h3>
-                <p className="text-sm text-gray-500 leading-relaxed">
-                  {itemData.description}
-                </p>
+                <h3 className="mb-1.5 text-lg font-medium text-gray-900">{itemData.title}</h3>
+                <p className="text-sm leading-relaxed text-gray-500">{itemData.description}</p>
               </motion.div>
             );
           })}

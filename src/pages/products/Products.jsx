@@ -53,9 +53,9 @@ const Products = () => {
       setIsLoading(true);
       try {
         const [productsRes, categoriesRes, brandsRes] = await Promise.allSettled([
-          fetch('http://localhost:3000/products').then((res) => res.json()),
-          fetch('http://localhost:3000/categories').then((res) => res.json()),
-          fetch('http://localhost:3000/brands').then((res) => res.json()),
+          fetch(`${import.meta.env.VITE_API_URL}/products`).then((res) => res.json()),
+          fetch(`${import.meta.env.VITE_API_URL}/categories`).then((res) => res.json()),
+          fetch(`${import.meta.env.VITE_API_URL}/brands`).then((res) => res.json()),
         ]);
 
         if (productsRes.status === 'fulfilled') setProducts(productsRes.value);

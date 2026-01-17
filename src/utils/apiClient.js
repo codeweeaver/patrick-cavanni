@@ -39,6 +39,9 @@ export async function apiClient(endpoint, { body, ...customConfig } = {}) {
 
 // Convenience methods
 apiClient.get = (endpoint, customConfig) => apiClient(endpoint, { ...customConfig, method: 'GET' });
-apiClient.post = (endpoint, body, customConfig) => apiClient(endpoint, { ...customConfig, method: 'POST', body });
-apiClient.patch = (endpoint, body, customConfig) => apiClient(endpoint, { ...customConfig, method: 'PATCH', body });
-apiClient.delete = (endpoint, customConfig) => apiClient(endpoint, { ...customConfig, method: 'DELETE' });
+apiClient.post = (endpoint, body, customConfig) =>
+  apiClient(endpoint, { ...customConfig, method: 'POST', body });
+apiClient.patch = (endpoint, body, customConfig) =>
+  apiClient(endpoint, { ...customConfig, method: 'PATCH', body });
+apiClient.delete = (endpoint, customConfig) =>
+  apiClient(endpoint, { ...customConfig, method: 'DELETE' });

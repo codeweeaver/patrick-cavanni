@@ -1,13 +1,7 @@
-import { motion } from "framer-motion"; // eslint-disable-line no-unused-vars
-import {
-  FaFacebook,
-  FaInstagram,
-  FaTiktok,
-  FaTwitter,
-  FaYoutube,
-} from "react-icons/fa";
-import { Link, NavLink } from "react-router-dom";
-import Logo from "../assets/images/logo.png";
+import { motion } from 'framer-motion'; // eslint-disable-line no-unused-vars
+import { FaFacebook, FaInstagram, FaTiktok, FaTwitter, FaYoutube } from 'react-icons/fa';
+import { Link, NavLink } from 'react-router-dom';
+import Logo from '../assets/images/logo.png';
 
 const Footer = () => {
   const containerVariants = {
@@ -26,7 +20,7 @@ const Footer = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
+      transition: { duration: 0.6, ease: 'easeOut' },
     },
   };
 
@@ -41,19 +35,19 @@ const Footer = () => {
   };
 
   const socialLinks = [
-    { name: "facebook", Icon: <FaFacebook size={20} />, path: "#" },
-    { name: "twitter", Icon: <FaTwitter size={20} />, path: "#" },
-    { name: "youtube", Icon: <FaYoutube size={20} />, path: "#" },
-    { name: "instagram", Icon: <FaInstagram size={20} />, path: "#" },
-    { name: "tiktok", Icon: <FaTiktok size={20} />, path: "#" },
+    { name: 'facebook', Icon: <FaFacebook size={20} />, path: '#' },
+    { name: 'twitter', Icon: <FaTwitter size={20} />, path: '#' },
+    { name: 'youtube', Icon: <FaYoutube size={20} />, path: '#' },
+    { name: 'instagram', Icon: <FaInstagram size={20} />, path: '#' },
+    { name: 'tiktok', Icon: <FaTiktok size={20} />, path: '#' },
   ];
 
   return (
-    <footer className="bg-white py-16 border-t border-gray-200">
-      <div className="max-w-6xl mx-auto px-6">
+    <footer className="border-t border-gray-200 bg-white py-16">
+      <div className="mx-auto max-w-6xl px-6">
         {/* Main Footer Content */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-12 mb-12"
+          className="mb-12 grid grid-cols-1 gap-12 md:grid-cols-3 lg:grid-cols-4"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -62,26 +56,21 @@ const Footer = () => {
           {/* Brand section */}
           <motion.div
             variants={itemVariants}
-            className="flex flex-col items-center md:items-start md:m-0 text-center md:text-left"
+            className="flex flex-col items-center text-center md:m-0 md:items-start md:text-left"
           >
-            <NavLink
-              className=""
-              to="/"
-              aria-label="Patrick Cavanni home"
-              title="Home"
-            >
+            <NavLink className="" to="/" aria-label="Patrick Cavanni home" title="Home">
               <motion.img
                 src={Logo}
                 alt="Patrick Cavanni — premium leather goods"
                 loading="lazy"
-                className="w-32 h-auto"
+                className="h-auto w-32"
                 initial={{ opacity: 0, y: 8 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
               />
             </NavLink>
-            <p className="mt-3 text-sm text-gray-600 max-w-60 text-center md:text-left">
+            <p className="mt-3 max-w-60 text-center text-sm text-gray-600 md:text-left">
               Handcrafted leather goods sustainable materials, timeless design.
             </p>
           </motion.div>
@@ -89,14 +78,14 @@ const Footer = () => {
           {/* Services Section */}
           <motion.div
             variants={itemVariants}
-            className="flex flex-col items-center md:items-start md:m-0 text-center md:text-left"
+            className="flex flex-col items-center text-center md:m-0 md:items-start md:text-left"
           >
-            <motion.h3 className="text-xl font-accent italic mb-4 text-primary">
+            <motion.h3 className="font-accent text-primary mb-4 text-xl italic">
               Access Our !
             </motion.h3>
-            <h2 className="text-2xl font-bold mb-6">QUICK LINKS</h2>
+            <h2 className="mb-6 text-2xl font-bold">QUICK LINKS</h2>
             <motion.div
-              className="w-12 h-1 mb-6 bg-primary self-center md:self-start"
+              className="bg-primary mb-6 h-1 w-12 self-center md:self-start"
               initial={{ scaleX: 0 }}
               whileInView={{ scaleX: 1 }}
               transition={{ duration: 0.8, delay: 0.3 }}
@@ -104,15 +93,15 @@ const Footer = () => {
             />
             <ul className="space-y-3">
               {[
-                "About Us",
-                "Our Blogs",
-                "Cavanni Wardrobe",
-                "Exclusive Collections",
-                "Haute Couture",
+                'About Us',
+                'Our Blogs',
+                'Cavanni Wardrobe',
+                'Exclusive Collections',
+                'Haute Couture',
               ].map((item, index) => (
                 <motion.li
                   key={index}
-                  className="text-gray-700 hover:text-primary cursor-pointer transition-colors"
+                  className="hover:text-primary cursor-pointer text-gray-700 transition-colors"
                   whileHover={{ x: 5 }}
                   transition={{ duration: 0.2 }}
                 >
@@ -125,14 +114,14 @@ const Footer = () => {
           {/* Contact Section */}
           <motion.div
             variants={itemVariants}
-            className="flex flex-col items-center md:items-start md:m-0 text-center md:text-left"
+            className="flex flex-col items-center text-center md:m-0 md:items-start md:text-left"
           >
-            <motion.h3 className="text-xl font-accent italic mb-4 text-primary">
+            <motion.h3 className="font-accent text-primary mb-4 text-xl italic">
               Talk to Us Now !
             </motion.h3>
-            <h2 className="text-2xl font-bold mb-6">CONTACT US</h2>
+            <h2 className="mb-6 text-2xl font-bold">CONTACT US</h2>
             <motion.div
-              className="w-12 h-1 mb-6 bg-primary self-center md:self-start"
+              className="bg-primary mb-6 h-1 w-12 self-center md:self-start"
               initial={{ scaleX: 0 }}
               whileInView={{ scaleX: 1 }}
               transition={{ duration: 0.8, delay: 0.3 }}
@@ -142,30 +131,27 @@ const Footer = () => {
               to="https://www.google.com/maps/search/?api=1&query=No+8,+Ndele+Street,+Wuse+Zone+3,+FCT+Abuja,+Nigeria"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-600 mb-4 hover:text-primary underline transition-colors"
+              className="hover:text-primary mb-4 text-gray-600 underline transition-colors"
             >
-              <span className="text-xl mr-1">📍</span>
+              <span className="mr-1 text-xl">📍</span>
               <span>
                 No 8, Ndele Street, <br /> Wuse Zone 3,
                 <br />
                 FCT Abuja, Nigeria
               </span>
             </Link>
-            <Link
-              to="tel:+2349087770900"
-              className="text-md font-semibold inline-block group mb-3"
-            >
-              <span className="text-xl mr-1">📞</span>
-              <span className="group-hover:underline group-hover:text-primary font-medium">
+            <Link to="tel:+2349087770900" className="text-md group mb-3 inline-block font-semibold">
+              <span className="mr-1 text-xl">📞</span>
+              <span className="group-hover:text-primary font-medium group-hover:underline">
                 +(234) 908 777 0900
               </span>
             </Link>
             <Link
               href="mailto:info@patrickcavanni.com"
-              className="text-md inline-flex items-center gap-2 group"
+              className="text-md group inline-flex items-center gap-2"
             >
               <span className="text-xl">📧</span>
-              <span className="group-hover:underline group-hover:text-primary font-medium">
+              <span className="group-hover:text-primary font-medium group-hover:underline">
                 info@patrickcavanni.com
               </span>
             </Link>
@@ -174,14 +160,14 @@ const Footer = () => {
           {/* Social Section */}
           <motion.div
             variants={itemVariants}
-            className="flex flex-col items-center md:items-start md:m-0 text-center md:text-left"
+            className="flex flex-col items-center text-center md:m-0 md:items-start md:text-left"
           >
-            <motion.h3 className="text-xl font-accent italic mb-4 text-primary">
+            <motion.h3 className="font-accent text-primary mb-4 text-xl italic">
               Get in Touch !
             </motion.h3>
-            <h2 className="text-2xl font-bold mb-6">FOLLOW US</h2>
+            <h2 className="mb-6 text-2xl font-bold">FOLLOW US</h2>
             <motion.div
-              className="w-12 h-1 mb-6 bg-primary self-center md:self-start"
+              className="bg-primary mb-6 h-1 w-12 self-center md:self-start"
               initial={{ scaleX: 0 }}
               whileInView={{ scaleX: 1 }}
               transition={{ duration: 0.8, delay: 0.3 }}
@@ -202,7 +188,7 @@ const Footer = () => {
                 >
                   <NavLink
                     to={link.path}
-                    className="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-md hover:shadow-lg text-primary"
+                    className="text-primary flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md hover:shadow-lg"
                   >
                     {link.Icon}
                   </NavLink>
@@ -214,7 +200,7 @@ const Footer = () => {
 
         {/* Divider */}
         <motion.div
-          className="border-t border-gray-200 my-12"
+          className="my-12 border-t border-gray-200"
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}
           transition={{ duration: 0.8, delay: 0.5 }}
@@ -223,20 +209,16 @@ const Footer = () => {
 
         {/* Copyright Section */}
         <motion.div
-          className="text-center py-8"
+          className="py-8 text-center"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
         >
           <motion.p variants={itemVariants} className="text-sm text-gray-600">
-            &copy; {new Date().getFullYear()} Patrick Cavanni. All rights
-            reserved.
+            &copy; {new Date().getFullYear()} Patrick Cavanni. All rights reserved.
           </motion.p>
-          <motion.p
-            variants={itemVariants}
-            className="text-xs text-gray-500 mt-3"
-          >
+          <motion.p variants={itemVariants} className="mt-3 text-xs text-gray-500">
             Designed with <span className="text-red-500">♥</span> by your team
           </motion.p>
         </motion.div>

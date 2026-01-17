@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const HelpOrder = () => {
-  return (
-    <div>HelpOrder</div>
-  )
-}
+  return <div>HelpOrder</div>;
+};
 
-export default HelpOrder
+export default HelpOrder;

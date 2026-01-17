@@ -42,7 +42,7 @@ const UserProfileLayout = () => {
 
         {/* --- THE EXACT SIDEBAR CARD --- */}
         <aside
-          className={`fixed inset-y-0 left-0 z-50 w-[350px] transform overflow-y-auto bg-white transition-transform duration-300 ease-in-out lg:static lg:w-[340px] lg:shrink-0 lg:translate-x-0 lg:self-start lg:overflow-hidden lg:rounded-xl lg:border lg:border-gray-100 lg:shadow-md ${
+          className={`fixed inset-y-0 left-0 z-50 w-[350px] transform overflow-y-auto bg-white transition-transform duration-300 ease-in-out lg:static lg:z-0 lg:w-[340px] lg:shrink-0 lg:translate-x-0 lg:self-start lg:overflow-hidden lg:rounded-xl lg:border lg:border-gray-100 lg:shadow-md ${
             isSidebarOpen ? 'translate-x-0 shadow-2xl' : '-translate-x-full'
           }`}
         >

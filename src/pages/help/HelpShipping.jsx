@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const HelpShipping = () => {
-  return (
-    <div>HelpShipping</div>
-  )
-}
+  return <div>HelpShipping</div>;
+};
 
-export default HelpShipping
+export default HelpShipping;

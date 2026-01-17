@@ -71,9 +71,7 @@ const ProductListItem = ({ product, badge }) => {
           </div>
 
           <div className="text-left sm:text-right">
-            <div className="text-xl font-black text-gray-900">
-              {formatPrice(product.price)}
-            </div>
+            <div className="text-xl font-black text-gray-900">{formatPrice(product.price)}</div>
             {product.originalPrice && (
               <div className="text-sm text-gray-400 line-through">
                 {formatPrice(product.originalPrice)}

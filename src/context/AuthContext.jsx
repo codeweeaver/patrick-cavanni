@@ -21,7 +21,7 @@ export const AuthProvider = ({ children }) => {
     async (email, password, rememberMe = false) => {
       startLoading();
       try {
-        const res = await fetch('http://localhost:3000/users');
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/users`);
 
         if (!res.ok) {
           throw new Error(`Invalid Credientials`);
@@ -36,7 +36,7 @@ export const AuthProvider = ({ children }) => {
 
         const {
           password: _password,
-          confirmPassword: _confirmPassword,
+          comfirmPassword: _comfirmPassword,
           createdAt: _createdAt,
           ...userWithoutPassword
         } = foundUser;

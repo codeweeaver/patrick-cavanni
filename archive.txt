@@ -280,19 +280,19 @@ const Register = () => {
 
           <Input
 
-            name="confirmPassword"
+            name="comfirmPassword"
 
             label="Confirm Password"
 
             type="password"
 
-            id="confirmPassword"
+            id="comfirmPassword"
 
             placeholder="Confirm your password"
 
             icon={<FiLock />}
 
-            error={errors.confirmPassword}
+            error={errors.comfirmPassword}
 
           />
 

@@ -10,6 +10,7 @@ const UserSettings = () => {
   return (
     <AnimatedPage>
       <div className="mx-auto max-w-4xl">
+      <div className="mx-auto max-w-4xl">
         <div className="mb-8">
           <h2 className="text-2xl font-bold text-gray-900">Account Settings</h2>
           <p className="mt-1 text-gray-500">Manage your profile details and account security.</p>

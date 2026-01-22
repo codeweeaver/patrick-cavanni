@@ -73,6 +73,7 @@ const Modal = ({ isOpen, onClose, title, children, footer }) => {
 
             {/* Body */}
             <div className="overflow-y-auto p-6">{children}</div>
+            <div className="overflow-y-auto p-6">{children}</div>
 
             {/* Footer */}
             {footer && (
@@ -82,6 +83,7 @@ const Modal = ({ isOpen, onClose, title, children, footer }) => {
         </motion.div>
       )}
     </AnimatePresence>,
+    document.body,
     document.body,
   );
 };

@@ -2,6 +2,10 @@ import { FiChevronDown } from 'react-icons/fi';
 import { NavLink } from 'react-router-dom';
 import { Autoplay, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { FiChevronDown } from 'react-icons/fi';
+import { NavLink } from 'react-router-dom';
+import { Autoplay, Pagination } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 const NavbarLinks = ({ pageNavLinks }) => {
   return (

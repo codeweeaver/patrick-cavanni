@@ -3,6 +3,8 @@ import { City, State } from 'country-state-city';
 import { motion } from 'framer-motion';
 import parsePhoneNumber from 'libphonenumber-js';
 import { useEffect, useMemo, useRef } from 'react';
+import parsePhoneNumber from 'libphonenumber-js';
+import { useEffect, useMemo, useRef } from 'react';
 import { FormProvider, useForm, useWatch } from 'react-hook-form';
 import toast from 'react-hot-toast';
 import { FiFlag, FiMap } from 'react-icons/fi';
@@ -20,6 +22,38 @@ const itemVariants = {
 const Address = () => {
   const navigate = useNavigate();
 
+  const savedData = useMemo(() => JSON.parse(sessionStorage.getItem('addressData') || '{}'), []);
+  const personalData = useMemo(
+    () => JSON.parse(sessionStorage.getItem('personalData') || '{}'),
+    [],
+  );
+
+  useEffect(() => {
+    if (Object.keys(personalData).length === 0) {
+      navigate('/register', { replace: true });
+      return;
+    }
+    const securityData = JSON.parse(sessionStorage.getItem('securityData') || '{}');
+    if (Object.keys(securityData).length === 0) {
+      navigate('/register/security', { replace: true });
+    }
+  }, [navigate, personalData]);
+
+  // Auto-detect country from phone number if no address country is saved
+  let defaultCountry = savedData.country;
+  let isCountryLocked = false;
+  if (personalData.phone) {
+    try {
+      const phoneNumber = parsePhoneNumber(personalData.phone);
+      if (phoneNumber && phoneNumber.country) {
+        defaultCountry = phoneNumber.country;
+        isCountryLocked = true;
+      }
+    } catch (error) {
+      console.error('Could not parse phone number from personalData:', personalData.phone, error);
+      // Fallback to unlocked country select, which is the default behavior.
+    }
+  }
   const savedData = useMemo(() => JSON.parse(sessionStorage.getItem('addressData') || '{}'), []);
   const personalData = useMemo(
     () => JSON.parse(sessionStorage.getItem('personalData') || '{}'),
@@ -71,9 +105,14 @@ const Address = () => {
 
   // Watch Country
   const watchedCountry = useWatch({ control, name: 'country' });
+  const watchedCountry = useWatch({ control, name: 'country' });
 
   // Watch State
   const watchedState = useWatch({ control, name: 'state' });
+
+  // Refs to track previous values for cascading resets
+  const previousCountry = useRef(watchedCountry);
+  const previousState = useRef(watchedState);
 
   // Refs to track previous values for cascading resets
   const previousCountry = useRef(watchedCountry);
@@ -105,9 +144,19 @@ const Address = () => {
       setValue('zipCode', '');
       previousCountry.current = watchedCountry;
     }
+    if (watchedCountry !== previousCountry.current) {
+      setValue('state', '');
+      setValue('city', '');
+      setValue('zipCode', '');
+      previousCountry.current = watchedCountry;
+    }
   }, [watchedCountry, setValue]);
 
   useEffect(() => {
+    if (watchedState !== previousState.current) {
+      setValue('city', '');
+      previousState.current = watchedState;
+    }
     if (watchedState !== previousState.current) {
       setValue('city', '');
       previousState.current = watchedState;
@@ -116,6 +165,8 @@ const Address = () => {
 
   const handleBack = () => {
     const currentValues = methods.getValues();
+    sessionStorage.setItem('addressData', JSON.stringify(currentValues));
+    navigate('/register/security');
     sessionStorage.setItem('addressData', JSON.stringify(currentValues));
     navigate('/register/security');
   };
@@ -127,8 +178,14 @@ const Address = () => {
       // Convert codes to full text for Country and State
       const countryLabel = countryList().getLabel(data.country);
       const stateObj = State.getStateByCodeAndCountry(data.state, data.country);
+      const securityData = JSON.parse(sessionStorage.getItem('securityData') || '{}');
+
+      // Convert codes to full text for Country and State
+      const countryLabel = countryList().getLabel(data.country);
+      const stateObj = State.getStateByCodeAndCountry(data.state, data.country);
 
       const finalData = {
+        ...personalData,
         ...personalData,
         ...securityData,
         addressess: [
@@ -182,6 +239,7 @@ const Address = () => {
               options={countryList().getData()}
               id="country"
               placeholder="Select Country"
+              disabled={isCountryLocked}
               disabled={isCountryLocked}
             />
           </motion.div>

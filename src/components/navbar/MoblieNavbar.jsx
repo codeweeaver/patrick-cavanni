@@ -3,6 +3,11 @@ import { useState } from 'react';
 import { FiMinus, FiPlus } from 'react-icons/fi';
 import { NavLink } from 'react-router-dom';
 import Logo from '../../assets/images/logo.png';
+import { AnimatePresence, motion } from 'framer-motion';
+import { useState } from 'react';
+import { FiMinus, FiPlus } from 'react-icons/fi';
+import { NavLink } from 'react-router-dom';
+import Logo from '../../assets/images/logo.png';
 
 const MoblieNavbar = ({ pageNavLinks, onClose }) => {
   const [openDropdown, setOpenDropdown] = useState(null);
@@ -14,14 +19,18 @@ const MoblieNavbar = ({ pageNavLinks, onClose }) => {
   const menuVariants = {
     hidden: { opacity: 0, height: 0 },
     visible: { opacity: 1, height: 'auto' },
+    visible: { opacity: 1, height: 'auto' },
   };
 
   const sidebarVariants = {
     hidden: { x: '-100%' },
+    hidden: { x: '-100%' },
     visible: {
       x: 0,
       transition: { type: 'spring', stiffness: 300, damping: 30 },
+      transition: { type: 'spring', stiffness: 300, damping: 30 },
     },
+    exit: { x: '-100%', transition: { duration: 0.2 } },
     exit: { x: '-100%', transition: { duration: 0.2 } },
   };
 
@@ -41,16 +50,20 @@ const MoblieNavbar = ({ pageNavLinks, onClose }) => {
         animate="visible"
         exit="exit"
         className="relative z-10 h-full w-[85%] max-w-sm bg-white shadow-2xl"
+        className="relative z-10 h-full w-[85%] max-w-sm bg-white shadow-2xl"
       >
+        <div className="flex h-full flex-col">
         <div className="flex h-full flex-col">
           <div className="flex items-center justify-between border-b border-gray-100">
             <div className="flex items-center space-x-2 p-4">
               <NavLink to="/" className="text-xl font-bold">
                 <img src={Logo} alt="Patrick Cavanni Logo" className="h-auto w-30" />
+                <img src={Logo} alt="Patrick Cavanni Logo" className="h-auto w-30" />
               </NavLink>
             </div>
             <button
               onClick={onClose}
+              className="bg-accent border-primary absolute top-18 -right-3.5 z-40 flex h-8 w-8 cursor-pointer items-center justify-center rounded-full border-2 p-2 text-sm text-white transition-colors hover:scale-110"
               className="bg-accent border-primary absolute top-18 -right-3.5 z-40 flex h-8 w-8 cursor-pointer items-center justify-center rounded-full border-2 p-2 text-sm text-white transition-colors hover:scale-110"
             >
               ✕

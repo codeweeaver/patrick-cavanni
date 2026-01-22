@@ -9,6 +9,8 @@ export const locationSchema = Yup.object().shape({
 
   state: Yup.string().required('State is required'),
 
+  state: Yup.string().required('State is required'),
+
   zipCode: Yup.string()
     .required('required')
     .matches(/^[0-9a-zA-Z -]+$/, 'Invalid format'),

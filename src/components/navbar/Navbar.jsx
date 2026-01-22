@@ -10,6 +10,11 @@ import slideImage3 from '../../assets/images/product_003.jpg';
 import slideImage2 from '../../assets/images/product_004.jpg';
 import MoblieNavbar from './MoblieNavbar.jsx';
 import NavbarLeft from './NavbarLeft.jsx';
+import slideImage1 from '../../assets/images/product_002.jpg';
+import slideImage3 from '../../assets/images/product_003.jpg';
+import slideImage2 from '../../assets/images/product_004.jpg';
+import MoblieNavbar from './MoblieNavbar.jsx';
+import NavbarLeft from './NavbarLeft.jsx';
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -44,6 +49,8 @@ const Navbar = () => {
   const pageNavLinks = [
     { name: 'HOME', path: '/' },
     { name: 'STORE', path: '/products' },
+    { name: 'HOME', path: '/' },
+    { name: 'STORE', path: '/products' },
     {
       name: 'CAVANNI WARDROBE',
       path: '/products',
@@ -52,13 +59,16 @@ const Navbar = () => {
           {
             image: slideImage2,
             title: 'New Arrivals',
+            title: 'New Arrivals',
           },
           {
             image: slideImage1,
             title: 'Summer Collection',
+            title: 'Summer Collection',
           },
           {
             image: slideImage3,
+            title: 'Special Offers',
             title: 'Special Offers',
           },
         ],
@@ -88,6 +98,8 @@ const Navbar = () => {
     },
     { name: 'OUR BLOGS', path: '/blogs' },
     { name: 'ABOUT US', path: '/about' },
+    { name: 'OUR BLOGS', path: '/blogs' },
+    { name: 'ABOUT US', path: '/about' },
   ];
 
   const containerVariants = {
@@ -108,6 +120,7 @@ const Navbar = () => {
       opacity: 1,
       transition: {
         type: 'spring',
+        type: 'spring',
         stiffness: 100,
       },
     },
@@ -121,6 +134,7 @@ const Navbar = () => {
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-16 items-center justify-between gap-4">
             {/* Navbar Left */}
+            <NavbarLeft mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} />
             <NavbarLeft mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} />
 
             {/* Nav Links */}
@@ -140,6 +154,7 @@ const Navbar = () => {
       {/* Mobile Menu */}
       <AnimatePresence>
         {mobileMenuOpen && (
+          <MoblieNavbar pageNavLinks={pageNavLinks} onClose={() => setMobileMenuOpen(false)} />
           <MoblieNavbar pageNavLinks={pageNavLinks} onClose={() => setMobileMenuOpen(false)} />
         )}
       </AnimatePresence>

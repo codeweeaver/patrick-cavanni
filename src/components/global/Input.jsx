@@ -66,6 +66,7 @@ export const Input = ({
 
   return (
     <div className={className || 'relative flex w-full flex-col'}>
+    <div className={className || 'relative flex w-full flex-col'}>
       <div className="flex justify-between">
         {label && (
           <label
@@ -125,6 +126,7 @@ export const Input = ({
                 }}
                 placeholder={placeholder}
                 isDisabled={disabled}
+                isDisabled={disabled}
                 unstyled
                 classNames={{
                   control: (state) =>
@@ -165,6 +167,7 @@ export const Input = ({
                   key={country}
                   ref={ref}
                   defaultCountry={country?.toLowerCase()}
+                  defaultCountry={country?.toLowerCase()}
                   value={value || ''}
                   onChange={(phone) => onChange(phone)}
                   className={`flex w-full items-center ${icon ? 'pl-10' : ''}`}
@@ -195,6 +198,18 @@ export const Input = ({
           />
         )}
       </div>
+
+      {errorPosition === 'bottom' && (
+        <AnimatePresence mode="wait" initial={false}>
+          {isInvalid && (
+            <InputError
+              message={inputErrors.error.message}
+              key={inputErrors.error.message}
+              className="absolute left-1/2 mt-3 -translate-x-1/2 transform"
+            />
+          )}
+        </AnimatePresence>
+      )}
     </div>
   );
 };
